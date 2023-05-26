@@ -1,0 +1,61 @@
+<header  class="header">
+    <div class="left">
+      <h1>Hamada</h1>
+      <div class="experimental-box">
+        <p>This webpage is experimental</p>
+      </div>
+    </div>
+    <div class="right">
+<div class="parent-container">
+<div class="google-apps-icon-link" (click)="showIcons = !showIcons">
+  <div class="google-apps-icon">
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+    <div class="row">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+  </div>
+</div>
+<div class="additional-icons-container" *ngIf="showIcons">
+  <a href="/baymax" class="icon-link">
+    <img src="assets/baymax-icon.png" alt="Spotify">
+    <span>Baymax</span>
+  </a>
+  <a href="/discord" class="icon-link">
+    <img src="assets/discord-icon.png" alt="Twitter">
+    <span>Discord</span>
+  </a>
+  <a href="/Spotify" class="icon-link">
+    <img src="assets/spotify-icon.png" alt="Discord">
+    <span>Spotify</span>
+  </a>
+  <a href="/settings" class="icon-link">
+    <img src="assets/settings-icon.png" alt="Discord">
+    <span>Settings</span>
+  </a>
+</div>
+  </div>
+      <div class="user-icon">
+        <div class="user-icon__container">
+          <a href="/user-account">
+            <img src="assets/Tommyinnit.png" alt="User Image" class="user-icon__image">
+            <div class="user-icon__details" #tooltip>
+              <h4 class="user-icon__name" alt="Kasai technologies">Kasai Tech.</h4>
+              <p class="user-icon__email">Tommyinnit</p>
+              <p class="user-icon__email">Tommyinnit@gmail.com</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
