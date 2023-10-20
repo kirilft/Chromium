@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BaymaxComponent } from './baymax.component';
+import { FooterComponent } from './footer.component';
 
-describe('BaymaxComponent', () => {
-  let component: BaymaxComponent;
-  let fixture: ComponentFixture<BaymaxComponent>;
+describe('FooterComponent', () => {
+  let component: FooterComponent;
+  let fixture: ComponentFixture<FooterComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [BaymaxComponent]
+      declarations: [FooterComponent]
     });
-    fixture = TestBed.createComponent(BaymaxComponent);
+    fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

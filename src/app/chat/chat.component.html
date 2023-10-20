@@ -1,0 +1,13 @@
+<div class="chat-container">
+    <div class="chat-history" #chatHistory>
+      <div *ngFor="let message of messages; let i = index" class="message" [ngClass]="message.sender">
+        <span>{{message.text}}</span>
+      </div>
+    </div>
+  
+    <div class="input-area">
+      <input type="text" [(ngModel)]="inputMessage" (keyup.enter)="sendMessage()">
+      <button (click)="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+  

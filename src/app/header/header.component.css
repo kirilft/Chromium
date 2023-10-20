@@ -1,56 +1,45 @@
-header {
-	width: 100%;
+.header{
 	display: flex;
 	align-items: center;
 	background-color: #000;
 	position: sticky;
 	top: 0;
-	left: 0;
 	z-index: 100;
 	justify-content: space-between;
 	color: #ccc;
 }
 
 .left,
-.right {
+.right{
 	display: flex;
 	align-items: center;
 }
 
-.header .left h1 {
+.left h1{
 	font-weight: 400;
 	font-size: 1.5em;
 }
 
 .experimental-box {
-	display: inline-block;
-	align-items: center;
-	margin-left: 5px;
-	padding: 5px 10px;
-	background-color: transparent;
+	margin: 5px;
+	padding: 1px 5px 1px 5px;
 	border: 2px solid purple;
 	border-radius: 8px;
 	line-height: 0.6em;
-}
-
-.experimental-box p {
 	font-size: 0.8em;
 	color: #888;
 }
 
 .right {
-	gap: 20px;
+	gap:30px;
 }
 
 .user-icon {
 	position: relative;
 	margin-top: 5px;
-}
-
-.user-icon__container {
-	position: relative;
 	display: inline-block;
 }
+
 
 .user-icon__image {
 	width: 50px;
@@ -60,27 +49,22 @@ header {
 	transition: box-shadow 0.3s ease-in-out;
 }
 
-.user-icon__container:hover .user-icon__image {
+.user-icon:hover .user-icon__image {
 	box-shadow: 0 0 0 5px #111;
 }
 
 .user-icon__details {
 	position: absolute;
-	top: calc(100% + 10px);
-	left: 0;
 	opacity: 0;
 	background-color: #000c;
 	color: #fff;
-	padding: 5px 10px;
-	border-radius: 5px;
 	transition: opacity 0.3s ease;
-	white-space: nowrap;
 	max-width: 200px;
-	text-align: left;
-	z-index: 999;
+	padding: 10px;
+	border-radius: 8px;
 }
 
-.user-icon__container:hover .user-icon__details {
+.user-icon:hover .user-icon__details {
 	opacity: 1;
 }
 
@@ -95,14 +79,11 @@ header {
 }
 
 .google-apps-icon-link {
-	text-decoration: none;
 	display: inline-block;
-	position: relative;
 }
 
 .google-apps-icon {
 	position: relative;
-	margin-right: 10px;
 	top: -7px;
 	display: flex;
 	flex-direction: column;
@@ -144,6 +125,7 @@ header {
 .google-apps-icon-link:hover .google-apps-icon::after {
 	opacity: 1;
 	background-color: #121212;
+	transition: box-shadow 0.3s ease-in-out;
 }
 
 .row {

@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { Title } from '@angular/platform-browser';
 
 describe('AppComponent', () => { 
-  Title = 'kasai';
+  
   beforeEach(() => TestBed.configureTestingModule({
     imports: [RouterTestingModule],
     declarations: [AppComponent]
