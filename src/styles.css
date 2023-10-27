@@ -1,7 +1,14 @@
+:root{
+  --black: #111;
+  --gray: #888;
+  --light: #F5F5F5;
+  --blue: #80b2ef;
+}
+
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
 }

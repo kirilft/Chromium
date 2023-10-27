@@ -1,25 +1,30 @@
 footer {
-    justify-content: flex-start;
-    padding:  2% 5% 5% 5%;
-    color: #888;
-    width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  justify-content: flex-start;
+  padding: 1rem;
+  color: var(--gray);
+  width: calc(100% - 4rem);
+  display: flex;
+  align-items: center;
+  background-color: var(--black);
+}
+
+
+.footer-content {
+    margin-left: 4rem;
     display: flex;
-    align-items: center;
-    background-color: #000;
-  }
-  
-  .footer-content {
-    display: flex;
-    gap: 30px;
+    gap: 2rem;
   }
 
   .privacy-link {
     text-decoration: none;
-    color: #888;
+    color: var(--gray);
     transition: color 0.3s ease;
-    margin-top: 25px;
+    margin-top: 1.5rem;
   }
-  
+
   .privacy-link:hover {
-    color: #80b2ef;
+    color: var(--blue);
   }

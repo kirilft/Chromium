@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'kasai'
+  title = 'Chromium'
   constructor(
     private cookieService: CookieService,
     private router: Router
