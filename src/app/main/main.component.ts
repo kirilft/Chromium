@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, HostListener }
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 const ANIMATION_SPEED = 100;  // in milliseconds
-const TYPING_SPEED = 50;  // in milliseconds
+const TYPING_SPEED = 100;  // in milliseconds
 const BLINK_DELAY = 3500;  // in milliseconds
 
 @Component({
@@ -45,7 +45,9 @@ export class MainComponent implements OnInit, AfterViewInit {
     "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
     "If I have seen further it is by standing on the shoulders of giants. - Isaac Newton",
     "Science and everyday life cannot and should not be separated. - Rosalind Franklin",
-    "Intelligence is the ability to adapt to change. - Stephen Hawking"
+    "Intelligence is the ability to adapt to change. - Stephen Hawking",
+    "Pants are for losers. - Zoe McFife",
+    "Be gay do crimes. - Alexander Hamilton"
   ];
   
   ngOnInit(): void {

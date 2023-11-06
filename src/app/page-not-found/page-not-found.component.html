@@ -1,10 +1,18 @@
-<app-header></app-header>
-
 <div class="main-container">
-  <h1>404: UH-OH!</h1>
-  <p>Even our electrons couldn't find the page you were looking for.</p>
-  <p>They must be quantum tunneling elsewhere...</p>
-  <a href="/" class="home-link">Warp Home</a>
-</div>
-
+<app-header></app-header>
+<main>
+  <div class="content-container">
+    <div class="typewriter-text" [@typing]="typingState">
+      <h1>
+        <p [@blinkCaret]="blinkCaretState">{{ displayedSentence }}</p>
+      </h1>
+    </div>
+    <div class="additional-text">
+        <p>Even our electrons couldn't find the page you were looking for. </p>
+        <p>They must be quantum tunneling elsewhere...</p>
+        <a href="/" class="home-link">Warp Home</a>
+    </div>
+  </div>
+</main>
 <app-footer></app-footer>
+</div>
