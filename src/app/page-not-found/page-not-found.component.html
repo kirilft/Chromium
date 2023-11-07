@@ -2,6 +2,7 @@
 <app-header></app-header>
 <main>
   <div class="content-container">
+    <p class="error">Error - 404 Page</p>
     <div class="typewriter-text" [@typing]="typingState">
       <h1>
         <p [@blinkCaret]="blinkCaretState">{{ displayedSentence }}</p>
@@ -10,7 +11,7 @@
     <div class="additional-text">
         <p>Even our electrons couldn't find the page you were looking for. </p>
         <p>They must be quantum tunneling elsewhere...</p>
-        <a href="/" class="home-link">Warp Home</a>
+        <button onclick="location.href='/'" class="btn-notify">Warp Home</button>
     </div>
   </div>
 </main>
