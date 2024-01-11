@@ -7,7 +7,8 @@
   justify-content: space-between;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1;
+  transition: font-size 0.3s ease;
 }
 
 /* Left Section */
@@ -17,11 +18,13 @@
   display: flex;
 }
 
+/*header h1*/
 .left h1 {
   font-size: 1.5em;
   font-weight: 400;
 }
 
+/*rounded Border*/
 .experimental-box {
   border: 2px solid purple;
   border-radius: 8px;
@@ -30,14 +33,33 @@
   line-height: 0.6em;
   margin: 5px;
   padding: 1px 5px;
+  transition: font-size 0.3s ease;
 }
 
-/* Right Section */
+@media (max-width: 600px) {
+  .left h1 {
+    font-size:calc(1em + 1vw);
+  }
+  .experimental-box {
+    font-size:calc(0.4em + 1vw);
+  }
+}
+
+@media (max-width: 244px) {
+  .left h1 {
+    font-size:calc(0.5em + 1vw);
+  }
+  .experimental-box {
+    font-size:calc(0.2em + 1vw);
+  }
+}
+
+/*
 .right {
   gap: 30px;
 }
 
-/* Google Apps Icon */
+
 .google-apps-icon-link {
   display: inline-block;
 }
@@ -64,7 +86,7 @@
   width: 4px;
 }
 
-/* Additional Icons */
+
 .additional-icons-container {
   background-color: #222;
   border-radius: 10px;
@@ -81,7 +103,7 @@
   z-index: 1000;
 }
 
-/* User Icon */
+
 .user-icon {
   display: inline-block;
   margin-top: 5px;
@@ -116,3 +138,4 @@
 .user-icon__email {
   color: var(--gray);
 }
+*/

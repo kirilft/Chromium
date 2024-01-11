@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, style, transition, animate } from '@angular/animations';
 
 const ANIMATION_SPEED = 100;  // in milliseconds
 const TYPING_SPEED = 100;  // in milliseconds
@@ -29,7 +29,6 @@ const BLINK_DELAY = 3500;  // in milliseconds
 })
 export class MainComponent implements OnInit, AfterViewInit {
   @ViewChild('tooltip') tooltip!: ElementRef;
-  showIcons: boolean = false;
   
   displayedSentence: string = '';
   typingState: string = 'initial';
@@ -50,7 +49,6 @@ export class MainComponent implements OnInit, AfterViewInit {
     "I’m not weird, I’m a limited edition. - Sam Cawthorn"
   ];
   
-  
   ngOnInit(): void {
     this.displayRandomSentence();
   }
@@ -59,10 +57,11 @@ export class MainComponent implements OnInit, AfterViewInit {
     this.adjustDropdownPosition();
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event): void {
+  @HostListener('window:resize')
+  onResize(): void {
     this.adjustDropdownPosition();
   }
+
 
   adjustDropdownPosition(): void {
     const { right } = this.tooltip.nativeElement.getBoundingClientRect();
