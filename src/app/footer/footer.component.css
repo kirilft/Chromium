@@ -48,7 +48,7 @@ footer {
   .footer-content {
     margin-left: 1rem; /* Reduce margin on smaller screens */
     font-size: calc(0.5em + 1vw); /* Reduce font-size on smaller screens */
-    gap: 0rem; /* Reduce gap on smaller screens */
+    gap: 0; /* Reduce gap on smaller screens */
     flex-direction: column; /* Stack items vertically on smaller screens */
     align-items: flex-start; /* Align items to the start on smaller screens */
   }

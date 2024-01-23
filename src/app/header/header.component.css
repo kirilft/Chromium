@@ -54,88 +54,9 @@
   }
 }
 
-/*
-.right {
-  gap: 30px;
-}
-
-
-.google-apps-icon-link {
-  display: inline-block;
-}
-
-.google-apps-icon {
-  display: flex;
-  flex-direction: column;
-  height: 20px;
-  justify-content: space-between;
-  position: relative;
-  top: -7px;
-  width: 20px;
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-}
-
-.cell {
-  background-color: var(--light);
-  border-radius: 50%;
-  height: 4px;
-  width: 4px;
-}
-
-
-.additional-icons-container {
-  background-color: #222;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  margin-right: 10px;
-  margin-top: 20px;
-  padding: 20px;
-  position: absolute;
-  top: 100%;
-  transform: translateX(-60%);
-  z-index: 1000;
-}
-
-
-.user-icon {
-  display: inline-block;
-  margin-top: 5px;
-  position: relative;
-}
-
-.user-icon__image {
-  border-radius: 50%;
-  height: 50px;
-  object-fit: cover;
-  transition: box-shadow 0.3s ease-in-out;
-  width: 50px;
-}
-
-.user-icon__details {
-  background-color: #000c;
-  border-radius: 8px;
-  color: var(--light);
-  max-width: 200px;
-  opacity: 0;
-  padding: 10px;
-  position: absolute;
-  transition: opacity 0.3s ease;
-}
-
-.user-icon__name,
-.user-icon__email {
-  font-size: 14px;
-  margin: 0;
-}
-
-.user-icon__email {
-  color: var(--gray);
-}
-*/
+  a {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits color from parent element */
+    font-style: normal; /* Ensures font is not italic */
+    font-weight: normal; /* Ensures font is not bold */
+  }

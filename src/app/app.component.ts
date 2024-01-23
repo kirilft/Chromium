@@ -15,11 +15,11 @@ export class AppComponent implements OnInit {
   ) {}
 
       ngOnInit() {
-        const isFirstVisit = this.cookieService.check('firstVisit'); // either no or null
-      
+        const isFirstVisit = this.cookieService.check('firstVisit');
+
         if ('no' != this.cookieService.get('firstVisit')) {
           this.cookieService.set('firstVisit', 'no');
           this.router.navigate(['/loading']);
         }
-      }    
+      }
 }
