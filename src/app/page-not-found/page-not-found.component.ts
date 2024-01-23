@@ -1,12 +1,11 @@
 // page-not-found.component.ts
-import { Router } from '@angular/router';
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Router } from '@angular/router';
+import { trigger, style, transition, animate } from '@angular/animations';
 
 const ANIMATION_SPEED = 50;  // in milliseconds
 const TYPING_SPEED = 25;  // in milliseconds
 const BLINK_DELAY = 3500;  // in milliseconds
-
 
 @Component({
   selector: 'app-page-not-found',
@@ -15,26 +14,26 @@ const BLINK_DELAY = 3500;  // in milliseconds
   animations: [
     trigger('typing', [
       transition(':enter', [
-        style({ opacity: '0' }),
-        animate(`${ANIMATION_SPEED}ms`, style({ opacity: '1' })),
+        style({ opacity: 0 }),
+        animate(`${ANIMATION_SPEED}ms`, style({ opacity: 1 })),
       ]),
       transition(':leave', [
-        animate(`${ANIMATION_SPEED}ms`, style({ opacity: '0' })),
+        animate(`${ANIMATION_SPEED}ms`, style({ opacity: 0 })),
       ])
     ]),
     trigger('blink-caret', [
-      transition('* => *', [
-        animate('0.5s ease-in-out', style({ opacity: '0' })),
-        animate('0.5s ease-in-out', style({ opacity: '1' })),
+      transition('* <=> *', [
+        animate('0.5s ease-in-out', style({ opacity: 0 })),
+        animate('0.5s ease-in-out', style({ opacity: 1 })),
       ]),
     ]),
   ],
 })
-export class PageNotFoundComponent {
+export class PageNotFoundComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('tooltip') tooltip!: ElementRef;
+  @ViewChild('tooltip', { static: false }) tooltip!: ElementRef;
   showIcons: boolean = false;
-  
+
   displayedSentence: string = '';
   typingState: string = 'initial';
   blinkCaretState: string = 'initial';
@@ -51,7 +50,7 @@ export class PageNotFoundComponent {
     "Someone let the internet gremlins out, and they took this page. Try luring them back with coffee.",
     "This page must have been taken by aliens because we can't find it anywhere."
   ];
-  
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {
@@ -63,7 +62,7 @@ export class PageNotFoundComponent {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: Event): void {
+  onResize(): void {
     this.adjustDropdownPosition();
   }
 
@@ -100,7 +99,7 @@ export class PageNotFoundComponent {
     this.blinkCaretState = this.blinkCaretState === 'initial' ? 'final' : 'initial';
   }
 
-  goToHome() {
+  goToHome(): void {
     this.router.navigateByUrl('/');
   }
 }

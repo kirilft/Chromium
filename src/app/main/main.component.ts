@@ -19,7 +19,7 @@ const BLINK_DELAY = 3500;  // in milliseconds
         animate(`${ANIMATION_SPEED}ms`, style({ opacity: '0' })),
       ])
     ]),
-    trigger('blink-caret', [
+    trigger('blinkCaretState', [
       transition('* => *', [
         animate('0.5s ease-in-out', style({ opacity: '0' })),
         animate('0.5s ease-in-out', style({ opacity: '1' })),
@@ -29,7 +29,7 @@ const BLINK_DELAY = 3500;  // in milliseconds
 })
 export class MainComponent implements OnInit, AfterViewInit {
   @ViewChild('tooltip') tooltip!: ElementRef;
-  
+
   displayedSentence: string = '';
   typingState: string = 'initial';
   blinkCaretState: string = 'initial';
@@ -48,9 +48,11 @@ export class MainComponent implements OnInit, AfterViewInit {
     "Life is short. Smile while you still have teeth. - Mallory Hopkins",
     "I’m not weird, I’m a limited edition. - Sam Cawthorn"
   ];
-  
+
   ngOnInit(): void {
-    this.displayRandomSentence();
+    this.displayRandomSentence().catch(error => {
+      console.error('Error during sentence display:', error);
+    });
   }
 
   ngAfterViewInit(): void {
@@ -74,10 +76,10 @@ export class MainComponent implements OnInit, AfterViewInit {
     }
   }
 
-  displayRandomSentence(): void {
+  async displayRandomSentence(): Promise<void> {
     const sentence = this.getRandomElement(this.sentences);
     this.typingState = 'start';
-    this.startTypingAnimation(sentence, TYPING_SPEED);
+    await this.startTypingAnimation(sentence, TYPING_SPEED);
   }
 
   getRandomElement<T>(array: T[]): T {
