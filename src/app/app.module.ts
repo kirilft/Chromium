@@ -11,6 +11,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { KasaiComponent } from './kasai/kasai.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     LoadingComponent,
     FooterComponent,
     PageNotFoundComponent,
+    KasaiComponent,
   ],
   imports: [
     BrowserModule,
