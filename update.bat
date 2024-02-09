@@ -14,6 +14,23 @@ if %ERRORLEVEL% neq 0 (
     goto end
 )
 
+REM Remove node_modules and package-lock.json
+echo Removing node_modules and package-lock.json...
+rd /s /q node_modules
+del /f /q package-lock.json
+if %ERRORLEVEL% neq 0 (
+    echo Error removing node_modules and/or package-lock.json.
+    goto end
+)
+
+REM Reinstall dependencies
+echo Reinstalling dependencies...
+npm install
+if %ERRORLEVEL% neq 0 (
+    echo Error reinstalling dependencies. Check the npm permissions and network connection.
+    goto end
+)
+
 REM Update local Angular CLI
 echo Updating Local Angular CLI...
 ng update @angular/cli@latest

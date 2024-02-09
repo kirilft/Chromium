@@ -1,8 +1,8 @@
 /* Header Component */
 .header {
   align-items: center;
-  background-color: var(--black);
-  color: #ccc;
+  background-color: var(--color-dark-black); /* Updated color variable */
+  color: var(--color-gray); /* Updated color variable to gray */
   display: flex;
   justify-content: space-between;
   position: sticky;
@@ -18,17 +18,17 @@
   display: flex;
 }
 
-/*header h1*/
+/* Header h1 */
 .left h1 {
   font-size: 1.5em;
   font-weight: 400;
 }
 
-/*rounded Border*/
+/* Rounded Border */
 .experimental-box {
-  border: 2px solid purple;
+  border: 2px solid purple; /* Consider creating a variable for this color if used often */
   border-radius: 8px;
-  color: var(--gray);
+  color: var(--color-gray); /* Updated color variable */
   font-size: 0.8em;
   line-height: 0.6em;
   margin: 5px;
@@ -37,26 +37,22 @@
 }
 
 @media (max-width: 600px) {
-  .left h1 {
-    font-size:calc(1em + 1vw);
-  }
+  .left h1,
   .experimental-box {
-    font-size:calc(0.4em + 1vw);
+    font-size: calc(1em + 1vw);
   }
 }
 
 @media (max-width: 244px) {
-  .left h1 {
-    font-size:calc(0.5em + 1vw);
-  }
+  .left h1,
   .experimental-box {
-    font-size:calc(0.2em + 1vw);
+    font-size: calc(0.5em + 1vw);
   }
 }
 
-  a {
-    text-decoration: none; /* Removes underline from links */
-    color: inherit; /* Inherits color from parent element */
-    font-style: normal; /* Ensures font is not italic */
-    font-weight: normal; /* Ensures font is not bold */
-  }
+a {
+  text-decoration: none;
+  color: inherit;
+  font-style: normal;
+  font-weight: normal;
+}
