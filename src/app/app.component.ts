@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,19 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'Chromium'
-  constructor(
-    private cookieService: CookieService,
-    private router: Router
-  ) {}
-
-      ngOnInit() {
-        const isFirstVisit = this.cookieService.check('firstVisit');
-
-        if ('no' != this.cookieService.get('firstVisit')) {
-          this.cookieService.set('firstVisit', 'no');
-          this.router.navigate(['/loading']);
-        }
-      }
+  constructor(private router: Router) {}
 }

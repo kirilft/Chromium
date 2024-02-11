@@ -95,14 +95,14 @@ body {
     object-fit: cover;
 }
 
-.link-container a {
+.link {
     font-size: 1.2rem;
-    color: var(--color-gray);
+    color: var(--color-light-gray);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.link-container a:hover {
+.link:hover {
     color: var(--color-light-blue);
 }
 
@@ -113,7 +113,8 @@ body {
     }
 
     .category {
-        flex-basis: 100%;
+        flex-basis: 30%;
+        align-items: center;
     }
 
     .header-logo {
