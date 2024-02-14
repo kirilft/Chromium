@@ -9,7 +9,7 @@ footer {
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: var(--color-dark-black);
+  background-color: var(--color-black);
   gap: 1rem;
   transition: font-size 0.3s ease;
 }

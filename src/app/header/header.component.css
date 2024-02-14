@@ -1,7 +1,7 @@
 /* Header Component */
 .header {
   align-items: center;
-  background-color: var(--color-dark-black); /* Updated color variable */
+  background-color: var(--color-black); /* Updated color variable */
   color: var(--color-gray); /* Updated color variable to gray */
   display: flex;
   justify-content: space-between;
