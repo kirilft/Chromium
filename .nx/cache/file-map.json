@@ -67,7 +67,7 @@
         },
         {
           "file": "package.json",
-          "hash": "13875406210250157168",
+          "hash": "17373139452498713933",
           "deps": [
             "npm:@angular/animations",
             "npm:@angular/common",
@@ -138,11 +138,11 @@
         },
         {
           "file": "src/app/footer/footer.component.css",
-          "hash": "3707756786088502334"
+          "hash": "5759289347052667743"
         },
         {
           "file": "src/app/footer/footer.component.html",
-          "hash": "15007974660119271198"
+          "hash": "512474083028005444"
         },
         {
           "file": "src/app/footer/footer.component.spec.ts",
@@ -160,7 +160,7 @@
         },
         {
           "file": "src/app/header/header.component.css",
-          "hash": "9749921379943812287"
+          "hash": "13051690302433074502"
         },
         {
           "file": "src/app/header/header.component.html",
@@ -182,7 +182,7 @@
         },
         {
           "file": "src/app/kasai/kasai.component.css",
-          "hash": "17095224293978382453"
+          "hash": "1865370784154580363"
         },
         {
           "file": "src/app/kasai/kasai.component.html",
@@ -213,7 +213,7 @@
         },
         {
           "file": "src/app/main/main.component.css",
-          "hash": "9607183480098553372"
+          "hash": "11569565490397281875"
         },
         {
           "file": "src/app/main/main.component.html",
@@ -245,7 +245,7 @@
         },
         {
           "file": "src/app/page-not-found/page-not-found.component.css",
-          "hash": "8786632017398999245"
+          "hash": "4405101882648760826"
         },
         {
           "file": "src/app/page-not-found/page-not-found.component.html",
@@ -365,7 +365,7 @@
         },
         {
           "file": "src/styles.css",
-          "hash": "4310370948839961959"
+          "hash": "2011963551439077276"
         },
         {
           "file": "tsconfig.app.json",

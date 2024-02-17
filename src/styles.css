@@ -11,6 +11,11 @@
   --color-green: #28a745;
 }
 
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 html, body {
   margin: 0;
   padding: 0;

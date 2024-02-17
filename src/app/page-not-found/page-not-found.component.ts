@@ -32,7 +32,7 @@ const BLINK_DELAY = 3500;  // in milliseconds
 export class PageNotFoundComponent implements OnInit, AfterViewInit {
 
   @ViewChild('tooltip', { static: false }) tooltip!: ElementRef;
-  showIcons: boolean = false;
+
 
   displayedSentence: string = '';
   typingState: string = 'initial';
