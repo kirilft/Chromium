@@ -47,11 +47,12 @@ export class MainComponent implements OnInit, AfterViewInit {
     "The early bird might get the worm, but the second mouse gets the cheese. - Steven Wright",
     "Life is short. Smile while you still have teeth. - Mallory Hopkins",
     "I’m not weird, I’m a limited edition. - Sam Cawthorn",
-    "once upon a time, i didn't care. still don't :slight_smile: - Humsi",
+    "once upon a time, i didn't care. still don't 🙂 - Humsi",
     "19 dollar Fortnite card - Waffel",
-    "I'm a yarn ball of anxiety. - Zoe McFife"
+    "I'm a yarn ball of anxiety. - Zoe McFife",
+    "life hard, 8008 soft - Kiri"
   ];
-  
+
 
   ngOnInit(): void {
     this.displayRandomSentence().catch(error => {
