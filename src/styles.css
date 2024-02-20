@@ -1,12 +1,11 @@
 :root {
-  --color-black: #0B0C10; /*0F0F0F*/
-  --color-midnight: #1F1F1F; /*#222*/
+  --color-black: #0B0C10; /* 0F0F0F */
+  --color-midnight: #1F1F1F; /* #222 */
   --color-gray: #888;
-  --color-light-gray: #E5E1E1;/*B1B1B1*/
+  --color-light-gray: #E5E1E1; /* B1B1B1 */
   --color-light-blue: #80b2ef;
-
   --color-dark-blue: #2C3E50;
-  --color-snow: #F0FAFF;/*F1F1F1*/
+  --color-snow: #F0FAFF; /* F1F1F1 */
   --color-blue: #007bff;
   --color-green: #28a745;
 }
@@ -16,7 +15,8 @@
   font-family: 'Poppins', sans-serif;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -24,3 +24,20 @@ html, body {
   background-color: var(--color-black);
 }
 
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 4px; /* Slightly rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-midnight); /* Darker shade for the thumb */
+  border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-midnight); /* Darker grey on hover */
+}
