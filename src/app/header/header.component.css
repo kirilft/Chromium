@@ -56,3 +56,19 @@ a {
   font-style: normal;
   font-weight: normal;
 }
+
+.link {
+  font-size:1.5em;
+  font-weight: 400;
+  padding-top:0.75rem;
+  margin-right: 2rem;
+  text-decoration: none; /* Removes underline from links */
+  color: var(--color-gray); /* Initial color, replace var(--color-gray) with your color variable or specific color code */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+  align-self: center; /* Centers the link, useful in flex containers */
+}
+
+/* Define the hover effect for .link */
+.link:hover {
+  color: var(--color-light-blue); /* Color changes to light blue on hover, replace var(--color-light-blue) with your color variable or specific color code */
+}

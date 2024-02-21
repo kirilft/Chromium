@@ -2,7 +2,6 @@ footer {
   width: calc(100% - 6rem);
   margin-left: 3rem;
   padding: 1rem;
-  bottom: 0;
   color: var(--color-gray);
   font-size: calc(0.75em + 0.5vw);
   transition: font-size 0.3s ease;
@@ -24,7 +23,6 @@ footer {
   color: var(--color-light-blue);
 }
 
-/* Responsive adjustments */
 @media (max-width: 800px) {
   footer {
     font-size: calc(0.7em + 0.5vw);
@@ -43,5 +41,11 @@ footer {
   footer {
     font-size: calc(0.6em + 0.5vw);
     padding: 0.5rem;
+  }
+}
+
+@media (max-height: 500px) and (max-width: 600px) {
+  footer {
+    display: none;
   }
 }
