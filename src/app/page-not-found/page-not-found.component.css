@@ -1,35 +1,22 @@
-body {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .main-container {
   width: calc(100% - 4rem);
-  min-height: 60vh;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
   margin: 2rem;
+  padding: 1rem;
   border-radius: calc(1rem + 1vw);
   background-color: var(--color-midnight);
   overflow-y: auto;
 }
 
 .typewriter-text {
-  width: calc(100% - 2rem);
   height: 30vh;
   display: flex;
-  justify-content: center;
   align-items: center;
   font-size: calc(1em + 1vw);
   color: var(--color-snow);
-  padding: 0;
-  margin: 1rem;
-}
-
-h1 p {
+  padding: 3rem;
   overflow-wrap: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -38,8 +25,8 @@ h1 p {
 .additional-text {
   text-align: left;
   color: var(--color-gray);
-  font-size: 1.5em;
-  padding: 4rem;
+  font-size: 1.5rem;
+  padding: 3rem;
 }
 
 .error {
@@ -47,29 +34,47 @@ h1 p {
   padding: 1rem;
   text-align: left;
   font-size: calc(1em + 1vw);
-  background: linear-gradient(to right, #ff0000, #0000ff); /* nice red to soft blue gradient */
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent; /* Makes the text color transparent to reveal the gradient */
-  display: inline-block; /* or 'block' depending on your layout needs */
+  background: linear-gradient(to right, #ff0000, #0000ff);
+  display: inline-block;
   position: relative;
-    color: transparent;
-    background: -webkit-linear-gradient(16deg, #4285f4 0, #9b72cb 9%, #d96570 20%, #d96570 24%, #9b72cb 35%, #4285f4 44%, #9b72cb 50%, #d96570 56%, #131314 75%, #131314 100%);
-    background: linear-gradient(74deg, #4285f4 0, #9b72cb 9%, #d96570 20%, #d96570 24%, #9b72cb 35%, #4285f4 44%, #9b72cb 50%, #d96570 56%, #131314 75%, #131314 100%);
-    background-size: 400% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  color: transparent;
+  background: -webkit-linear-gradient(
+    16deg,
+    #4285f4 0,
+    #9b72cb 9%,
+    #d96570 20%,
+    #d96570 24%,
+    #9b72cb 35%,
+    #4285f4 44%,
+    #9b72cb 50%,
+    #d96570 56%,
+    #131314 75%,
+    #131314 100%
+  );
+  background: linear-gradient(
+    74deg,
+    #4285f4 0,
+    #9b72cb 9%,
+    #d96570 20%,
+    #d96570 24%,
+    #9b72cb 35%,
+    #4285f4 44%,
+    #9b72cb 50%,
+    #d96570 56%,
+    #131314 75%,
+    #131314 100%
+  );
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
-
 
 .btn-notify {
   display: inline-block;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: var(--color-gray);
-  color: var(--color-light-gray);
+  background-color: #444;
+  color: var(--color-snow);
   text-align: center;
   cursor: pointer;
   border: none;

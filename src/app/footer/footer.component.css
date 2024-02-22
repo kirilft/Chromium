@@ -1,22 +1,25 @@
 footer {
   width: calc(100% - 6rem);
   margin-left: 3rem;
-  padding: 1rem;
+  bottom: 2vh;
   color: var(--color-gray);
-  font-size: calc(0.75em + 0.5vw);
-  transition: font-size 0.3s ease;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  font-size: calc(0.75rem + 0.5vw);
+  display:flex;
+  position: fixed;
   gap: 2rem;
-  box-sizing: border-box;
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-style: inherit;
+  font-weight: inherit;
 }
 
 .privacy-link {
-  text-decoration: none;
-  color: var(--color-gray);
-  transition: color 0.3s ease;
   align-self: center;
+  color: var(--color-gray);
 }
 
 .privacy-link:hover {
@@ -25,26 +28,30 @@ footer {
 
 @media (max-width: 800px) {
   footer {
-    font-size: calc(0.7em + 0.5vw);
-    padding: 0.8rem;
+    font-size: calc(0.7rem + 0.5vw);
   }
 }
 
 @media (max-width: 600px) {
   footer {
-    font-size: calc(0.65em + 0.5vw);
-    padding: 0.5rem;
+    font-size: calc(0.65rem + 0.5vw);
   }
 }
 
 @media (max-width: 400px) {
   footer {
-    font-size: calc(0.6em + 0.5vw);
-    padding: 0.5rem;
+    font-size: calc(0.6rem + 0.5vw);
   }
 }
 
-@media (max-height: 500px) and (max-width: 600px) {
+@media (max-height: 800px){
+  footer {
+    font-size: calc(0.7rem + 0.5vw);
+    bottom: 0.2vh;
+  }
+}
+
+@media (max-height: 650px){
   footer {
     display: none;
   }

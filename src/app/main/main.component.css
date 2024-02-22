@@ -1,17 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-body {
-  color: var(--color-light-gray);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .main-container {
   width: 100%;
   flex-direction: column;

@@ -1,53 +1,33 @@
-/* Header Component */
 .header {
-  align-items: center;
-  background-color: var(--color-black); /* Updated color variable */
-  color: var(--color-gray); /* Updated color variable to gray */
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  background-color: var(--color-black);
+  color: var(--color-gray);
   position: sticky;
   top: 0;
-  z-index: 1;
-  transition: font-size 0.3s ease;
 }
 
-/* Left Section */
 .left,
 .right {
-  align-items: center;
   display: flex;
+  align-items: center;
 }
 
-/* Header h1 */
-.left h1 {
-  font-size: 1.5em;
+h1 {
+  margin-left:3rem;
+  font-size: 2rem;
   font-weight: 400;
 }
 
-/* Rounded Border */
 .experimental-box {
-  border: 2px solid purple; /* Consider creating a variable for this color if used often */
-  border-radius: 8px;
-  color: var(--color-gray); /* Updated color variable */
-  font-size: 0.8em;
-  line-height: 0.6em;
+  border: 0.15rem solid purple;
+  border-radius: 0.6rem;
   margin: 5px;
   padding: 1px 5px;
-  transition: font-size 0.3s ease;
-}
-
-@media (max-width: 600px) {
-  .left h1,
-  .experimental-box {
-    font-size: calc(1em + 1vw);
-  }
-}
-
-@media (max-width: 244px) {
-  .left h1,
-  .experimental-box {
-    font-size: calc(0.5em + 1vw);
-  }
+  font-size: 1rem;
+  line-height: 0.6em;
+  color: var(--color-gray);
 }
 
 a {
@@ -58,17 +38,47 @@ a {
 }
 
 .link {
-  font-size:1.5em;
-  font-weight: 400;
-  padding-top:0.75rem;
+  align-self: center;
   margin-right: 2rem;
-  text-decoration: none; /* Removes underline from links */
-  color: var(--color-gray); /* Initial color, replace var(--color-gray) with your color variable or specific color code */
-  transition: color 0.3s ease; /* Smooth transition for color change */
-  align-self: center; /* Centers the link, useful in flex containers */
+  padding-top: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-gray);
 }
 
-/* Define the hover effect for .link */
 .link:hover {
-  color: var(--color-light-blue); /* Color changes to light blue on hover, replace var(--color-light-blue) with your color variable or specific color code */
+  color: var(--color-light-blue);
+}
+
+@media (max-width: 800px) {
+  .left h1,
+  .link {
+    font-size: calc(1em + 1vw);
+  }
+
+  .experimental-box {
+    font-size: calc(0.4em + 1vw);
+  }
+}
+
+@media (max-width: 600px) {
+  .left h1,
+  .link {
+    font-size: calc(0.5em + 1vw);
+  }
+
+  .experimental-box {
+    font-size: calc(0.4em + 1vw);
+  }
+}
+
+@media (max-width: 400px) {
+  .left h1,
+  .link {
+    font-size: calc(0.25em + 1vw);
+  }
+
+  .experimental-box {
+    font-size: calc(0.2em + 1vw);
+  }
 }
