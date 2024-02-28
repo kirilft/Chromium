@@ -3,7 +3,6 @@ import { trigger, style, transition, animate } from '@angular/animations';
 
 const ANIMATION_SPEED = 100;  // in milliseconds
 const TYPING_SPEED = 100;  // in milliseconds
-const BLINK_DELAY = 3500;  // in milliseconds
 
 @Component({
   selector: 'app-main',
@@ -12,25 +11,18 @@ const BLINK_DELAY = 3500;  // in milliseconds
   animations: [
     trigger('typing', [
       transition(':enter', [
-        style({ opacity: '0' }),
-        animate(`${ANIMATION_SPEED}ms`, style({ opacity: '1' })),
+        style({ opacity: 0 }),
+        animate(`${ANIMATION_SPEED}ms`, style({ opacity: 1 })),
       ]),
       transition(':leave', [
-        animate(`${ANIMATION_SPEED}ms`, style({ opacity: '0' })),
+        animate(`${ANIMATION_SPEED}ms`, style({ opacity: 0 })),
       ])
-    ]),
-    trigger('blinkCaretState', [
-      transition('* => *', [
-        animate('0.5s ease-in-out', style({ opacity: '0' })),
-        animate('0.5s ease-in-out', style({ opacity: '1' })),
-      ]),
-    ]),
+    ])
   ],
 })
 export class MainComponent implements OnInit {
   displayedSentence: string = '';
   typingState: string = 'initial';
-  blinkCaretState: string = 'initial';
 
   sentences: string[] = [
     "Pants are for losers. - Zoe McFife",
@@ -51,7 +43,6 @@ export class MainComponent implements OnInit {
     "life hard, 8008 soft - Kiri"
   ];
 
-
   ngOnInit(): void {
     this.displayRandomSentence().catch(error => {
       console.error('Error during sentence display:', error);
@@ -70,13 +61,10 @@ export class MainComponent implements OnInit {
   }
 
   async startTypingAnimation(sentence: string, speed: number): Promise<void> {
+    this.displayedSentence = ''; // Ensure to clear the previous sentence before starting
     for (let i = 0; i < sentence.length; i++) {
       this.displayedSentence += sentence[i];
       await new Promise(resolve => setTimeout(resolve, speed));
     }
-
-    this.typingState = 'final';
-    await new Promise(resolve => setTimeout(resolve, BLINK_DELAY));
-    this.blinkCaretState = this.blinkCaretState === 'initial' ? 'final' : 'initial';
   }
 }

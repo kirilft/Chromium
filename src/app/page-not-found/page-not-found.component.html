@@ -1,15 +1,13 @@
 <app-header></app-header>
 <main class="main-container">
-    <p class="error">Error - 404 Page</p>
-    <div class="typewriter-text" [@typing]="typingState">
-      <h1>
-        <p [@blinkCaret]="blinkCaretState">{{ displayedSentence }}</p>
-      </h1>
-    </div>
-    <div class="additional-text">
-        <p>Even our electrons couldn't find the page you were looking for. </p>
-        <p>They must be quantum tunneling elsewhere...</p>
-        <button onclick="location.href='/'" class="btn-notify">Warp Home</button>
-    </div>
+  <p class="error">Error - 404 Page</p>
+  <div class="typewriter-text" [@typing]="typingState">
+    <h1>{{ displayedSentence }}</h1>
+  </div>
+  <div class="additional-text">
+    <p>Even our electrons couldn't find the page you were looking for. </p>
+    <p>They must be quantum tunneling elsewhere...</p>
+    <button (click)="goToHome()" class="btn-notify">Warp Home</button>
+  </div>
 </main>
 <app-footer></app-footer>

@@ -1,16 +1,14 @@
 <div class="main-container">
-<app-header></app-header>
- <main>
-  <div class="content-container">
-    <div class="typewriter-text" [@typing]="typingState">
-      <h1>
-        <p [@blinkCaret]="blinkCaretState">{{ displayedSentence }}</p>
-      </h1>
+  <app-header></app-header>
+  <main>
+    <div class="content-container">
+      <div class="typewriter-text" [@typing]="typingState">
+        <h1>{{ displayedSentence }}</h1>
+      </div>
+      <p class="additional-text">
+        This website is an experiment | Made by Kasai Technologies
+      </p>
     </div>
-    <p class="additional-text">
-      This website is an experiment | Made by Kasai Technologies
-    </p>
-  </div>
-</main>
-    <app-footer></app-footer>
-  </div>
+  </main>
+  <app-footer></app-footer>
+</div>

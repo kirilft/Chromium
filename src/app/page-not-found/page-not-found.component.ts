@@ -1,11 +1,9 @@
-// page-not-found.component.ts
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { trigger, style, transition, animate } from '@angular/animations';
 
 const ANIMATION_SPEED = 50;  // in milliseconds
 const TYPING_SPEED = 25;  // in milliseconds
-const BLINK_DELAY = 3500;  // in milliseconds
 
 @Component({
   selector: 'app-page-not-found',
@@ -20,25 +18,15 @@ const BLINK_DELAY = 3500;  // in milliseconds
       transition(':leave', [
         animate(`${ANIMATION_SPEED}ms`, style({ opacity: 0 })),
       ])
-    ]),
-    trigger('blink-caret', [
-      transition('* <=> *', [
-        animate('0.5s ease-in-out', style({ opacity: 0 })),
-        animate('0.5s ease-in-out', style({ opacity: 1 })),
-      ]),
-    ]),
+    ])
   ],
 })
-export class PageNotFoundComponent implements OnInit, AfterViewInit {
-
-  @ViewChild('tooltip', { static: false }) tooltip!: ElementRef;
-
+export class PageNotFoundComponent implements OnInit {
 
   displayedSentence: string = '';
   typingState: string = 'initial';
-  blinkCaretState: string = 'initial';
 
-  sentences: string[] = [
+    sentences: string[] = [
     "Oops! This page must have taken a wrong turn at the internet intersection.",
     "This page is playing hide and seek — and it's winning!",
     "404: Page not found. But on the bright side, we found this missing 'e' we've been looking for.",
@@ -51,30 +39,12 @@ export class PageNotFoundComponent implements OnInit, AfterViewInit {
     "This page must have been taken by aliens because we can't find it anywhere."
   ];
 
+
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.displayRandomSentence();
-  }
-
-  ngAfterViewInit(): void {
-    this.adjustDropdownPosition();
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(): void {
-    this.adjustDropdownPosition();
-  }
-
-  adjustDropdownPosition(): void {
-    const { right } = this.tooltip.nativeElement.getBoundingClientRect();
-    const { style } = this.tooltip.nativeElement;
-
-    if (right > window.innerWidth) {
-      Object.assign(style, { right: '0', left: 'auto', transform: 'translateX(0)' });
-    } else {
-      Object.assign(style, { right: 'auto', left: '50%', transform: 'translateX(-50%)' });
-    }
   }
 
   displayRandomSentence(): void {
@@ -89,14 +59,11 @@ export class PageNotFoundComponent implements OnInit, AfterViewInit {
   }
 
   async startTypingAnimation(sentence: string, speed: number): Promise<void> {
+    this.displayedSentence = ''; // Ensure to clear the previous sentence before starting
     for (let i = 0; i < sentence.length; i++) {
       this.displayedSentence += sentence[i];
       await new Promise(resolve => setTimeout(resolve, speed));
     }
-
-    this.typingState = 'final';
-    await new Promise(resolve => setTimeout(resolve, BLINK_DELAY));
-    this.blinkCaretState = this.blinkCaretState === 'initial' ? 'final' : 'initial';
   }
 
   goToHome(): void {
