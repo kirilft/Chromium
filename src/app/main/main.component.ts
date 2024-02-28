@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { trigger, style, transition, animate } from '@angular/animations';
 
 const ANIMATION_SPEED = 100;  // in milliseconds
@@ -27,9 +27,7 @@ const BLINK_DELAY = 3500;  // in milliseconds
     ]),
   ],
 })
-export class MainComponent implements OnInit, AfterViewInit {
-  @ViewChild('tooltip') tooltip!: ElementRef;
-
+export class MainComponent implements OnInit {
   displayedSentence: string = '';
   typingState: string = 'initial';
   blinkCaretState: string = 'initial';
@@ -58,27 +56,6 @@ export class MainComponent implements OnInit, AfterViewInit {
     this.displayRandomSentence().catch(error => {
       console.error('Error during sentence display:', error);
     });
-  }
-
-  ngAfterViewInit(): void {
-    this.adjustDropdownPosition();
-  }
-
-  @HostListener('window:resize')
-  onResize(): void {
-    this.adjustDropdownPosition();
-  }
-
-
-  adjustDropdownPosition(): void {
-    const { right } = this.tooltip.nativeElement.getBoundingClientRect();
-    const { style } = this.tooltip.nativeElement;
-
-    if (right > window.innerWidth) {
-      Object.assign(style, { right: '0', left: 'auto', transform: 'translateX(0)' });
-    } else {
-      Object.assign(style, { right: 'auto', left: '50%', transform: 'translateX(-50%)' });
-    }
   }
 
   async displayRandomSentence(): Promise<void> {
