@@ -1,5 +1,6 @@
 .main-container {
   width: calc(100% - 4rem);
+  min-height: calc(60vh - 4rem);
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +17,8 @@
   align-items: center;
   font-size: calc(1em + 1vw);
   color: var(--color-snow);
-  padding: 3rem;
+  padding: 2rem;
+  padding-left: 3rem;
   overflow-wrap: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -25,15 +27,18 @@
 .additional-text {
   text-align: left;
   color: var(--color-gray);
-  font-size: 1.5rem;
-  padding: 3rem;
+  font-size: calc(1.2rem + 1vw);
+  padding: 1rem;
+  margin-top: 1rem;
+  padding-left: 3rem;
 }
 
 .error {
   margin: 1rem;
   padding: 1rem;
+  padding-left: 3rem;
   text-align: left;
-  font-size: calc(1em + 1vw);
+  font-size: calc(1.5em + 1vw);
   background: linear-gradient(to right, #ff0000, #0000ff);
   display: inline-block;
   position: relative;
@@ -69,6 +74,13 @@
   -webkit-text-fill-color: transparent;
 }
 
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
 .btn-notify {
   display: inline-block;
   padding: 1rem;
@@ -84,4 +96,40 @@
 
 .btn-notify:hover {
   background-color: var(--color-black);
+}
+
+@media (max-width: 768px) {
+  .typewriter-text, .additional-text, .error {
+    padding-left: 1.5rem; /* Reduce padding for smaller screens */
+  }
+
+  .typewriter-text, .additional-text {
+    font-size: calc(0.9em + 2vw); /* Increase relative font size */
+  }
+
+  .error {
+    font-size: calc(1.3em + 2vw); /* Adjust font size for visibility */
+  }
+
+  .btn-notify {
+    padding: 0.8rem 2rem; /* Adjust button padding */
+    font-size: calc(0.9rem + 0.5vw); /* Adjust button font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container, .typewriter-text, .additional-text, .error {
+    width: 100%; /* Full width for very small screens */
+    padding-left: 1rem; /* Reduce padding further */
+    padding: 1rem; /* Uniform padding for all elements */
+  }
+
+  .typewriter-text, .additional-text, .error {
+    text-align: center; /* Center align text for better readability */
+  }
+
+  .btn-notify {
+    width: auto; /* Allow button to fill width as needed */
+    margin: 1rem; /* Ensure there's space around the button */
+  }
 }

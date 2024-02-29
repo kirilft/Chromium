@@ -5,7 +5,6 @@ footer {
   color: var(--color-gray);
   font-size: calc(0.75rem + 0.5vw);
   display:flex;
-  position: fixed;
   gap: 2rem;
 
 }
@@ -26,33 +25,35 @@ a {
   color: var(--color-light-blue);
 }
 
+/* Responsive adjustments */
 @media (max-width: 800px) {
   footer {
-    font-size: calc(0.7rem + 0.5vw);
+    padding: 0.5rem; /* Reduce padding on smaller screens */
+    font-size: calc(0.7rem + 1vw); /* Adjust font size for better readability */
   }
 }
 
 @media (max-width: 600px) {
   footer {
-    font-size: calc(0.65rem + 0.5vw);
+    font-size: calc(0.65rem + 1.5vw); /* Further adjust for smaller screens */
   }
 }
 
 @media (max-width: 400px) {
   footer {
-    font-size: calc(0.6rem + 0.5vw);
+    font-size: calc(0.6rem + 2vw); /* Ensure legibility on very small screens */
   }
 }
 
-@media (max-height: 800px){
+@media (max-height: 800px) {
   footer {
-    font-size: calc(0.7rem + 0.5vw);
-    bottom: 0.2vh;
+    font-size: calc(0.7rem + 0.5vw); /* Adjust for viewport height */
   }
 }
 
-@media (max-height: 650px){
+@media (max-height: 650px) {
   footer {
-    display: none;
+    display: block; /* Keep the footer but adjust for very limited vertical space */
+    font-size: calc(0.5rem + 1vw);
   }
 }
