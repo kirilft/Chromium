@@ -1,7 +1,9 @@
 <app-header></app-header>
 <div class="main-container">
   <main>
+    
     <div class="content-container">
+      <p class="reload" (click)="displayRandomSentence()">&#8635;</p>
       <div class="typewriter-text" [@typing]="typingState">
         <h1>{{ displayedSentence }}</h1>
       </div>

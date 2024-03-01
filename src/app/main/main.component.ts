@@ -23,7 +23,7 @@ const TYPING_SPEED = 100;  // in milliseconds
 export class MainComponent implements OnInit {
   displayedSentence: string = '';
   typingState: string = 'initial';
-
+  private typingTimeouts: any[] = []; // Store timeout IDs
   sentences: string[] = [
     "Pants are for losers. - Zoe McFife",
     "Be gay do crimes. - Alexander Hamilton",
@@ -44,14 +44,13 @@ export class MainComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.displayRandomSentence().catch(error => {
-      console.error('Error during sentence display:', error);
-    });
+    this.displayRandomSentence().catch(error => console.error('Error during sentence display:', error));
   }
 
   async displayRandomSentence(): Promise<void> {
+    this.clearTypingAnimation(); // Clear any ongoing typing animation before starting a new one
     const sentence = this.getRandomElement(this.sentences);
-    this.typingState = 'start';
+    this.typingState = 'start'; // Might need adjustment to re-trigger Angular animations
     await this.startTypingAnimation(sentence, TYPING_SPEED);
   }
 
@@ -61,10 +60,19 @@ export class MainComponent implements OnInit {
   }
 
   async startTypingAnimation(sentence: string, speed: number): Promise<void> {
-    this.displayedSentence = ''; // Ensure to clear the previous sentence before starting
+    this.displayedSentence = '';
     for (let i = 0; i < sentence.length; i++) {
-      this.displayedSentence += sentence[i];
-      await new Promise(resolve => setTimeout(resolve, speed));
+      const timeoutId = setTimeout(() => {
+        this.displayedSentence += sentence[i];
+      }, i * speed);
+      this.typingTimeouts.push(timeoutId);
     }
+  }
+
+  clearTypingAnimation(): void {
+    this.typingTimeouts.forEach(timeoutId => clearTimeout(timeoutId)); // Clear all timeouts
+    this.typingTimeouts = []; // Reset the timeouts array
+    this.displayedSentence = ''; // Clear the currently displayed sentence
+    this.typingState = ''; // Reset typing state, if needed for Angular animations
   }
 }
