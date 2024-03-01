@@ -21,9 +21,15 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--color-black);
+  background-image: linear-gradient(
+    320deg, 
+    #131314 0%, 
+    #131314 25%, 
+    hsl(354, 60%, 20%) 50%, 
+    #131314 75%, 
+    #131314 100%
+);
 }
-
 ::-webkit-scrollbar {
   width: 8px;
 }

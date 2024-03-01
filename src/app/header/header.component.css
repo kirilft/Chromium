@@ -2,8 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--color-black);
-  color: var(--color-gray);
+  color: var(--color-snow);
   position: sticky;
   top: 0;
   padding: 0 1rem;
@@ -45,7 +44,7 @@ a {
   padding-top: 0.75rem;
   font-size: 1.5rem;
   font-weight: 400;
-  color: var(--color-gray);
+  color: var(--color-snow);
   padding: 0.5rem;
 }
 
