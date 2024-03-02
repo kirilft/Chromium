@@ -1,9 +1,8 @@
-// src/app/main/main.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main.component';
-import { SharedModule } from '../shared/shared.module'; // Import SharedModule
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   {
@@ -19,7 +18,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SharedModule // Import SharedModule here
+    SharedModule
   ]
 })
 export class MainModule { }

@@ -3,20 +3,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--color-black);
   padding: 5px 20px;
 }
 
 .content-container {
+  padding-top: 3rem;
   margin: 20px 0 0 0;
   width: 100%;
-  height: 75vh;
-  background-color: var(--color-midnight);
+  height: 70vh;
+  background-color: rgba(255,255,255, .10);
+  backdrop-filter: blur(25px);
   border-radius: 1rem;
   overflow-y: auto;
 }
 
 .typewriter-text {
+  margin-top: -4rem;
   width: 100%;
   height: 50%;
   display: flex;
@@ -38,6 +40,26 @@
 
 .additional-text {
   text-align: left;
-  color: var(--color-gray);
+  color: var(--color-snow);
   font-size: 1.5em;
+}
+
+.reload {
+  display: flex;
+  justify-content: flex-end; /* Keeps content aligned to the right */
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  user-select: none;
+  width: 100%; /* Fills the width of its container */
+  color: var(--color-black);
+  align-items: center; /* Centers the reload icon vertically */
+  padding-right: 1rem;
+  margin: 0;
+  margin-top: -3rem; /* Adds padding to the right, effectively shifting content to the left */
+
+}
+
+.reload:hover{
+  color: var(--color-light-gray); /* Changes icon color on hover */
 }

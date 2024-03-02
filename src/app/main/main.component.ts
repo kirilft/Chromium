@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { trigger, style, transition, animate } from '@angular/animations';
 
 const ANIMATION_SPEED = 100;  // in milliseconds
 const TYPING_SPEED = 100;  // in milliseconds
-const BLINK_DELAY = 3500;  // in milliseconds
 
 @Component({
   selector: 'app-main',
@@ -12,28 +11,19 @@ const BLINK_DELAY = 3500;  // in milliseconds
   animations: [
     trigger('typing', [
       transition(':enter', [
-        style({ opacity: '0' }),
-        animate(`${ANIMATION_SPEED}ms`, style({ opacity: '1' })),
+        style({ opacity: 0 }),
+        animate(`${ANIMATION_SPEED}ms`, style({ opacity: 1 })),
       ]),
       transition(':leave', [
-        animate(`${ANIMATION_SPEED}ms`, style({ opacity: '0' })),
+        animate(`${ANIMATION_SPEED}ms`, style({ opacity: 0 })),
       ])
-    ]),
-    trigger('blinkCaretState', [
-      transition('* => *', [
-        animate('0.5s ease-in-out', style({ opacity: '0' })),
-        animate('0.5s ease-in-out', style({ opacity: '1' })),
-      ]),
-    ]),
+    ])
   ],
 })
-export class MainComponent implements OnInit, AfterViewInit {
-  @ViewChild('tooltip') tooltip!: ElementRef;
-
+export class MainComponent implements OnInit {
   displayedSentence: string = '';
   typingState: string = 'initial';
-  blinkCaretState: string = 'initial';
-
+  private typingTimeouts: any[] = []; // Store timeout IDs
   sentences: string[] = [
     "Pants are for losers. - Zoe McFife",
     "Be gay do crimes. - Alexander Hamilton",
@@ -48,42 +38,19 @@ export class MainComponent implements OnInit, AfterViewInit {
     "Life is short. Smile while you still have teeth. - Mallory Hopkins",
     "I’m not weird, I’m a limited edition. - Sam Cawthorn",
     "once upon a time, i didn't care. still don't 🙂 - Humsi",
-    "19 dollar Fortnite card - Waffel",
+    "19 dollar Fortnite card - Moth",
     "I'm a yarn ball of anxiety. - Zoe McFife",
     "life hard, 8008 soft - Kiri"
   ];
 
-
   ngOnInit(): void {
-    this.displayRandomSentence().catch(error => {
-      console.error('Error during sentence display:', error);
-    });
-  }
-
-  ngAfterViewInit(): void {
-    this.adjustDropdownPosition();
-  }
-
-  @HostListener('window:resize')
-  onResize(): void {
-    this.adjustDropdownPosition();
-  }
-
-
-  adjustDropdownPosition(): void {
-    const { right } = this.tooltip.nativeElement.getBoundingClientRect();
-    const { style } = this.tooltip.nativeElement;
-
-    if (right > window.innerWidth) {
-      Object.assign(style, { right: '0', left: 'auto', transform: 'translateX(0)' });
-    } else {
-      Object.assign(style, { right: 'auto', left: '50%', transform: 'translateX(-50%)' });
-    }
+    this.displayRandomSentence().catch(error => console.error('Error during sentence display:', error));
   }
 
   async displayRandomSentence(): Promise<void> {
+    this.clearTypingAnimation(); // Clear any ongoing typing animation before starting a new one
     const sentence = this.getRandomElement(this.sentences);
-    this.typingState = 'start';
+    this.typingState = 'start'; // Might need adjustment to re-trigger Angular animations
     await this.startTypingAnimation(sentence, TYPING_SPEED);
   }
 
@@ -93,13 +60,19 @@ export class MainComponent implements OnInit, AfterViewInit {
   }
 
   async startTypingAnimation(sentence: string, speed: number): Promise<void> {
+    this.displayedSentence = '';
     for (let i = 0; i < sentence.length; i++) {
-      this.displayedSentence += sentence[i];
-      await new Promise(resolve => setTimeout(resolve, speed));
+      const timeoutId = setTimeout(() => {
+        this.displayedSentence += sentence[i];
+      }, i * speed);
+      this.typingTimeouts.push(timeoutId);
     }
+  }
 
-    this.typingState = 'final';
-    await new Promise(resolve => setTimeout(resolve, BLINK_DELAY));
-    this.blinkCaretState = this.blinkCaretState === 'initial' ? 'final' : 'initial';
+  clearTypingAnimation(): void {
+    this.typingTimeouts.forEach(timeoutId => clearTimeout(timeoutId)); // Clear all timeouts
+    this.typingTimeouts = []; // Reset the timeouts array
+    this.displayedSentence = ''; // Clear the currently displayed sentence
+    this.typingState = ''; // Reset typing state, if needed for Angular animations
   }
 }

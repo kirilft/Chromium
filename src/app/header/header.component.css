@@ -2,10 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--color-black);
-  color: var(--color-gray);
+  color: var(--color-snow);
   position: sticky;
   top: 0;
+  padding: 0 1rem;
+  z-index: 10;
 }
 
 .left,
@@ -16,7 +17,7 @@
 
 h1 {
   margin-left:3rem;
-  font-size: 2rem;
+  font-size: 2cqw;
   font-weight: 400;
 }
 
@@ -26,7 +27,7 @@ h1 {
   margin: 5px;
   padding: 1px 5px;
   font-size: 1rem;
-  line-height: 0.6em;
+  line-height: 1.2em;
   color: var(--color-gray);
 }
 
@@ -43,42 +44,70 @@ a {
   padding-top: 0.75rem;
   font-size: 1.5rem;
   font-weight: 400;
-  color: var(--color-gray);
+  color: var(--color-snow);
+  padding: 0.5rem;
 }
 
 .link:hover {
   color: var(--color-light-blue);
 }
 
+/* Responsive adjustments */
 @media (max-width: 800px) {
-  .left h1,
-  .link {
-    font-size: calc(1em + 1vw);
+  h1, .link {
+    font-size: calc(1em + 2vw); /* Increased scalability */
   }
 
   .experimental-box {
-    font-size: calc(0.4em + 1vw);
+    font-size: calc(0.8em + 1vw); /* Adjusted for better readability */
+  }
+
+  .header {
+    padding: 0 0.5rem; /* Adjust padding for smaller screens */
+  }
+
+  h1 {
+    margin-left: 1rem; /* Reduce margin on smaller screens */
   }
 }
 
 @media (max-width: 600px) {
-  .left h1,
-  .link {
-    font-size: calc(0.5em + 1vw);
+  .left h1, .link {
+    font-size: calc(0.75em + 2vw);
   }
 
   .experimental-box {
-    font-size: calc(0.4em + 1vw);
+    font-size: calc(0.7em + 1vw);
   }
 }
 
 @media (max-width: 400px) {
-  .left h1,
-  .link {
-    font-size: calc(0.25em + 1vw);
+  .left h1, .link {
+    font-size: calc(0.6em + 3vw);
   }
 
   .experimental-box {
-    font-size: calc(0.2em + 1vw);
+    font-size: calc(0.6em + 1vw);
+  }
+
+  .link {
+    margin-right: 1rem; /* Reduce margin for very small screens */
+  }
+}
+
+/* Adjustments for very high zoom levels */
+@media screen and (max-width: 800px), (min-resolution: 300dpi) {
+  .header {
+    padding: 0; /* Reduce padding */
+  }
+
+  .left h1, .link {
+    margin-left: 0; /* Adjust margins */
+    font-size: calc(0.8em + 1.5vw); /* Adjust font size */
+  }
+
+  .experimental-box, .link {
+    padding: 0.2rem 0.5rem; /* Adjust padding */
+    font-size: calc(0.6em + 1vw); /* Adjust font size */
   }
 }
