@@ -46,20 +46,69 @@
 
 .reload {
   display: flex;
-  justify-content: flex-end; /* Keeps content aligned to the right */
+  justify-content: flex-end;
   font-size: 2rem;
   cursor: pointer;
   transition: transform 0.3s ease;
   user-select: none;
-  width: 100%; /* Fills the width of its container */
+  width: 100%;
   color: var(--color-black);
-  align-items: center; /* Centers the reload icon vertically */
-  padding-right: 1rem;
-  margin: 0;
-  margin-top: -3rem; /* Adds padding to the right, effectively shifting content to the left */
-
+  align-items: center;
+  margin-top: -3.8rem;
+  padding: 1rem;
 }
 
 .reload:hover{
-  color: var(--color-light-gray); /* Changes icon color on hover */
+  color: var(--color-light-gray);
+}
+.reload:hover::after{
+  rotate: 360deg;
+}
+
+@media (max-width: 800px) {
+  .typewriter-text {
+    font-size:calc(0.8em + 1vw);
+  }
+
+  .additional-text {
+    font-size: calc(0.8em + 1vw);
+  }
+}
+
+@media (max-width: 600px) {
+  .typewriter-text {
+    font-size:calc(0.7em + 1vw);
+  }
+
+  .additional-text {
+    font-size: calc(0.7em + 1vw);
+  }
+}
+
+@media (max-width: 400px) {
+  .typewriter-text {
+    font-size:calc(0.6em + 1vw);
+  }
+
+  .additional-text {
+    font-size: calc(0.6em + 1vw);
+  }
+}
+
+/* Adjustments for very high zoom levels */
+@media screen and (max-width: 800px), (min-resolution: 300dpi) {
+  
+  .main-container {
+    padding: 0; /* Reduce padding */
+    width: 100%;
+    height: 50vh;
+  }
+
+  .typewriter-text {
+    font-size:calc(0.6em + 1vw);
+  }
+
+  .additional-text {
+    font-size: calc(0.6em + 1vw);
+  }
 }
