@@ -1,12 +1,15 @@
 footer {
-  width: calc(100% - 6rem);
-  margin-left: 3rem;
-  bottom: 2vh;
   color: var(--color-snow);
-  font-size: calc(0.75rem + 0.5vw);
-  display:flex;
-  gap: 2rem;
-
+  margin:0;
+  padding: 32px;
+  gap: 32px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 a {
@@ -14,10 +17,10 @@ a {
   color: inherit;
   font-style: inherit;
   font-weight: inherit;
+  align-self: center;
 }
 
 .privacy-link {
-  align-self: center;
   color: var(--color-snow);
 }
 
@@ -53,7 +56,21 @@ a {
 
 @media (max-height: 650px) {
   footer {
-    display: block; /* Keep the footer but adjust for very limited vertical space */
-    font-size: calc(0.5rem + 1vw);
+    display: block;
+    font-size: calc(0.5rem + 0.75vw);
+  }
+}
+
+@media (max-height: 400px) {
+  footer {
+    display: block;
+    font-size: calc(0.5rem + 0.5vw);
+  }
+}
+
+@media (max-height: 200px) {
+  footer {
+    display: block;
+    font-size: calc(0.5rem + 0.25vw);
   }
 }
