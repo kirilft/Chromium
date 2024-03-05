@@ -1,65 +1,54 @@
-.main-container {
-  width: 100%;
+main {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 20px;
-}
-
-.content-container {
-  padding-top: 3rem;
-  margin: 20px 0 0 0;
-  width: 100%;
-  height: 70vh;
+  overflow-y: auto;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius:calc(1rem + 1vw);
   background-color: rgba(255,255,255, .10);
   backdrop-filter: blur(25px);
-  border-radius: 1rem;
-  overflow-y: auto;
+  height: 70vh;
 }
 
 .typewriter-text {
-  margin-top: -4rem;
-  width: 100%;
-  height: 50%;
+  margin: 2rem;
+  padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size:calc(1em + 1vw);
-}
-
-.typewriter-text h1 p {
   overflow-wrap: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.typewriter-text h1, .additional-text {
-  margin: 10% 10% 0 10%;
-  color: var(--color-light-gray);
+  color: var(--color-snow);
+  font-size:calc(1rem + 1vw);
 }
 
 .additional-text {
+  margin: 2rem auto;
+  padding: 2rem;
   text-align: left;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: var(--color-snow);
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .reload {
+  margin: 0 0 0 auto;
+  padding: 0;
   display: flex;
-  justify-content: flex-end; /* Keeps content aligned to the right */
-  font-size: 2rem;
+  justify-content: flex-end;
+  align-items: center;
   cursor: pointer;
-  transition: transform 0.3s ease;
   user-select: none;
-  width: 100%; /* Fills the width of its container */
   color: var(--color-black);
-  align-items: center; /* Centers the reload icon vertically */
-  padding-right: 1rem;
-  margin: 0;
-  margin-top: -3rem; /* Adds padding to the right, effectively shifting content to the left */
-
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+  width: fit-content;
 }
 
 .reload:hover{
-  color: var(--color-light-gray); /* Changes icon color on hover */
+  color: var(--color-light-gray);
 }

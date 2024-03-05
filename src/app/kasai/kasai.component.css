@@ -39,8 +39,7 @@
 .content-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Reduced from 20px to decrease spacing between columns */
-    justify-content: Top;
+    gap: 10px;
     width: calc(100% - 4rem);
     height: 64vh;
     margin: 2rem;

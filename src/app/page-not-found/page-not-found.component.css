@@ -17,7 +17,6 @@
   align-items: center;
   font-size: calc(1em + 1vw);
   color: var(--color-snow);
-  padding: 2rem;
   padding-left: 3rem;
   overflow-wrap: break-word;
   overflow: hidden;
@@ -28,14 +27,12 @@
   text-align: left;
   color: var(--color-gray);
   font-size: calc(1.2rem + 1vw);
-  padding: 1rem;
   margin-top: 1rem;
   padding-left: 3rem;
 }
 
 .error {
   margin: 1rem;
-  padding: 1rem;
   padding-left: 3rem;
   text-align: left;
   font-size: calc(1.5em + 1vw);
@@ -120,7 +117,6 @@
 @media (max-width: 480px) {
   .main-container, .typewriter-text, .additional-text, .error {
     width: 100%; /* Full width for very small screens */
-    padding-left: 1rem; /* Reduce padding further */
     padding: 1rem; /* Uniform padding for all elements */
   }
 
