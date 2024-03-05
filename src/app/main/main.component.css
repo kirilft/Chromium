@@ -21,7 +21,7 @@ main {
   overflow: hidden;
   text-overflow: ellipsis;
   color: var(--color-snow);
-  font-size:calc(1rem + 1vw);
+  font-size:2rem;
 }
 
 .additional-text {
@@ -52,3 +52,68 @@ main {
 .reload:hover{
   color: var(--color-light-gray);
 }
+
+@media (max-width: 1680px) {
+  main {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .reload{
+    margin: 1rem 0 0 auto;
+    font-size: 1.8rem;
+  }
+  .typewriter-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    padding: 0.75rem;
+    margin: 0.75rem;
+    border-radius: calc(0.5rem + 1vw);
+    height: 60vh;
+  }
+
+  .typewriter-text {
+    font-size: 1rem;
+  }
+
+  .additional-text {
+    padding: 1.5rem;
+    font-size: calc(1.2rem + 1vw);
+  }
+
+  .reload{
+    margin: 0 0 0 auto;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    flex-direction: row;
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+
+  .typewriter-text,
+  .additional-text{
+    margin:0;
+    padding: 0;
+    font-size: calc(0.4rem + 0.4vw);
+  }
+  .reload{
+    padding: 0;
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .typewriter-text,
+  .additional-text {
+    font-size: calc(0.2rem + 0.2vw);
+  }
+}
+

@@ -4,12 +4,12 @@ footer {
   padding: 1.8rem;
   gap: 1.8rem;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  font-size: calc(0.6rem + 0.6vw);
 }
 
 a {
@@ -28,49 +28,49 @@ a {
   color: var(--color-light-blue);
 }
 
-/* Responsive adjustments */
 @media (max-width: 800px) {
   footer {
     padding: 0.5rem;
-    font-size: calc(0.7rem + 1vw); /* Adjust font size for better readability */
+    font-size: calc(0.5rem + 0.5vw);
   }
 }
 
+
 @media (max-width: 600px) {
   footer {
-    font-size: calc(0.65rem + 1.5vw); /* Further adjust for smaller screens */
+    font-size: calc(0.4rem +  0.4vw);
   }
 }
 
 @media (max-width: 400px) {
   footer {
-    font-size: calc(0.6rem + 2vw); /* Ensure legibility on very small screens */
+    font-size: calc(0.2rem + 0.2vw);
   }
 }
 
 @media (max-height: 800px) {
   footer {
-    font-size: calc(0.7rem + 0.5vw); /* Adjust for viewport height */
+    font-size: calc(0.6rem + 0.6vw);
   }
 }
 
 @media (max-height: 650px) {
   footer {
     display: block;
-    font-size: calc(0.5rem + 0.75vw);
+    font-size: calc(0.5rem + 0.5vw);
   }
 }
 
 @media (max-height: 400px) {
   footer {
     display: block;
-    font-size: calc(0.5rem + 0.5vw);
+    font-size: calc(0.4rem + 0.4vw);
   }
 }
 
 @media (max-height: 200px) {
   footer {
     display: block;
-    font-size: calc(0.5rem + 0.25vw);
+    font-size: calc(0.2rem + 0.2vw);
   }
 }
