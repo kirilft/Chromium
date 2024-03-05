@@ -17,7 +17,6 @@
 .header-text {
     margin: 0;
     font-weight: 400;
-    color: var(--color-gray);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -32,10 +31,6 @@
     background-color: rgba(255,255,255, .10);
     backdrop-filter: blur(25px);
     flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: Top;
-    height: 64vh;
-    padding: 10px;
     border-radius: 1rem;
     overflow-y: auto;
 }
