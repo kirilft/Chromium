@@ -77,13 +77,6 @@ body {
 
 @font-face {
   font-family: 'Poppins';
-  src: local('Poppins SemiBold'), url('/assets/fonts/Poppins-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Poppins';
   src: local('Poppins SemiBold Italic'), url('/assets/fonts/Poppins-SemiBoldItalic.ttf') format('truetype');
   font-weight: 600;
   font-style: italic;
