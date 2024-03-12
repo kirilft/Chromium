@@ -1,15 +1,14 @@
 footer {
   color: var(--color-snow);
-  margin:0;
-  padding: 1.8rem;
+  left: 0;
+  bottom: 0;
+  padding: 0 0 0.6rem 1.8rem;
   gap: 1.8rem;
   display: flex;
   align-items: center;
   position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
-  font-size: calc(0.6rem + 0.6vw);
+  font-size: calc(0.5rem + 0.6vw);
 }
 
 a {
@@ -30,15 +29,14 @@ a {
 
 @media (max-width: 800px) {
   footer {
-    padding: 0.5rem;
-    font-size: calc(0.5rem + 0.5vw);
+    padding: 0 0 0.3rem 0.6rem;
+    font-size: calc(0.4rem + 0.2vw);
   }
 }
 
-
 @media (max-width: 600px) {
   footer {
-    font-size: calc(0.4rem +  0.4vw);
+    font-size: calc(0.2rem +  0.2vw);
   }
 }
 
@@ -48,29 +46,4 @@ a {
   }
 }
 
-@media (max-height: 800px) {
-  footer {
-    font-size: calc(0.6rem + 0.6vw);
-  }
-}
 
-@media (max-height: 650px) {
-  footer {
-    display: block;
-    font-size: calc(0.5rem + 0.5vw);
-  }
-}
-
-@media (max-height: 400px) {
-  footer {
-    display: block;
-    font-size: calc(0.4rem + 0.4vw);
-  }
-}
-
-@media (max-height: 200px) {
-  footer {
-    display: block;
-    font-size: calc(0.2rem + 0.2vw);
-  }
-}
