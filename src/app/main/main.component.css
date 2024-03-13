@@ -1,14 +1,14 @@
 main {
+  padding: 0;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   overflow-y: auto;
-  padding: 2rem;
   margin: 2rem;
   border-radius:calc(1rem + 1vw);
   background-color: rgba(255,255,255, .10);
   backdrop-filter: blur(25px);
-  height: 70vh;
+  height: 75vh;
 }
 
 .typewriter-text {
@@ -51,44 +51,4 @@ main {
 
 .reload:hover{
   color: var(--color-light-gray);
-}
-
-@media(max-width:800px){
-  main{
-    padding:0.5rem;
-    margin:0.5rem;
-  }
-  .typewriter-text {
-    padding:0.25rem;
-    margin:0.5rem;
-    font-size:calc(0.5rem + 1vw);
-  }
-  .additional-text {
-    padding:0.5rem;
-    margin:0.5rem;
-  }
-}
-
-@media(max-width:600px) {
-  main {
-    padding: 0.25rem;
-    margin: 0;
-    height: 65vh;
-  }
-
-  .typewriter-text {
-    padding: 0.25rem;
-    margin: 0;
-    font-size: calc(0.25rem + 1vw);
-  }
-
-  .additional-text {
-    padding: 0.25rem;
-    margin: 0;
-    font-size: calc(0.25rem + 1vw);
-  }
-
-  .reload {
-    font-size:1rem;
-  }
 }

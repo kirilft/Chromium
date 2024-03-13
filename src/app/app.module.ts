@@ -11,14 +11,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    // Other components
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    BrowserAnimationsModule // Add BrowserAnimationsModule here
-    // Other modules
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
