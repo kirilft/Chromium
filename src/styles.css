@@ -1,35 +1,70 @@
 :root {
-  --color-black: #0B0C10; /* 0F0F0F */
-  --color-midnight: #1F1F1F; /* #222 */
-  --color-gray: #888;
-  --color-light-gray: #E5E1E1; /* B1B1B1 */
-  --color-light-blue: #80b2ef;
-  --color-dark-blue: #2C3E50;
-  --color-snow: #F0FAFF; /* F1F1F1 */
-  --color-blue: #007bff;
-  --color-green: #28a745;
+  /* Main Colors */
+  --color-space-black: #0b0c10; /* High Contrast */
+  --color-midnight-sky: #1f1f1f; /* Background */
+  --color-neutral-grey: #888888; /* Secondary */
+  --color-ivory-white: #FFFEFE; /* Headings */
+  --color-off-white: #e5e1e1; /* Text */
+
+  /* Accent Colors */
+  --color-accent-blue: #007bff; /* For Links on Hover */
+  --color-accent-green: #28a745; /* For Checkboxes or Sliders */
+  --color-accent-red:#FF0000; /* For Cancel Actions */
 }
 
 * {
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-html,
-body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+
+body,
+html {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(
-    320deg, 
-    #131314 0%, 
-    #131314 25%, 
-    hsl(354, 60%, 20%) 50%, 
-    #131314 75%, 
-    #131314 100%
+  320deg,
+  #131314 0%,
+  #131314 25%,
+  hsl(354, 60%, 20%) 50%,
+  #131314 75%,
+  #131314 100%
 );
+
+  /*setup Font*/
+  font-family: "Poppins", sans-serif;
+  color: var(--color-off-white);
+  font-size: 100%;
+  line-height: 1.6;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  color: var(--color-ivory-white);
+}
+
+a {
+  text-decoration: none;
+  align-self: center;
+  color: var(--color-off-white);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-accent-blue);
+}
+
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
