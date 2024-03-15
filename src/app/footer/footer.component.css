@@ -1,69 +1,21 @@
 footer {
-  margin-left: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  gap: 1.8rem;
   display: flex;
   align-items: center;
   position: fixed;
   left: 0;
   bottom: 0;
-  font-size: 1rem;
+  margin: 1rem;
 }
 
-a {
-  text-decoration: none;
+.logo {
+  font-weight: 500;
   color: inherit;
-  font-style: inherit;
-  font-weight: inherit;
-  align-self: center;
+  font-size: 2rem;
+  margin: 1rem;
 }
 
-.privacy-link {
-  color: var( --color-off-white);
-}
-
-.privacy-link:hover {
-  color: var(--color-accent-blue);
-}
-
-
-@media only screen and (min-resolution: 1.5dppx) {
-  footer {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    gap: 1.8rem;
-    font-size: 0.8rem;
-  }
-}
-
-
-@media only screen and (min-resolution: 2dppx) {
-  footer {
-    margin-left: 1.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    gap: 1.8rem;
-    font-size: 0.6rem;
-  }
-}
-
-@media only screen and (min-resolution: 4dppx) {
-  footer {
-    margin-left: 1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    gap: 1.8rem;
-    font-size: 0.4rem;
-  }
-}
-
-@media only screen and (min-resolution: 5dppx) {
-  footer {
-    margin-left: 0.5rem;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
-    gap: 1.8rem;
-    font-size: 0.2rem;
-  }
+.link {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 1rem;
 }

@@ -1,17 +1,16 @@
 main {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin: 2rem;
-  padding: 2rem;
-  border-radius:calc(1rem + 1vw);
+  border-radius:calc(2.5rem);
   background-color: rgba(255,255,255, .10);
-  backdrop-filter: blur(25px);
-  height:calc(80vh - 4rem);
+  backdrop-filter: blur(1.5625rem);
+  height:74%;
 }
 
 .typewriter-text {
+  flex-direction: column;
   margin: 2rem;
   display: flex;
   justify-content: center;
@@ -21,16 +20,17 @@ main {
   text-overflow: ellipsis;
   font-size:calc(1rem + 1vw);
 }
-
+/*
 .additional-text {
+  flex-direction: column;
   width: 100%;
-  margin: 2rem; /* Adds space around the element */
-  text-align: left; /* Ensures text aligns to the left */
-  overflow-wrap: break-word; /* Allows long words to break and wrap onto the next line */
-  overflow: hidden; /* Hides overflow content that does not fit in the block's box */
-  text-overflow: ellipsis; /* Adds an ellipsis (...) to indicate text overflow */
-  color: var(--color-off-white); /* Sets the text color */
-  font-size: 1.5rem; /* Sets the size of the font */
+  margin: 2rem; 
+  text-align: left;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-off-white);
+  font-size: 1.5rem;
 }
 
 .reload {
@@ -48,75 +48,4 @@ main {
 
 .reload:hover{
   color: var(--color-off-white);
-}
-
-@media only screen and (min-resolution: 1.5dppx) {
-  main {
-    margin: 1rem;
-    padding: 1rem;
-    height:calc(80vh - 2rem);
-    border-radius:calc(0.5rem + 1vw);
-  }
-  .typewriter-text {
-    margin: 1rem;
-    font-size:calc(0.75rem + 1vw);
-  }
-  .additional-text {
-    margin: 1rem;
-    font-size: 1.2rem;
-  }
-  .reload { 
-    font-size: 1.5rem;
-  }
-}
-
-
-@media only screen and (min-resolution: 2dppx) {
-  main {
-    margin: 0.5rem;
-    padding: 0.5rem;
-    height:calc(70vh - 1rem);
-    border-radius:calc(0.25rem + 1vw);
-  }
-  .typewriter-text {
-    margin: 0.5rem;
-    font-size:calc(0.4rem + 1vw);
-  }
-  .additional-text {
-    margin: 0.5rem;
-    font-size: 0.8rem;
-  }
-  .reload { 
-    font-size: 1rem;
-  }
-}
-
-@media only screen and (min-resolution: 4dppx) {
-  main {
-    margin: 0.25rem;
-    padding: 0.25rem;
-    height:calc(70vh - 0.5rem);
-    border-radius:1vw;
-  }
-  .typewriter-text {
-    margin: 0;
-    font-size:calc(0.2rem + 1vw);
-  }
-  .additional-text {
-    margin: 0.25rem;
-    font-size: 0.4rem;
-  }
-  .reload { 
-    font-size: 0.5rem;
-  }
-}
-
-@media only screen and (min-resolution: 5dppx) {
-  .typewriter-text {
-    font-size:calc(0.1rem + 1vw);
-  }
-  .additional-text {
-    margin: 0.25rem;
-    font-size: 0.2rem;
-  }
-}
+}*/
