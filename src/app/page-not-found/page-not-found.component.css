@@ -1,39 +1,40 @@
 .main-container {
-  width: calc(100% - 4rem);
-  min-height: calc(60vh - 4rem);
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin: 2rem;
-  padding: 1rem;
-  border-radius: calc(1rem + 1vw);
-  background-color: var(--color-midnight);
-  overflow-y: auto;
+  padding: 2rem;
+  border-radius:calc(1rem + 1vw);
+  background-color: rgba(255,255,255, .10);
+  backdrop-filter: blur(25px);
+  height:calc(80vh - 4rem);
 }
 
 .typewriter-text {
-  height: 30vh;
+  margin: 2rem;
   display: flex;
+  justify-content: center;
   align-items: center;
-  font-size: calc(1em + 1vw);
-  color: var(--color-snow);
-  padding-left: 3rem;
   overflow-wrap: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size:calc(1rem + 1vw);
 }
 
 .additional-text {
-  text-align: left;
-  color: var(--color-gray);
-  font-size: calc(1.2rem + 1vw);
-  margin-top: 1rem;
-  padding-left: 3rem;
+  width: 100%;
+  margin: 2rem; /* Adds space around the element */
+  text-align: left; /* Ensures text aligns to the left */
+  overflow-wrap: break-word; /* Allows long words to break and wrap onto the next line */
+  overflow: hidden; /* Hides overflow content that does not fit in the block's box */
+  text-overflow: ellipsis; /* Adds an ellipsis (...) to indicate text overflow */
+  color: var(--color-off-white); /* Sets the text color */
+  font-size: 1.5rem; /* Sets the size of the font */
 }
 
 .error {
-  margin: 1rem;
-  padding-left: 3rem;
+  margin: 0 auto 0 0;
   text-align: left;
   font-size: calc(1.5em + 1vw);
   background: linear-gradient(to right, #ff0000, #0000ff);
@@ -81,9 +82,10 @@
 .btn-notify {
   display: inline-block;
   padding: 1rem;
+  margin: 1rem;
   border-radius: 0.5rem;
-  background-color: #444;
-  color: var(--color-snow);
+  background-color: var(--color-accent-blue);
+  color: var(--color-ivory-white);
   text-align: center;
   cursor: pointer;
   border: none;
@@ -92,7 +94,7 @@
 }
 
 .btn-notify:hover {
-  background-color: var(--color-black);
+  
 }
 
 @media (max-width: 768px) {
