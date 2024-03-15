@@ -4,7 +4,7 @@
   --color-midnight-sky: #1f1f1f; /* Background */
   --color-neutral-grey: #888888; /* Secondary */
   --color-ivory-white: #FFFEFE; /* Headings */
-  --color-off-white: #e5e1e1; /* Text */
+  --color-off-white: #E5E1E1; /* Text */
 
   /* Accent Colors */
   --color-accent-blue: #0077ed; /* For Links on Hover */
@@ -27,26 +27,15 @@ html {
   320deg,
   #131314 0%,
   #131314 25%,
-  hsl(354, 60%, 20%) 50%,
+  #52141b 50%,
   #131314 75%,
   #131314 100%
 );
 
-  /*setup Font*/
   font-family: "Poppins", sans-serif;
   color: var(--color-off-white);
   font-size: 100%;
   line-height: 1.6;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: normal;
-  color: var(--color-ivory-white);
 }
 
 a {

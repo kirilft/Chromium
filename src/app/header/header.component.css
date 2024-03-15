@@ -2,80 +2,38 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky; 
-  top: 0;
+  position: sticky;
+  top: 0.25rem;
+  margin-left: 1rem;
+}
+
+h1{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 2.5rem;
+  margin: 1rem;
 }
 
 .left {
   display: flex;
   align-items: center;
-  margin-left: 2rem;
 }
 
 .experimental-box {
   color: var(--color-neutral-grey);
-  border: 0.2rem solid purple;
-  border-radius: 0.5rem;
-  margin: 0.5rem;
+  border: 3px solid #B00B69;
+  border-radius: 1rem;
   padding: 0.5rem;
 }
 
-.right {
-  display: flex;
-  align-items: center;
-  margin-right: 2rem;
+.links {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  margin-right: 1rem;
+  margin-top: 0.75rem;
 }
 
 .link {
-  font-size: 2rem;
   margin: 1rem;
-}
-
-.link:hover {
-  color: var(--color-accent-blue);
-}
-
-@media only screen and (min-resolution: 1.5dppx) {
-  .link {
-    font-size: 1.6rem;
-    margin: 0.8rem;
-  }
-  .left {
-    margin-left: 1.6rem;
-    font-size: 0.8rem;
-  }
-}
-
-
-@media only screen and (min-resolution: 2dppx) {
-  .link {
-    font-size: 1.2rem;
-    margin: 0.6rem;
-  }
-  .left {
-    margin-left: 1.2rem;
-    font-size: 0.6rem;
-  }
-}
-
-@media only screen and (min-resolution: 4dppx) {
-  .link {
-    font-size: 0.8rem;
-    margin: 0.4rem;
-  }
-  .left {
-    margin-left: 0.8rem;
-    font-size: 0.4rem;
-  }
-}
-
-@media only screen and (min-resolution: 5dppx) {
-  .link {
-    font-size: 0.4rem;
-    margin: 0.2rem;
-  }
-  .left {
-    margin-left: 0.4rem;
-    font-size: 0.2rem;
-  }
 }
