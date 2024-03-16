@@ -1,10 +1,9 @@
 .header {
-    width: 100vw;
     display: flex;
     align-items: center;
-    padding: 10px 20px;
     position: sticky;
-    top: 0;
+    top: 0.25rem;
+    padding: 1rem;
 }
 
 .header-logo {
@@ -14,82 +13,42 @@
     object-fit: cover;
 }
 
-.header-text {
-    margin: 0;
+h1 {
     font-weight: 400;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 2.5rem;
 }
 
-.main-container {
+main {
+    display: flex;
+    align-items: center;
     margin: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: calc(100% - 4rem);
+    border-radius:calc(2.5rem);
     background-color: rgba(255,255,255, .10);
-    backdrop-filter: blur(25px);
-    flex-wrap: wrap;
-    border-radius: 1rem;
-    overflow-y: auto;
-}
+    backdrop-filter: blur(1.5625rem);
+    height:calc(74% - 4rem);
+    width: calc(100% - 4rem);
+    overflow: hidden;
+  }
 
-.category {
-    margin: 10vh 0;
-    flex-basis: 20%;
+  .main-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-}
-
-h2 {
-    font-size: 3rem;
-    color: var(--color-light-gray);
-    margin-bottom: 15px;
-}
-
-.link-container {
-    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 18px;
-    margin-bottom: 21px;
-}
+    margin: 4rem;
+    width: calc(100% - 8rem);
+    height: calc(100% - 8rem);
+  }
 
-.link-container img {
-    width: 50px;
-    height: 50px;
+img {
+    width: 40px;
+    height: 40px;
     object-fit: cover;
 }
 
-.link {
-    font-size: 1.2rem;
-    color: var(--color-light-gray);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.link:hover {
-    color: var(--color-light-blue);
-}
-
-@media (max-width: 768px) {
-    .content-container, .category {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .category {
-        flex-basis: 30%;
-        align-items: center;
-    }
-
-    .header-logo {
-        width: 72px;
-        height: 72px;
-    }
-
-    .header-text {
-        font-size: 1rem;
-    }
+.category {
+    flex-direction: column;
 }
