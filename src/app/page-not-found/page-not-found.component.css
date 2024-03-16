@@ -1,41 +1,55 @@
+main {
+  display: flex;
+  align-items: center;
+  margin: 2rem;
+  border-radius:calc(2.5rem);
+  background-color: rgba(255,255,255, .10);
+  backdrop-filter: blur(1.5625rem);
+  height:calc(74% - 4rem);
+  width: calc(100% - 4rem);
+  overflow: hidden;
+}
+
+
 .main-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  margin: 2rem;
-  padding: 2rem;
-  border-radius:calc(1rem + 1vw);
-  background-color: rgba(255,255,255, .10);
-  backdrop-filter: blur(25px);
-  height:calc(80vh - 4rem);
+  margin: 4rem;
+  width: calc(100% - 8rem);
+  height: calc(100% - 8rem);
 }
 
-.typewriter-text {
-  margin: 2rem;
+
+.animated-text h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   overflow-wrap: break-word;
   overflow: hidden;
+  flex-direction: column;
   text-overflow: ellipsis;
-  font-size:calc(1rem + 1vw);
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--color-ivory-white);
 }
 
-.additional-text {
-  width: 100%;
-  margin: 2rem; /* Adds space around the element */
-  text-align: left; /* Ensures text aligns to the left */
-  overflow-wrap: break-word; /* Allows long words to break and wrap onto the next line */
-  overflow: hidden; /* Hides overflow content that does not fit in the block's box */
-  text-overflow: ellipsis; /* Adds an ellipsis (...) to indicate text overflow */
-  color: var(--color-off-white); /* Sets the text color */
-  font-size: 1.5rem; /* Sets the size of the font */
+
+.info-text {
+  position: relative;
+  align-items: center;
+  width: calc(100% - 4rem);
+  font-size: 2rem;
+  margin: 1rem;
+  color:var(--color-neutral-grey);
 }
 
 .error {
-  margin: 0 auto 0 0;
+  margin: 0 auto auto 1rem;
   text-align: left;
+  align-items: center;
   font-size: calc(1.5em + 1vw);
   background: linear-gradient(to right, #ff0000, #0000ff);
   display: inline-block;
@@ -79,55 +93,14 @@
 }
 
 
-.btn-notify {
+.warp-button {
   display: inline-block;
-  padding: 1rem;
-  margin: 1rem;
-  border-radius: 0.5rem;
-  background-color: var(--color-accent-blue);
-  color: var(--color-ivory-white);
   text-align: center;
+  padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+  border-radius: 1rem;
+  background-color: var(--color-accent-blue);
+  color: #FFF;
   cursor: pointer;
   border: none;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.btn-notify:hover {
-  
-}
-
-@media (max-width: 768px) {
-  .typewriter-text, .additional-text, .error {
-    padding-left: 1.5rem; /* Reduce padding for smaller screens */
-  }
-
-  .typewriter-text, .additional-text {
-    font-size: calc(0.9em + 2vw); /* Increase relative font size */
-  }
-
-  .error {
-    font-size: calc(1.3em + 2vw); /* Adjust font size for visibility */
-  }
-
-  .btn-notify {
-    padding: 0.8rem 2rem; /* Adjust button padding */
-    font-size: calc(0.9rem + 0.5vw); /* Adjust button font size */
-  }
-}
-
-@media (max-width: 480px) {
-  .main-container, .typewriter-text, .additional-text, .error {
-    width: 100%; /* Full width for very small screens */
-    padding: 1rem; /* Uniform padding for all elements */
-  }
-
-  .typewriter-text, .additional-text, .error {
-    text-align: center; /* Center align text for better readability */
-  }
-
-  .btn-notify {
-    width: auto; /* Allow button to fill width as needed */
-    margin: 1rem; /* Ensure there's space around the button */
-  }
 }

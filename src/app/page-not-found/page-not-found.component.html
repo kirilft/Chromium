@@ -1,13 +1,15 @@
 <app-header></app-header>
-<main class="main-container">
+<main>
+  <div class="main-container">
   <p class="error">Error - 404 Page</p>
-  <div class="typewriter-text" [@typing]="typingState">
+  <div class="animated-text">
     <h1>{{ displayedSentence }}</h1>
   </div>
-  <div class="additional-text">
+  <div class="info-text">
     <p>Even our electrons couldn't find the page you were looking for. </p>
     <p>They must be quantum tunneling elsewhere...</p>
-    <button (click)="goToHome()" class="btn-notify">Warp Home</button>
+    <button (click)="goToHome()" class="warp-button">Warp Home</button>
   </div>
+</div>
 </main>
 <app-footer></app-footer>
