@@ -1,11 +1,13 @@
 <app-header></app-header>
 <main>
-      <!--<p class="reload" (click)="displayRandomSentence()">&#8635;</p>-->
-      <div class="typewriter-text">
-        <h1>{{ displayedSentence }}</h1>
-      </div>
-      <!--<p class="additional-text">
-        This website is an experiment | Made by Kasai Technologies
-      </p>-->
-  </main>
+  <div class="main-container">
+    <!--<p class="sentence-reloader" (click)="displayRandomSentence()">&#8635;</p>-->
+    <div class="animated-text">
+      <h1>{{ displayedSentence }}</h1>
+    </div>
+    <p class="info-text">
+      This website is an experiment | Made by Kasai Technologies
+    </p>
+  </div>
+</main>
 <app-footer></app-footer>
