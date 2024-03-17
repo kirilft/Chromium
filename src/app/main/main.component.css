@@ -8,6 +8,7 @@ main {
   height:calc(74% - 4rem);
   width: calc(100% - 4rem);
   overflow: hidden;
+  flex-direction: column;
 }
 
 .main-container {
@@ -15,7 +16,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 4rem;
+  margin: 1rem 4rem 4rem 4rem;
   width: calc(100% - 8rem);
   height: calc(100% - 8rem);
 }
@@ -35,13 +36,44 @@ main {
 }
 
 .info-text {
-  position: relative;
   align-items: center;
+  justify-content: center;
+  text-align: left;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  flex-direction: column;
+  text-overflow: ellipsis;
   width: calc(100% - 4rem);
   font-size: 2rem;
-  margin: 2rem;
-  top: 25%;
-  transform:translateY(-25%);
   color:var(--color-neutral-grey);
 }
 
+.animated-text, .info-text {
+  margin: auto;
+}
+
+.sentence-reloader {
+  margin: 1rem 2.5rem 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  color: var(--color-space-black);
+  font-size: 2rem;
+  width: fit-content;
+}
+
+.sentence-reloader:hover {
+  color: var(--color-light-gray);
+  animation: rotate360 1s ease-in-out forwards;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
