@@ -34,9 +34,12 @@ Prefix line with `#`, `##`, or `###` for different header sizes.
 - Inline: `` `code` ``
 - Multi-line: 
   \`\`\` [Language, i. e. js, html, ...]
+  code
   \`\`\`
+
   code block
-  ```
+  ```html
+  <html>example</html>
   ```
 
 ### Block Quotes
