@@ -1,27 +1,51 @@
-# Chromium
+# Discord Text Formatting Guide
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+Quick reference to formatting text in Discord messages, using Markdown & special Discord features.
 
-## Development server
+## Basic Formatting
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Bold:** `**text**`
+- **Italics:** `*text*` or `_text_`
+- **Underline:** `__text__`
+- **Strikethrough:** `~~text~~`
+- **Underline Italics:** `__*text*__`
+- **Underline Bold:** `__**text**__`
+- **Bold Italics:** `***text***`
+- **Underline Bold Italics:** `__***text***__`
 
-## Code scaffolding
+## Organizational Formatting
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Headers
+Prefix line with `#`, `##`, or `###` for different header sizes.
+- `# Header 1`
+- `## Header 2`
+- `### Header 3`
 
-## Build
+### Masked Links
+`[Displayed Text](URL)`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Lists
+- Unordered: `- item` or `* item`
+- Nested: Indent with a space before `-` or `*`.
 
-## Running unit tests
+## Advanced Formatting
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Code Blocks
+- Inline: `` `code` ``
+- Multi-line: 
+  ```[Language, i. e. js, html, ...]
+  ```
+  code block
+  ```
+  ```
 
-## Running end-to-end tests
+### Block Quotes
+- Single line: `> Quote`
+- Multi-line: `>>> Multi-line quote`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Special Formatting
 
-## Further help
+### Spoilers
+`||Spoiler text||`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
