@@ -1,0 +1,26 @@
+footer{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    height: 10vh;
+}
+
+.footer{
+    margin: 1rem;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color:var(--color-ivory-white);
+}
+
+.footer-link{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    color: var(--color-neutral-grey);
+    font-size: 2rem;
+}
+
+.footer-link:hover {
+    color: var(--color-accent-blue);
+}
