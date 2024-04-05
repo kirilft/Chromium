@@ -42,3 +42,7 @@ a{
     text-decoration: none;
     font-size: 2rem;
   }
+
+  .link:hover {
+    color: var(--color-accent-blue);
+  }

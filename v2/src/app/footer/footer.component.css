@@ -6,9 +6,10 @@ footer{
 }
 
 .footer{
+    padding-left: 1rem;
     margin: 1rem;
     font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color:var(--color-ivory-white);
 }
 
@@ -18,7 +19,6 @@ footer{
     align-items: center;
     margin: 1rem;
     color: var(--color-neutral-grey);
-    font-size: 2rem;
 }
 
 .footer-link:hover {

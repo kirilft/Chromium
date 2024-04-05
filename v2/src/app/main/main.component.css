@@ -1,3 +1,46 @@
 main{
 height: 80vh;
+padding: 2rem;
+}
+
+.container{
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(80vh - 4rem);
+    border-radius: 4rem;
+}
+
+.container-2{
+    margin: 2rem;
+    border: 3px solid var(--color-accent-purple);
+    height: calc(80vh - 8rem);
+    width: calc(100vw - 8rem);
+}
+
+.animated-text{
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--color-ivory-white);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.example-text{
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-neutral-grey);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 50%;
+    width: 50%;
+    transform: translateY(-250%);
+    margin-left: 2rem;
 }
