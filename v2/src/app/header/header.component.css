@@ -45,4 +45,42 @@ a{
 
   .link:hover {
     color: var(--color-accent-blue);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 40%);
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.link {
+  margin: 1rem;
+  color: var(--color-off-white);
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.link:hover {
+  color: var(--color-accent-blue);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 40%);
+}
+
+.full-text {
+  display: none;
+}
+
+.short-text {
+  display: block;
+}
+
+@media (min-width: 1000px) {
+  .full-text {
+    display: block;
   }
+
+  .short-text {
+    display: none;
+  }
+}
