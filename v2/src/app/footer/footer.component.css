@@ -10,7 +10,7 @@ footer{
     margin: 1rem;
     font-weight: 500;
     font-size: 1.5rem;
-    color:var(--color-ivory-white);
+    color:var(--color-Text);
 }
 
 .footer-link{
@@ -18,9 +18,9 @@ footer{
     justify-content: space-between;
     align-items: center;
     margin: 1rem;
-    color: var(--color-neutral-grey);
+    color: var(--color-accent);
 }
 
 .footer-link:hover {
-    color: var(--color-accent-blue);
+    color: var(--color-link);
 }

@@ -13,7 +13,7 @@ header {
 }
 
 a{
-    color: var(--color-ivory-white);
+    color: var(--color-Text);
 }
 
   .left {
@@ -38,7 +38,7 @@ a{
   
   .link {
     margin: 1rem;
-    color: var(--color-off-white);
+    color: var(--color-Text);
     text-decoration: none;
     font-size: 2rem;
   }
@@ -57,7 +57,7 @@ a{
 
 .link {
   margin: 1rem;
-  color: var(--color-off-white);
+  color: var(--color-Text);
   text-decoration: none;
   font-size: 2rem;
 }
