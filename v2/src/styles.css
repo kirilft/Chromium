@@ -40,17 +40,22 @@
   font-style: italic;
 }
 
+:root[data-theme="light"] {
+  --text: #010e0a;
+  --background: #ededed;
+  --primary: #006fd6;
+  --secondary: #6e6e72;
+  --accent: #f44eac;
+}
+:root[data-theme="dark"] {
+  --text: #f1fefa;
+  --background: #121212;
+  --primary: #2997ff;
+  --secondary: #8d8d91;
+  --accent: #b10b69;
+}
 
 :root {
-    /* Main Colors */
-    --color-black: #121212;
-    --color-accent: #8E8E92;
-    --color-Text: #D9E5E1;
-    --color-Headings: #f1fefa;
-  
-    /* Accent Colors */
-    --color-link: #2997ff;
-    --color-experimental: #b00b69;
     --color-accent-green: #33cc54;
     --color-accent-red: #f00f0f;
 
@@ -95,4 +100,3 @@
   button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
   }
-  
