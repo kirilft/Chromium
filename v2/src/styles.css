@@ -47,6 +47,7 @@
   --secondary: #6e6e72;
   --accent: #f44eac;
 }
+
 :root[data-theme="dark"] {
   --text: #f1fefa;
   --background: #121212;
@@ -59,13 +60,15 @@
     --color-accent-green: #33cc54;
     --color-accent-red: #f00f0f;
 
+    
+    color-scheme: light dark;
 
     font-family: "Poppins", sans-serif;
     line-height: 1.6;
     font-weight: 400;
 
     color: var(--text);
-    background-color: var(--color-black);
+    background-color: var(--background);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -93,7 +96,7 @@
   
   a:hover,
   a:focus {
-    color: var(--color-link);
+    color: var(--primary);
   }
   
   button:focus,

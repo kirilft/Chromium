@@ -4,13 +4,11 @@ header {
   height: 10vh;
   }
     
-
-
 .title {
   margin: 1rem;
   font-weight: 500;
   font-size: 2.5rem;
-  color: var(--color-Headings);
+  color: var(--color-Text);
 }
 
 a{
@@ -24,11 +22,16 @@ a{
 }
   
 .experimental-box {
-    color: var(--color-accent);
-    border: 3px solid var(--color-experimental);
-    border-radius: 1rem;
-    padding: 0.75rem 1rem;
+  color: var(--secondary);/* This is your --secondary variable */
+  border: 3px solid transparent;
+  border-image: linear-gradient(to right, #4A052C , #b10b69) 1; /* Using hex codes directly */
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
 }
+
+
+
+
 
 .links {
   display: flex;
