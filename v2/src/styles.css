@@ -40,46 +40,24 @@
   font-style: italic;
 }
 
-:root[data-theme="light"] {
-  --text: #010e0a;
-  --background: #ededed;
-  --primary: #006fd6;
-  --secondary: #6e6e72;
-  --accent: #f44eac;
-}
-
-:root[data-theme="dark"] {
-  --text: #f1fefa;
-  --background: #121212;
-  --primary: #2997ff;
-  --secondary: #8d8d91;
-  --accent: #b10b69;
-}
-
 :root {
-    --color-accent-green: #33cc54;
+    --color-accent-green: #3c5;
     --color-accent-red: #f00f0f;
-
-    
-    color-scheme: light dark;
+    --text: #f1fefa;
+    --background: #111;
+    --primary: #2997ff;
+    --secondary: #8d8d91;
+    --accent: #b10b69;
+    --dark:#000;
 
     font-family: "Poppins", sans-serif;
     line-height: 1.6;
-    font-weight: 400;
-
     color: var(--text);
-    background-color: var(--background);
-
+    background-color: var(--dark);
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
   }
   
   body,
@@ -87,19 +65,35 @@
     display: flex;
     font-size: 100%;
     width: 100%;
-    min-height: 100vh;
+    max-height: 100%;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  }
+
+  h1 {font-size: 3.158rem; /* 50.56px */}
+  
+  h2 {font-size: 2.369rem; /* 37.92px */ }
+  
+  h3 {font-size: 1.777rem; /* 28.48px */}
+  
+  h4 {font-size: 1.333rem; /* 21.28px */}
+  
+  small {font-size: 0.750rem; /* 12px */}
+
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("assets/img/index.png");  /* Adjust the path to your image if needed */
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
   }
   
-  a {
-    text-decoration: none;
-  }
-  
-  a:hover,
-  a:focus {
-    color: var(--primary);
-  }
-  
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }

@@ -1,26 +1,16 @@
 footer{
+    position: fixed;
+    width: 100vw;
+    height: 12.9vh;
+    left: 0;
+    bottom: 0;
     display: flex;
     align-items: center;
-    position: sticky;
-    height: 10vh;
 }
 
 .footer{
-    padding-left: 1rem;
-    margin: 1rem;
-    font-weight: 500;
-    font-size: 1.5rem;
-    color:var(--color-Text);
+    color:var(--text);
+    text-decoration: none;
+    margin-left: 3.5rem;
 }
 
-.footer-link{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1rem;
-    color: var(--color-accent);
-}
-
-.footer-link:hover {
-    color: var(--color-link);
-}

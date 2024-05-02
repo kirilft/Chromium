@@ -1,55 +1,25 @@
 header {
+  position: fixed;
+  width: 100vw;
+  height: 12.9vh;
+  left: 0;
+  top: 0;
   display: flex;
-  justify-content: space-between;
-  height: 10vh;
+  align-items: center;
   }
     
 .title {
-  margin: 1rem;
-  font-weight: 500;
-  font-size: 2.5rem;
-  color: var(--color-Text);
+
 }
 
-a{
-    color: var(--color-Text);
-}
-
-.left {
-    margin-left: 1rem;
-    display: flex;
-    align-items: center;
-}
-  
 .experimental-box {
-  color: var(--secondary);/* This is your --secondary variable */
-  border: 3px solid transparent;
-  border-image: linear-gradient(to right, #4A052C , #b10b69) 1; /* Using hex codes directly */
+  border: 3px solid #B10B69;
+  padding: 1rem;
   border-radius: 1rem;
-  padding: 0.75rem 1rem;
+  margin-left: 1rem;
 }
 
 
-
-
-
-.links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 1rem;
-}
-
-.link {
-  margin: 1rem;
-  color: var(--color-Text);
-  text-decoration: none;
-  font-size: 2rem;
-}
-
-.link:hover {
-  color: var(--color-link);
-}
 
 .full-text {
   display: block;
@@ -59,52 +29,7 @@ a{
   display: none;
 }
 
-
-@media only screen and (min-width: 1280px) and (max-width: 1439px) {
-  .full-text {
-    display: none;
-  }
-
-  .short-text {
-    display: block;
-  }
-}
-
-/* Medium screens (1024px to 1279px) */
-@media only screen and (min-width: 1024px) and (max-width: 1279px) {
-  .full-text {
-    display: none;
-  }
-
-  .short-text {
-    display: block;
-  }
-}
-
-/* Small tablets and large phones (768px to 1023px) */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .full-text {
-    display: none;
-  }
-
-  .short-text {
-    display: block;
-  }
-}
-
-/* Smaller devices (phones) (481px to 767px) */
-@media only screen and (min-width: 481px) and (max-width: 767px) {
-  .full-text {
-    display: none;
-  }
-
-  .short-text {
-    display: block;
-  }
-}
-
-/* Very small devices (360px to 480px) */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1439px) {
   .full-text {
     display: none;
   }
