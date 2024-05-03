@@ -6,20 +6,37 @@ header {
   top: 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
   }
     
 .title {
+  margin-left: 3.5rem;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  background-clip: text;
+  color: transparent;
+  align-items: center;
+  font-weight: 500;
+  text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
+a {
+  text-decoration: none;
 }
 
 .experimental-box {
   border: 3px solid #B10B69;
-  padding: 1rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 1rem;
   margin-left: 1rem;
+  color: var(--secondary);
 }
-
-
 
 .full-text {
   display: block;
@@ -27,6 +44,24 @@ header {
 
 .short-text {
   display: none;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  margin-right: 5rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 2.369rem;
+}
+
+.link:hover {
+  color: var(--primary);
 }
 
 @media only screen and (max-width: 1439px) {

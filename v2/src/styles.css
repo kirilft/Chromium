@@ -46,7 +46,7 @@
     --text: #f1fefa;
     --background: #111;
     --primary: #2997ff;
-    --secondary: #8d8d91;
+    --secondary: rgba(241, 254, 250, 0.8);
     --accent: #b10b69;
     --dark:#000;
 
@@ -58,6 +58,11 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   
   body,
@@ -83,17 +88,3 @@
   h4 {font-size: 1.333rem; /* 21.28px */}
   
   small {font-size: 0.750rem; /* 12px */}
-
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: url("assets/img/index.png");  /* Adjust the path to your image if needed */
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.5;
-  }
-  
