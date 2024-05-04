@@ -1,75 +1,136 @@
-main{
-    background-color: var(--background);
-    display: flex;
-    align-items: center;
-    height: 72.2vh;
-    width: calc(100vw - 4rem);
-    margin: 13.9vh 2rem 13.9vh 2rem;
-    border-radius: 1rem;
-    background-color: var(--background);
-    flex-direction: column;
-}
-
-.sentence-reloader{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    user-select: none;
-    color: rgba(241, 254, 250, 0.8);
-    font-size: 2rem;
-    width: fit-content;
-    justify-content: flex-end;
-    margin: 1rem 2.5rem 0 auto;
-}
-
-.sentence-reloader:hover {
-    color: var(--color-light-gray);
-    animation: rotate360 1s ease-in-out forwards;
+main {
+  align-items: center;
+  background-color: var(--background);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 72.2vh;
+  margin: 13.9vh 2rem;
+  width: calc(100vw - 4rem);
+  }
+  
+  .animated-text {
+  align-items: center;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-h1);
+  min-height: var(--font-size-h1);
+  font-weight: 500;
+  justify-content: center;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-align: center;
+  text-overflow: ellipsis;
+  width: calc(100% - 4rem);
+  margin: auto;
+  }
+  
+  .info-text {
+  align-items: center;
+  color: var(--secondary);
+  flex-direction: column;
+  font-size: var(--font-size-h3);
+  min-height: var(--font-size-h3);
+  justify-content: center;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-align: left;
+  text-overflow: ellipsis;
+  width: calc(100% - 4rem);
+  margin: auto;
+  }
+  
+  .sentence-reloader {
+  align-items: center;
+  color: var(--secondary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  justify-content: flex-end;
+  margin: 1rem 2.5rem 0 auto;
+  user-select: none;
+  width: fit-content;
+  }
+  
+  .sentence-reloader:hover {
+  animation: rotate360 1s ease-in-out forwards;
+  color: var(--color-accent-green);
   }
   
   @keyframes rotate360 {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-    }
-
-    .main-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 1rem 4rem 4rem 4rem;
-        width: calc(100% - 8rem);
-        height: calc(100% - 8rem);
-      }
-      
-      .animated-text{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        overflow-wrap: break-word;
-        overflow: hidden;
-        flex-direction: column;
-        text-overflow: ellipsis;
-        font-weight: 500;
-        font-size: 4rem;
-        color: var(--color-ivory-white);
-      }
-      
-      .info-text {
-        align-items: center;
-        justify-content: center;
-        text-align: left;
-        overflow-wrap: break-word;
-        overflow: hidden;
-        flex-direction: column;
-        text-overflow: ellipsis;
-        width: calc(100% - 4rem);
-        font-size: 2rem;
-        color:var(--color-neutral-grey);
-      }
+  from {
+  transform: rotate(0);
+  }
+  to {
+  transform: rotate(360deg);
+  }
+  }
+  
+  /* For iPad Pro 12.9" */
+  @media only screen and (max-width: 1366px) {
+  main {
+  border-radius: 0.75rem;
+  margin: 13.9vh 1.5rem 13.9vh 1.5rem;
+  width: calc(100vw - 3rem);
+  }
+  .animated-text {
+  font-size: var(--font-size-h2);
+  min-height: var(--font-size-h2);
+  margin: auto;
+  }
+  
+  .info-text {
+  font-size: var(--font-size-h4);
+  min-height: var(--font-size-h4);
+  margin: auto;
+  }
+  .sentence-reloader {
+  font-size: 1.75rem;
+  margin: 1rem 2rem 0 auto;
+  }
+  }
+  
+  /* For iPhone 14 & 15 Pro Max */
+  @media only screen and (max-width: 690px) {
+  main {
+  border-radius: 0.5rem;
+  margin: 13.9vh 1rem;
+  width: calc(100vw - 2rem);
+  }
+  .animated-text {
+  font-size: var(--font-size-h3);
+  min-height: var(--font-size-h3);
+  }
+  .info-text {
+  font-size: var(--font-size-h5);
+  min-height: var(--font-size-h5);
+  }
+  .sentence-reloader {
+  font-size: 1.5rem;
+  margin: 1rem 1.5rem 0 auto;
+  }
+  }
+  
+  /* For iPhone 13 Mini */
+  @media only screen and (max-width: 420px) {
+  main {
+  border-radius: 0.25rem;
+  margin: 13.9vh 0.5rem;
+  width: calc(100vw - 1rem);
+  }
+  .animated-text {
+  font-size: var(--font-size-h5);
+  min-height: var(--font-size-h5);
+  }
+  .info-text {
+  font-size: 1rem;
+  min-height: 1rem;
+  }
+  .sentence-reloader {
+  font-size: 1rem;
+  margin: 0 0.5rem 0 auto;
+  }
+  }
+  

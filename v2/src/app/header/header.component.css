@@ -7,34 +7,32 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  }
+}
 
-  .left {
-    display: flex;
-    align-items: center;
-  }
+.left {
+  display: flex;
+  align-items: center;
+}
     
 .title {
   margin-left: 3.5rem;
+  font-size: var(--font-size-h2);
+  text-shadow: var(--inner-shadow);
+
   background: linear-gradient(90deg, var(--primary), var(--accent));
   background-clip: text;
   color: transparent;
-  align-items: center;
-  font-weight: 500;
-  text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-a {
-  text-decoration: none;
-}
-
 .experimental-box {
-  border: 3px solid #B10B69;
   padding: 0.5rem 0.75rem;
-  border-radius: 1rem;
   margin-left: 1rem;
+  font-size: 1rem;
+  border: 3px solid var(--accent);
+  text-shadow: var(--inner-shadow);
+  border-radius: 1rem;
   color: var(--secondary);
 }
 
@@ -56,20 +54,60 @@ a {
   display: flex;
   align-items: center;
   color: var(--text);
-  text-decoration: none;
-  font-size: 2.369rem;
+  font-size: var(--font-size-h3);
 }
 
 .link:hover {
   color: var(--primary);
 }
 
-@media only screen and (max-width: 1439px) {
+/* For iPad Pro 12.9" */
+@media only screen and (max-width: 1366px) {
   .full-text {
     display: none;
   }
-
   .short-text {
     display: block;
+  }
+}
+
+/* For iPhone 14 & 15 Pro Max */
+@media only screen and (max-width: 690px) {
+  .title {
+    margin-left: 1.25rem;
+    font-size: var(--font-size-h4);
+  }
+  .experimental-box {
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--accent);
+  }
+  .links {
+    margin-right: 2rem;
+  }
+  .link{
+    font-size: var(--font-size-h4);
+  }
+}
+
+/* For iPhone 13 Mini */
+@media only screen and (max-width: 420px) {
+  .title {
+    margin-left: 0.5rem;
+    font-size: var(--font-size-h5);
+  }
+  .experimental-box {
+    margin-left: 0.25rem;
+    font-size: 0.5rem;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+  }
+  .links {
+    margin-right: 1.5rem;
+  }
+  .link{
+    font-size: var(--font-size-h5);
   }
 }

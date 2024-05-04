@@ -1,22 +1,9 @@
 @font-face {
   font-family: 'Poppins';
-  src: local('Poppins Italic'), url('/assets/fonts/Poppins-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Poppins';
   src: local('Poppins Medium'), url('/assets/fonts/Poppins-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: local('Poppins Medium Italic'), url('/assets/fonts/Poppins-MediumItalic.ttf') format('truetype');
-  font-weight: 500;
-  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -24,67 +11,58 @@
   src: local('Poppins Regular'), url('/assets/fonts/Poppins-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: local('Poppins SemiBold'), url('/assets/fonts/Poppins-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: local('Poppins SemiBold Italic'), url('/assets/fonts/Poppins-SemiBoldItalic.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
+  font-display: swap;
 }
 
 :root {
-    --color-accent-green: #3c5;
-    --color-accent-red: #f00f0f;
-    --text: #f1fefa;
-    --background: #111;
-    --primary: #2997ff;
-    --secondary: rgba(241, 254, 250, 0.8);
-    --accent: #b10b69;
-    --dark:#000;
+  --color-accent-green: #3c5;
+  --color-accent-red: #f00f0f;
+  --text: #f1fefa;
+  --background: #111;
+  --primary: #2997ff;
+  --secondary: rgba(241, 254, 250, 0.8);
+  --accent: #b10b69;
+  --dark:#000;
 
-    font-family: "Poppins", sans-serif;
-    line-height: 1.6;
-    color: var(--text);
-    background-color: var(--dark);
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body,
-  html {
-    display: flex;
-    font-size: 100%;
-    width: 100%;
-    max-height: 100%;
-    font-weight: 400;
-  }
+  /*Font Size*/
+  --font-size-h1: 4.210rem;
+  --font-size-h2: 3.158rem;
+  --font-size-h3: 2.369rem;
+  --font-size-h4: 1.777rem;
+  --font-size-h5: 1.333rem;
 
-  h1, h2, h3, h4, h5 {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-  }
+  --inner-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
 
-  h1 {font-size: 3.158rem; /* 50.56px */}
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--dark);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
   
-  h2 {font-size: 2.369rem; /* 37.92px */ }
-  
-  h3 {font-size: 1.777rem; /* 28.48px */}
-  
-  h4 {font-size: 1.333rem; /* 21.28px */}
-  
-  small {font-size: 0.750rem; /* 12px */}
+body, 
+html{
+  display: flex;
+  font-size: 100%;
+  width: 100%;
+  max-height: 100%;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}

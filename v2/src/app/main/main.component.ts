@@ -3,8 +3,8 @@ import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { trigger, style, transition, animate } from '@angular/animations';
 
-const ANIMATION_SPEED = 1;  // in milliseconds
-const TYPING_SPEED = 1;  // in milliseconds
+const ANIMATION_SPEED = 100;  // in milliseconds
+const TYPING_SPEED = 100;  // in milliseconds
 
 @Component({
   selector: 'app-main',
@@ -28,14 +28,14 @@ const TYPING_SPEED = 1;  // in milliseconds
 export class MainComponent implements OnInit {
   displayedSentence: string = '';
   typingState: string = 'initial';
-  private typingTimeouts: any[] = []; // Store timeout IDs
+  private typingTimeouts: any[] = [];
   sentences: string[] = [
-    "Pants are for losers. - Zoe McFife", //ZoeMcFife
-    "I'm a yarn ball of anxiety. - Zoe McFife", //ZoeMcFife
-    "Be gay do crimes. - Alexander Hamilton", //Alexander Hamilton
-    "once upon a time, i didn't care. still don't 🙂 - Humsi", //Humsi
-    "19 dollar Fortnite card - Moth", //Waffel
-    "Thinking about being stupid makes you smarter than most people. - Kiri", //Kiri
+    "Pants are for losers. - Zoe McFife",
+    "I'm a yarn ball of anxiety. - Zoe McFife",
+    "Be gay do crimes. - Alexander Hamilton",
+    "once upon a time, i didn't care. still don't 🙂 - Humsi",
+    "19 dollar Fortnite card - Moth",
+    "Thinking about being stupid makes you smarter than most people. - Kiri",
     "Don't let yourself make excuses for not doing the things you want to do. - Sam Altman",
     "Move fast. Speed is one of your main advantages over large competitors. - Sam Altman",
     "Reality is just a crutch for people who can't handle science fiction. - Skylar Astin",
@@ -43,10 +43,7 @@ export class MainComponent implements OnInit {
     "I’m not arguing, I’m just explaining why I’m right. - Charlie Bright",
     "Always borrow money from a pessimist, they never expect it back. - Oscar Wilde",
     "I don’t have a dirty mind, I have a sexy imagination. - Noah Sparks",
-    //"Why do they call it rush hour when nothing moves? - Robin Williams",
-    //"I'm not lazy, I'm on energy-saving mode. - Leah Clarkson",
     "The early bird might get the worm, but the second mouse gets the cheese. - Steven Wright",
-    //"Life is short. Smile while you still have teeth. - Mallory Hopkins",
     "I’m not weird, I’m a limited edition. - Sam Cawthorn"
   ];
 
