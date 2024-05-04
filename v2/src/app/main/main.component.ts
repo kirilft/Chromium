@@ -3,8 +3,8 @@ import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { trigger, style, transition, animate } from '@angular/animations';
 
-const ANIMATION_SPEED = 100;  // in milliseconds
-const TYPING_SPEED = 100;  // in milliseconds
+const ANIMATION_SPEED = 1;  // in milliseconds
+const TYPING_SPEED = 1;  // in milliseconds
 
 @Component({
   selector: 'app-main',
