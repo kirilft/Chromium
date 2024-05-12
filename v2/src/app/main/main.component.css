@@ -1,41 +1,37 @@
 main {
+  display: flex;
   align-items: center;
+  flex-direction: column;
   background-color: var(--background);
   border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
   height: 72.2vh;
   margin: 13.9vh 2rem;
   width: calc(100vw - 4rem);
   }
   
   .animated-text {
-  align-items: center;
-  color: var(--text);
   display: flex;
-  flex-direction: column;
-  font-size: var(--font-size-h1);
-  min-height: var(--font-size-h1);
-  font-weight: 500;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
   overflow: hidden;
   overflow-wrap: break-word;
   text-align: center;
   text-overflow: ellipsis;
+  font-size: var(--font-size-h1);
+  min-height: var(--font-size-h1);
+  font-weight: 500;
   width: calc(100% - 4rem);
   margin: auto;
   }
   
   .info-text {
-  align-items: center;
   color: var(--secondary);
   flex-direction: column;
   font-size: var(--font-size-h3);
   min-height: var(--font-size-h3);
-  justify-content: center;
   overflow: hidden;
   overflow-wrap: break-word;
-  text-align: left;
   text-overflow: ellipsis;
   width: calc(100% - 4rem);
   margin: auto;
@@ -55,24 +51,27 @@ main {
   }
   
   .sentence-reloader:hover {
-  animation: rotate360 1s ease-in-out forwards;
   color: var(--color-accent-green);
   }
   
+  .rotate360 {
+    animation: rotate360 1s linear;
+  }
+  
   @keyframes rotate360 {
-  from {
-  transform: rotate(0);
-  }
-  to {
-  transform: rotate(360deg);
-  }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
   
   /* For iPad Pro 12.9" */
   @media only screen and (max-width: 1366px) {
   main {
   border-radius: 0.75rem;
-  margin: 13.9vh 1.5rem 13.9vh 1.5rem;
+  margin: 13.9vh 1.5rem;
   width: calc(100vw - 3rem);
   }
   .animated-text {
