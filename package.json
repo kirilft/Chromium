@@ -22,6 +22,9 @@
     "@angular/router": "^18.1.1",
     "@angular/ssr": "^18.1.1",
     "express": "^4.19.2",
+    "glob": "^11.0.0",
+    "lru-cache": "^11.0.0",
+    "rimraf": "^6.0.1",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.2",
     "zone.js": "~0.14.4"
@@ -39,6 +42,6 @@
     "karma-coverage": "~2.2.1",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.4.5"
+    "typescript": "^5.5.3"
   }
 }
