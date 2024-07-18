@@ -1,8 +1,10 @@
 @echo off
 setlocal
 
+:: mp0: /srv/samba/share/chromium,mp=/mnt/chromium
+
 :: Define the shared folder path
-set "SHARE_PATH=\\192.168.1.4\nginx"
+set "SHARE_PATH=\\192.168.1.2\chromium"
 
 :: Define the source directory (Angular project's dist folder)
 set "SOURCE_DIR=%~dp0dist"
