@@ -8,7 +8,7 @@ main {
   margin: 13.9vh 2rem;
   width: calc(100vw - 4rem);
   }
-  
+
   .animated-text {
   display: flex;
   align-items: center;
@@ -24,7 +24,7 @@ main {
   width: calc(100% - 4rem);
   margin: auto;
   }
-  
+
   .info-text {
   color: var(--secondary);
   flex-direction: column;
@@ -36,7 +36,7 @@ main {
   width: calc(100% - 4rem);
   margin: auto;
   }
-  
+
   .sentence-reloader {
   align-items: center;
   color: var(--secondary);
@@ -49,15 +49,15 @@ main {
   user-select: none;
   width: fit-content;
   }
-  
+
   .sentence-reloader:hover {
   color: var(--color-accent-green);
   }
-  
+
   .rotate360 {
     animation: rotate360 1s linear;
   }
-  
+
   @keyframes rotate360 {
     from {
       transform: rotate(0deg);
@@ -66,7 +66,7 @@ main {
       transform: rotate(360deg);
     }
   }
-  
+
   /* For iPad Pro 12.9" */
   @media only screen and (max-width: 1366px) {
   main {
@@ -79,7 +79,7 @@ main {
   min-height: var(--font-size-h2);
   margin: auto;
   }
-  
+
   .info-text {
   font-size: var(--font-size-h4);
   min-height: var(--font-size-h4);
@@ -90,7 +90,7 @@ main {
   margin: 1rem 2rem 0 auto;
   }
   }
-  
+
   /* For iPhone 14 & 15 Pro Max */
   @media only screen and (max-width: 690px) {
   main {
@@ -111,7 +111,7 @@ main {
   margin: 1rem 1.5rem 0 auto;
   }
   }
-  
+
   /* For iPhone 13 Mini */
   @media only screen and (max-width: 420px) {
   main {
@@ -132,4 +132,3 @@ main {
   margin: 0 0.5rem 0 auto;
   }
   }
-  

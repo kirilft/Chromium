@@ -61,7 +61,7 @@
   font-style: normal;
 }
 
-:root[data-theme="light"] {
+/*:root[data-theme="light"] {
   --red: #FF282F;
   --green: #33CC54;
   --blue: #1F8BFF;
@@ -76,6 +76,10 @@
 }
 
 :root[data-theme="dark"] {
+
+}*/
+
+:root {
   --red: #FF383F;
   --green: #31D354;
   --blue: #2997FF;
@@ -87,9 +91,7 @@
   --gray2: #2C2C30;
   --gray: #0A0A0F;
   --black: #000;
-}
 
-:root {
   --font-size-h1: 4.1875rem;
   --font-size-h2: 3.1875rem;
   --font-size-h3: 2.369rem;
@@ -123,4 +125,19 @@ html{
 
 a {
   text-decoration: none;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/img/index.png'); /* Replace with your screenshot path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.5; /* Set opacity to 50% */
+  pointer-events: none; /* Allows interaction with underlying content */
+  z-index: 1000; /* Ensures the overlay stays on top */
 }
