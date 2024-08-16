@@ -126,18 +126,3 @@ html{
 a {
   text-decoration: none;
 }
-
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('assets/img/Index.png'); /* Replace with your screenshot path */
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0.5; /* Set opacity to 50% */
-  pointer-events: none; /* Allows interaction with underlying content */
-  z-index: 1000; /* Ensures the overlay stays on top */
-}
