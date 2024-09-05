@@ -9,18 +9,13 @@ footer{
 }
 
 .footer{
-    color:var(--text);
-    font-size: var(--font-size-h3);
-    margin-left: var(--font-size-h1);
-    text-shadow: var(--inner-shadow); 
-    font-weight: 500;
-}
-
-/* For iPad Pro 12.9" */
-@media only screen and (max-width: 1366px) {
-    .footer{
-        font-size: var(--font-size-h3);
-    }
+  color: var(--Grays-White, #FFF);
+  font-family: Outfit;
+  font-size: var(--Fontsize-h3, 38px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 56px;
 }
 
 /* For iPhone 14 & 15 Pro Max */
@@ -33,7 +28,7 @@ footer{
         margin-left: 0;
     }
 }
-  
+
 /* For iPhone 13 Mini */
 @media only screen and (max-width: 420px) {
 .footer{

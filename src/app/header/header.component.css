@@ -1,12 +1,14 @@
 header {
   position: fixed;
   width: 100%;
+  height: 4rem;
   left: 0;
   top: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 28px;
 }
 
 .logo {
@@ -15,47 +17,35 @@ header {
 }
 
 .title {
-  font-family: 'Outfit', sans-serif;
+  font-family: Outfit;
+  font-size: var(--Font-size-h2);
+  font-style: normal;
   font-weight: 500;
-  font-size: 51px;
   line-height: normal;
-  letter-spacing: -0.004em;
-  text-align: center;
-  background: linear-gradient(90deg, var(--blue), var(--purple));
+  letter-spacing: -0.204px;
+  background: linear-gradient(96deg, #2997FF 4.56%, #B00B69 95.39%);
   background-clip: text;
-  color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  position: relative;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-
 .badge {
-  font-size: var(--font-size-h5);
-  border: 3px solid var(--purple);
-  border-radius: 1rem;
-  color: var(--gray4);
-  padding: 8px;
-  padding: 4px;
+  border-radius: 8px;
+  border: 2px solid #0A0A0F;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
 .full-text{
   display: block;
-}
+  color: var(--Grays-Gray4, #A5A5B0);
+  text-align: center;
+  font-family: Outfit;
+  font-size: var(--Font-size-h5);
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  }
 
 .short-text{
   display: none;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-}
-
-.link {
-  display: flex;
-  align-items: center;
-  color:  var(--white);
-  font-size: var(--font-size-h3);
 }
