@@ -61,7 +61,7 @@
   font-style: normal;
 }
 
-/*:root[data-theme="light"] {
+:root[data-theme="light"] {
   --red: #FF282F;
   --green: #33CC54;
   --blue: #1F8BFF;
@@ -76,10 +76,6 @@
 }
 
 :root[data-theme="dark"] {
-
-}*/
-
-:root {
   --red: #FF383F;
   --green: #31D354;
   --blue: #2997FF;
@@ -91,13 +87,17 @@
   --gray2: #2C2C30;
   --gray: #0A0A0F;
   --black: #000;
+}
 
-  --font-size-h1: 4.1875rem;
-  --font-size-h2: 3.1875rem;
-  --font-size-h3: 2.369rem;
-  --font-size-h4: 2.375rem;
-  --font-size-h5: 1.3125rem;
+:root {
+  --Fontsize-h1: 4.1875rem;
+  --Fontsize-h2: 3.1875rem;
+  --Fontsize-h3: 2.369rem;
+  --Fontsize-h4: 2.375rem;
+  --Fontsize-h5: 1.3125rem;
   --small: 0.75rem;
+
+  --Gradiants-Title: linear-gradient(96deg, var(--blue) 4.56%, var(--purple) 95.39%);
 
   font-family: "Outfit", sans-serif;
   line-height: 1.6;
