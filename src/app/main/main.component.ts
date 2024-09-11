@@ -1,4 +1,5 @@
-import { Component, OnInit, Renderer2, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef, ViewChild, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { trigger, style, transition, animate } from '@angular/animations';
@@ -46,34 +47,44 @@ export class MainComponent implements OnInit, AfterViewInit {
 
   @ViewChild('sentenceReloader', { static: true }) sentenceReloader!: ElementRef;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
-    this.displayRandomSentence().catch(error => console.error('Error during sentence display:', error));
+    // Check if we are running in the browser (not server-side)
+    if (isPlatformBrowser(this.platformId)) {
+      window.onload = () => {
+        this.initialize();
+      };
+    }
   }
 
   ngAfterViewInit(): void {
-    this.renderer.listen(this.sentenceReloader.nativeElement, 'click', () => {
-      this.toggleAnimation();
-      this.displayRandomSentence();
-    });
+    // Only add event listeners if we're in the browser
+    if (isPlatformBrowser(this.platformId)) {
+      this.renderer.listen(this.sentenceReloader.nativeElement, 'click', () => {
+        this.toggleAnimation();
+        this.displayRandomSentence();
+      });
+    }
+  }
+
+  initialize(): void {
+    this.displayRandomSentence().catch(error => console.error('Error during sentence display:', error));
   }
 
   toggleAnimation(): void {
     const element = this.sentenceReloader.nativeElement;
-    element.classList.add('rotate360');  // Add the animation class
-
-    // Remove the class after the animation completes (1000 ms = 1s)
+    element.classList.add('rotate360');
     setTimeout(() => {
       element.classList.remove('rotate360');
     }, 1000);
   }
 
   async displayRandomSentence(): Promise<void> {
-    this.clearTypingAnimation(); // Clear any ongoing typing animation before starting a new one
+    this.clearTypingAnimation();
     const sentence = this.getRandomElement(this.sentences);
-    this.typingState = 'start'; // Might need adjustment to re-trigger Angular animations
-    await this.startTypingAnimation(sentence, 100);  // Typing speed
+    this.typingState = 'start';
+    await this.startTypingAnimation(sentence, 100);
   }
 
   getRandomElement<T>(array: T[]): T {
@@ -83,12 +94,18 @@ export class MainComponent implements OnInit, AfterViewInit {
 
   async startTypingAnimation(sentence: string, speed: number): Promise<void> {
     this.displayedSentence = '';
-    for (let i = 0; i < sentence.length; i++) {
-      const timeoutId = setTimeout(() => {
-        this.displayedSentence += sentence[i];
-      }, i * speed);
-      this.typingTimeouts.push(timeoutId);
-    }
+    let index = 0;
+
+    const typeCharacter = () => {
+      if (index < sentence.length) {
+        this.displayedSentence += sentence[index];  // Append characters correctly
+        index++;
+        const timeoutId = setTimeout(typeCharacter, speed);
+        this.typingTimeouts.push(timeoutId);
+      }
+    };
+
+    typeCharacter();
   }
 
   clearTypingAnimation(): void {
