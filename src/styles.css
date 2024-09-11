@@ -99,6 +99,8 @@
 
   --Gradiants-Title: linear-gradient(96deg, var(--blue) 4.56%, var(--purple) 95.39%);
 
+  --Gradiants-Stroke: linear-gradient(90deg,var(--black) -83.55%, var(--purple) 100%);
+
   font-family: "Outfit", sans-serif;
   line-height: 1.6;
   color: var(--white);

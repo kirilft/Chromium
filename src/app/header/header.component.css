@@ -29,9 +29,12 @@ header {
   margin-right: 16px;
   transition: font-size 0.5s ease-in-out;
   width: 125px;
-  box-shadow: 0px 4px 4px 0px #00000040 inset;
   transition: font-size 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  text-shadow:
+  0px 4px 4px rgb(0, 0, 0, 0.25); /* Inverse shadow */
 }
+
+
 
 .gradient-out{
   width: 312px;
@@ -78,6 +81,25 @@ nav{
   justify-content: flex-end;
   margin-left: auto;
   margin-right: 1.5rem;
+}
+
+.links{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1.5rem;
+}
+
+.link{
+  font-family: Outfit;
+  font-size: var(--Fontsize-h5);
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.15px;
+  color: var(--Grays-Gray4);
+  margin-left: 1.5rem;
+  transition: color 0.5s ease-in-out;
 }
 
 /* Mobile Layout (up to 767px wide) */
