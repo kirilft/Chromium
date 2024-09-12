@@ -28,6 +28,7 @@ main {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  transition: transition: font-size 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out;
   }
 
   .info-text {

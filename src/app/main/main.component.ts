@@ -84,7 +84,7 @@ export class MainComponent implements OnInit, AfterViewInit {
     this.clearTypingAnimation();
     const sentence = this.getRandomElement(this.sentences);
     this.typingState = 'start';
-    await this.startTypingAnimation(sentence, 100);
+    await this.startTypingAnimation(sentence, 80);
   }
 
   getRandomElement<T>(array: T[]): T {
