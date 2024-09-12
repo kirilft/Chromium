@@ -22,7 +22,7 @@ main {
   font-weight: 500;
   width: calc(100% - 32rem);
   margin: auto;
-  color: var(--Grays-White---Dark, #FFF);
+  color: var(--white);
   font-family: Outfit;
   font-size: var(--Fontsize-h1, 67px);
   font-style: normal;
@@ -40,7 +40,7 @@ main {
   margin-bottom: auto;
   margin-top: auto;
   margin-right: auto;
-  color: var(--Grays-Gray4---Dark, #A5A5B0);
+  color: var(--gray4);
   font-family: Outfit;
   font-size: var(--Fontsize-h3, 38px);
   font-style: normal;
@@ -50,7 +50,7 @@ main {
 
   .sentence-reloader {
   align-items: center;
-  color: var(--secondary);
+  color: var(--gray3);
   cursor: pointer;
   display: flex;
   flex-direction: column;

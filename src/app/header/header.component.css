@@ -34,7 +34,7 @@ header {
   height: 50px;
   flex-shrink: 0;
   border-radius: 8px;
-  background: var(--Gradiants-Stroke, linear-gradient(90deg, #000 -83.55%, #B00B69 100%));
+  background: var(--Gradiants-Stroke);
   Display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +46,7 @@ header {
   height: 42px;
   flex-shrink: 0;
   border-radius: 4px;
-  background: var(--Grays-Black, #000);
+  background: var(--black);
   Display: flex;
   justify-content: center;
   align-items: center;
@@ -54,7 +54,7 @@ header {
 }
 
 .full-text, .short-text{
-  color: var(--Grays-Gray4, #A5A5B0);
+  color: var(--gray4);
   text-align: center;
   font-family: Outfit;
   font-size: var(--Fontsize-h5, 21px);
@@ -76,23 +76,28 @@ nav{
   margin-right: 1.5rem;
 }
 
-.links{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 1.5rem;
-}
-
 .link{
+  color: var(--white);
   font-family: Outfit;
-  font-size: var(--Fontsize-h5);
+  font-size: 38px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   line-height: normal;
-  letter-spacing: 0.15px;
-  color: var(--Grays-Gray4);
-  margin-left: 1.5rem;
-  transition: color 0.5s ease-in-out;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
+.icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  transition: color 0.5s ease-in-out;
+  margin-right: 40px;
+  margin-left: 1rem;
+  filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
+}
 
+.light{
+  display: none;
+}
