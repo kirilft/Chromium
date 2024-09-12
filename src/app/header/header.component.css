@@ -1,7 +1,7 @@
 header {
   position: fixed;
   width: calc(100% - 4rem);
-  height: 76px;
+
   left: 0;
   top: 0;
   display: flex;
@@ -17,21 +17,16 @@ header {
 .title {
   font-family: Outfit;
   font-size: var(--Fontsize-h2);
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
   letter-spacing: -0.204px;
-  background: var(--Gradiants-Title, linear-gradient(96deg, #2997FF 4.56%, #B00B69 95.39%));
+  background: var(--Gradiants-Title);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
   transition: font-size 0.5s ease-in-out;
-  width: 125px;
-  transition: font-size 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-  text-shadow:
-  0px 4px 4px rgb(0, 0, 0, 0.25); /* Inverse shadow */
 }
 
 .gradient-out{
@@ -100,70 +95,4 @@ nav{
   transition: color 0.5s ease-in-out;
 }
 
-/* Mobile Layout (up to 767px wide) */
-@media only screen and (max-width: 767px) {
-  header {
-    height: 64px;
-    margin: 1rem;
-    width: calc(100% - 2rem);
-  }
 
-  .title {
-    font-size: var(--Fontsize-h3);
-    margin-left: 4px;
-    margin-right: 0;
-  }
-
-  .gradient-out{
-    width: 86px;
-    height: 27px;
-    border-radius: 6px;
-  }
-
-  .gradient-in{
-    width: 82px;
-    height: 23px;
-    border-radius: 4px;
-  }
-
-  .short-text{
-    display: block;
-    font-size: var(--Fontsize-small, 12px);
-  }
-
-  .full-text{
-    display: none;
-  }
-}
-
-/* Tablet Layout (768px to 1024px wide) */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  header {
-    height: 80px;
-    margin: 1.5rem;
-    width: calc(100% - 3rem);
-  }
-
-  .title {
-    font-size: var(--Fontsize-h3);
-    margin-left: 1rem;
-    margin-right: 0.5rem;
-  }
-
-  .gradient-out{
-    margin-left: 16px;
-    width: 321px;
-    height: 50px;
-    border-radius: 12px;
-  }
-
-  .gradient-in{
-    width: 315px;
-    height: 44px;
-    border-radius: 9px;
-  }
-
-  .full-text{
-    font-size: var(--Fontsize-h5);
-  }
-}

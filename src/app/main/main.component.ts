@@ -33,7 +33,7 @@ export class MainComponent implements OnInit, AfterViewInit {
     "Be gay do crimes. - Alexander Hamilton",
     "Once upon a time, I didn't care. Still don't 🙂 - Humsi",
     "19 dollar Fortnite card - Moth",
-    "Thinking about being stupid makes you smarter than most people. - Kiri",
+    "Intelligence is knowing that you know nothing. - Kiri",
     "Don't let yourself make excuses for not doing the things you want to do. - Sam Altman",
     "Move fast. Speed is one of your main advantages over large competitors. - Sam Altman",
     "Reality is just a crutch for people who can't handle science fiction. - Skylar Astin",
