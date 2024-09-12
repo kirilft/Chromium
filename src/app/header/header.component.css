@@ -1,7 +1,6 @@
-header {
+.header-container{
   position: fixed;
-  width: calc(100% - 4rem);
-
+  width: 100%;
   left: 0;
   top: 0;
   display: flex;
@@ -9,12 +8,12 @@ header {
   margin: 2rem;
 }
 
-.logo {
+.logo-section{
   display: flex;
   align-items: center;
 }
 
-.title {
+.logo-title{
   font-family: Outfit;
   font-size: var(--Fontsize-h2);
   font-weight: 500;
@@ -25,39 +24,39 @@ header {
   -webkit-text-fill-color: transparent;
   margin-left: 1rem;
   margin-right: 1rem;
-  text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* corrected */
   transition: font-size 0.5s ease-in-out;
 }
 
-.gradient-out{
+.tagline-box{
   width: 312px;
   height: 50px;
   flex-shrink: 0;
   border-radius: 8px;
   background: var(--Gradiants-Stroke);
-  Display: flex;
+  display: flex; /* corrected */
   justify-content: center;
   align-items: center;
   transition: width 0.5s ease-in-out, height 0.5s ease-in-out, border-radius 0.5s ease-in-out;
 }
 
-.gradient-in{
+.tagline-content{
   width: 304px;
   height: 42px;
   flex-shrink: 0;
   border-radius: 4px;
   background: var(--black);
-  Display: flex;
+  display: flex; /* corrected */
   justify-content: center;
   align-items: center;
   transition: width 0.5s ease-in-out, height 0.5s ease-in-out, border-radius 0.5s ease-in-out;
 }
 
-.full-text, .short-text{
+.tagline-full, .tagline-short{
   color: var(--gray4);
   text-align: center;
   font-family: Outfit;
-  font-size: var(--Fontsize-h5, 21px);
+  font-size: var(--Fontsize-h5); /* corrected */
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -65,29 +64,29 @@ header {
   transition: opacity 0.5s ease-in-out;
 }
 
-.short-text{
+.tagline-short{
   display: none;
 }
 
-nav{
+.navbar{
   display: flex;
   justify-content: flex-end;
   margin-left: auto;
   margin-right: 1.5rem;
 }
 
-.link{
+.nav-link{
   color: var(--white);
   font-family: Outfit;
   font-size: 38px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 38px; /* added */
   margin-right: 1rem;
   margin-left: 1rem;
 }
 
-.icon{
+.theme-toggle{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,6 +97,10 @@ nav{
   filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.light{
+.icon-light{
   display: none;
+}
+
+.icon-dark{
+  display: block; /* added */
 }
