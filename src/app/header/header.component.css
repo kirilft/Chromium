@@ -1,3 +1,4 @@
+/*Adjust the width height and possition of the element*/
 .header-container{
   position: fixed;
   width: 100%;
@@ -8,11 +9,13 @@
   margin: 2rem;
 }
 
+/*certering*/
 .logo-section{
   display: flex;
   align-items: center;
 }
 
+/*Kasai Logo Text*/
 .logo-title{
   font-family: Outfit;
   font-size: var(--Fontsize-h2);
@@ -66,41 +69,4 @@
 
 .tagline-short{
   display: none;
-}
-
-.navbar{
-  display: flex;
-  justify-content: flex-end;
-  margin-left: auto;
-  margin-right: 1.5rem;
-}
-
-.nav-link{
-  color: var(--white);
-  font-family: Outfit;
-  font-size: 38px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 38px; /* added */
-  margin-right: 1rem;
-  margin-left: 1rem;
-}
-
-.theme-toggle{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--white);
-  transition: color 0.5s ease-in-out;
-  margin-right: 40px;
-  margin-left: 1rem;
-  filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-.icon-light{
-  display: none;
-}
-
-.icon-dark{
-  display: block; /* added */
 }
