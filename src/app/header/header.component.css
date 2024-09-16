@@ -1,5 +1,5 @@
-/*Adjust the width height and possition of the element*/
-.header-container{
+/* Adjust the width, height, and position of the element */
+.header-container {
   position: fixed;
   width: 100%;
   left: 0;
@@ -9,83 +9,153 @@
   margin: 2rem;
 }
 
-/*certering*/
-.logo-section{
+/* Centering */
+.logo-section {
   display: flex;
   align-items: center;
 }
 
-/*Kasai Logo Text*/
-.logo-title{
-  font-family: Outfit;
+/* Kasai Logo Text */
+.logo-title {
+  font-family: 'Outfit', sans-serif;
   font-size: var(--Fontsize-h2);
   font-weight: 500;
-  letter-spacing: -0.204px;
-  background: var(--Gradiants-Title);
+  letter-spacing: -0.2px;
+  background: var(--Gradients-Title);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback for non-webkit browsers */
   margin-left: 1rem;
   margin-right: 1rem;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* corrected */
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transition: font-size 0.5s ease-in-out;
 }
 
-.tagline-box{
-  width: 312px;
-  height: 50px;
+.tagline-box {
+  width: 20rem; /* Changed from 312px */
+  height: 3.125rem; /* Changed from 50px */
   flex-shrink: 0;
   border-radius: 8px;
-  background: var(--Gradiants-Stroke);
-  display: flex; /* corrected */
+  background: var(--Gradients-Stroke);
+  display: flex;
   justify-content: center;
   align-items: center;
-  transition: width 0.5s ease-in-out, height 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+  /* Consider animating transform instead of width and height */
+  transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out;
 }
 
-.tagline-content{
-  width: 304px;
-  height: 42px;
+.tagline-content {
+  width: 19rem; /* Changed from 304px */
+  height: 2.625rem; /* Changed from 42px */
   flex-shrink: 0;
   border-radius: 4px;
   background: var(--black);
-  display: flex; /* corrected */
+  display: flex;
   justify-content: center;
   align-items: center;
-  transition: width 0.5s ease-in-out, height 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out;
 }
 
-.tagline-full, .tagline-short{
+.tagline-full,
+.tagline-short {
   color: var(--gray4);
   text-align: center;
-  font-family: Outfit;
-  font-size: var(--Fontsize-h5); /* corrected */
+  font-family: 'Outfit', sans-serif;
+  font-size: var(--Fontsize-h5);
   font-style: normal;
   font-weight: 300;
-  line-height: normal;
-  width: 280px;
+  line-height: 1.5; /* Adjusted for consistency */
+  width: 17.5rem; /* Changed from 280px */
   transition: opacity 0.5s ease-in-out;
 }
 
-.tagline-short{
+.tagline-short {
   display: none;
 }
 
-.navbar{
+.navbar {
   display: flex;
   justify-content: flex-end;
   margin-left: auto;
-  margin-right: 1.5rem;
+  margin-right: 2.5rem;
 }
 
-.nav-link{
+.nav-link {
   color: var(--white);
-  font-family: Outfit;
-  font-size: 38px;
+  font-family: 'Outfit', sans-serif;
+  font-size: var(--Fontsize-nav-link); /* Use variable */
   font-style: normal;
   font-weight: 400;
-  line-height: 38px; /* added */
+  line-height: 1; /* Unitless for scalability */
   margin-right: 1rem;
   margin-left: 1rem;
+}
 
+/* Mobile Layout (up to 767px wide) */
+@media only screen and (max-width: 767px) {
+  .header-container {
+    height: 4rem; /* Changed from 64px */
+    margin: 1rem;
+    width: calc(100% - 2rem);
+  }
+
+  .logo-title {
+    font-size: var(--Fontsize-h3);
+    margin-left: 0.25rem;
+    margin-right: 0;
+  }
+
+  .tagline-box {
+    width: 5.375rem; /* Changed from 86px */
+    height: 1.6875rem; /* Changed from 27px */
+    border-radius: 6px;
+  }
+
+  .tagline-content {
+    width: 5.125rem; /* Changed from 82px */
+    height: 1.4375rem; /* Changed from 23px */
+    border-radius: 4px;
+  }
+
+  .tagline-short {
+    display: block;
+    font-size: var(--small, 12px); /* Use existing variable */
+  }
+
+  .tagline-full {
+    display: none;
+  }
+}
+
+/* Tablet Layout (768px to 1024px wide) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .header-container {
+    height: 5rem; /* Changed from 80px */
+    margin: 1.5rem;
+    width: calc(100% - 3rem);
+  }
+
+  .logo-title {
+    font-size: var(--Fontsize-h3);
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+  }
+
+  .tagline-box {
+    margin-left: 1rem; /* Changed from 16px */
+    width: 20.0625rem; /* Changed from 321px */
+    height: 3.125rem; /* Remains 50px equivalent */
+    border-radius: 12px;
+  }
+
+  .tagline-content {
+    width: 19.6875rem; /* Changed from 315px */
+    height: 2.75rem; /* Changed from 44px */
+    border-radius: 9px;
+  }
+
+  .tagline-full {
+    font-size: var(--Fontsize-h5);
+  }
 }
