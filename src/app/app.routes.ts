@@ -11,3 +11,13 @@ export const routes: Routes = [
   {path: '**', component: PageNotFoundComponent} // Changed from redirect to component
 ];
 
+/*
+// Lazy loading
+
+const routes: Routes = [
+  {
+    path: 'your-path',
+    loadChildren: () => import('./your-module/your-module.module').then(m => m.YourModule)
+  }
+];
+*/

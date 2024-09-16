@@ -92,6 +92,26 @@
   margin-left: 1rem;
 }
 
+.dot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 6px); /* 3 columns, each 6px wide */
+  gap: 6px; /* 6px gap between each dot */
+  padding: 0;
+  margin: 0;
+  list-style-type: none; /* Remove default list styling */
+}
+
+.dot-grid li {
+  width: 6px;
+  height: 6px;
+  background-color: white; /* Pure solid color */
+  border-radius: 50%; /* Makes the dots round */
+}
+.nav-box{
+  display: none;
+}
+
+
 /* Mobile Layout (up to 767px wide) */
 @media only screen and (max-width: 767px) {
   .header-container {
@@ -125,6 +145,14 @@
 
   .tagline-full {
     display: none;
+  }
+
+  .nav-links{
+    display: none;
+  }
+
+  .nav-box{
+    display: block;
   }
 }
 
