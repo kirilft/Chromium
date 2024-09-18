@@ -1,7 +1,7 @@
 /* Adjust the width, height, and position of the element */
 .header-container {
   position: fixed;
-  width: 100%;
+  width: calc(100% - 4rem);
   left: 0;
   top: 0;
   display: flex;
@@ -33,28 +33,25 @@
 }
 
 .tagline-box {
-  width: 20rem; /* Changed from 312px */
-  height: 3.125rem; /* Changed from 50px */
+  width: 312px;
+  height: 50px;
   flex-shrink: 0;
   border-radius: 8px;
   background: var(--Gradients-Stroke);
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Consider animating transform instead of width and height */
-  transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out;
 }
 
 .tagline-content {
-  width: 19rem; /* Changed from 304px */
-  height: 2.625rem; /* Changed from 42px */
+  width: 304px;
+  height: 42px;
   flex-shrink: 0;
-  border-radius: 4px;
+  border-radius: 6px;
   background: var(--black);
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out;
 }
 
 .tagline-full,
@@ -65,9 +62,8 @@
   font-size: var(--Fontsize-h5);
   font-style: normal;
   font-weight: 300;
-  line-height: 1.5; /* Adjusted for consistency */
-  width: 17.5rem; /* Changed from 280px */
-  transition: opacity 0.5s ease-in-out;
+  line-height: 1.6;
+  width: 280px;
 }
 
 .tagline-short {
@@ -76,21 +72,30 @@
 
 .navbar {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
   margin-left: auto;
-  margin-right: 2.5rem;
+  margin-right: 2rem;
+  justify-content: flex-end;
 }
 
-.nav-link {
-  color: var(--white);
-  font-family: 'Outfit', sans-serif;
-  font-size: var(--Fontsize-nav-link); /* Use variable */
+.nav-links{
+  margin: 8px;
+}
+.nav-link{
+  margin-left: 16px;
+  margin-right: 16px;
+  color: var(--Grays-White, #FFF);
+  font-family: Outfit;
+  font-size: 38px;
   font-style: normal;
   font-weight: 400;
-  line-height: 1; /* Unitless for scalability */
-  margin-right: 1rem;
-  margin-left: 1rem;
+  line-height: normal;
 }
+
+.nav-link:hover{
+  color: var(--blue);
+}
+
 
 .dot-grid {
   display: grid;
@@ -107,8 +112,28 @@
   background-color: white; /* Pure solid color */
   border-radius: 50%; /* Makes the dots round */
 }
+
 .nav-box{
   display: none;
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.dark {
+margin-right: 40px;
+margin-left: 1rem;
+cursor: pointer;
+}
+
+.light {
+  display: none;
+  margin-right: 40px;
+  margin-left: 1rem;
+  cursor: pointer;
 }
 
 
