@@ -101,6 +101,18 @@
 }
 
 :root {
+  --red: #FF383F;
+  --green: #31D354;
+  --blue: #2997FF;
+  --purple: #B00B69;
+
+  --white: #FFF;
+  --gray4: #A5A5B0;
+  --gray3: #585860;
+  --gray2: #2C2C30;
+  --gray: #0A0A0F;
+  --black: #000;
+
   --Fontsize-h1: 4.1875rem;
   --Fontsize-h2: 3.1875rem;
   --Fontsize-h3: 2.375rem;
