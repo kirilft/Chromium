@@ -86,3 +86,51 @@ main {
       font-weight: 500;
       line-height: normal;
     }
+
+    /* Mobile Layout (up to 767px wide) */
+@media only screen and (max-width: 767px) {
+  main {
+    margin-left: 1rem ;
+    margin-right: 1rem;
+    width: calc(100% - 2rem);
+  }
+
+
+  .animated-text {
+    width: calc(100% - 1rem);
+      font-size: var(--Fontsize-h3, 38px);
+  }
+
+    .info-text {
+  font-size: var(--Fontsize-h5);
+  margin-left: 1rem;
+    }
+
+  .sentence-reloader {
+    font-size: 1.5rem;
+  }
+}
+
+/* Tablet Layout (768px to 1024px wide) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  main {
+    margin-left: 1.5rem ;
+    margin-right: 1.5rem;
+    width: calc(100% - 3rem);
+  }
+
+
+  .animated-text {
+    width: calc(100% - 6rem);
+      font-size: var(--Fontsize-h3, 38px);
+  }
+
+    .info-text {
+  font-size: var(--Fontsize-h4);
+  margin-left: 2rem;
+    }
+
+  .sentence-reloader {
+    font-size: 2.5rem;
+  }
+}

@@ -1,23 +1,11 @@
+/* app.routes.ts */
 import { Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HeaderComponent } from './header/header.component';
-
 
 export const routes: Routes = [
-  { path: 'head', component:HeaderComponent},
-  { path: 'main', component: MainComponent }, // Changed from redirect to component
-  { path: '', redirectTo: 'main', pathMatch: 'full' }, // Changed from component to redirect
-  {path: '**', component: PageNotFoundComponent} // Changed from redirect to component
-];
+  { path: '', component: MainComponent }, // Main path for the root
+  { path: 'main', redirectTo: '', pathMatch: 'full' }, // Redirect from 'main' to root
 
-/*
-// Lazy loading
-
-const routes: Routes = [
-  {
-    path: 'your-path',
-    loadChildren: () => import('./your-module/your-module.module').then(m => m.YourModule)
-  }
+  { path: '**', component: PageNotFoundComponent } // Catch-all for undefined routes
 ];
-*/

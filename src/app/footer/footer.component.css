@@ -19,6 +19,10 @@ footer{
   transition: font-size 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
+.footer:hover{
+  color: var(--blue);
+}
+
 /* Mobile Layout (up to 767px wide) */
 @media only screen and (max-width: 767px) {
   footer{
@@ -26,7 +30,7 @@ footer{
   }
 
   .footer{
-    font-size: var(--Fontsize-h4, 28px);
+    font-size: var(--Fontsize-h4);
     margin-left: 0;
     margin-bottom: 0;
   }

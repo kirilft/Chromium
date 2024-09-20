@@ -28,11 +28,6 @@ export class MainComponent implements OnInit, AfterViewInit {
   typingState: string = 'initial';
   private typingTimeouts: any[] = [];
   sentences: string[] = [
-    "Pants are for losers. - Zoe McFife",
-    "I'm a yarn ball of anxiety. - Zoe McFife",
-    "Be gay do crimes. - Alexander Hamilton",
-    "Once upon a time, I didn't care. Still don't 🙂 - Humsi",
-    "19 dollar Fortnite card - Moth",
     "Intelligence is knowing that you know nothing. - Kiri",
     "Don't let yourself make excuses for not doing the things you want to do. - Sam Altman",
     "Move fast. Speed is one of your main advantages over large competitors. - Sam Altman",
@@ -42,7 +37,18 @@ export class MainComponent implements OnInit, AfterViewInit {
     "Always borrow money from a pessimist, they never expect it back. - Oscar Wilde",
     "I don’t have a dirty mind, I have a sexy imagination. - Noah Sparks",
     "The early bird might get the worm, but the second mouse gets the cheese. - Steven Wright",
-    "I’m not weird, I’m a limited edition. - Sam Cawthorn"
+    "I’m not weird, I’m a limited edition. - Sam Cawthorn",
+    "Success is just failure with better marketing. - Superinaligence",
+    "If I had a dollar for every time I didn’t care, I’d be too rich to deal with this nonsense. - Weathly",
+    "Life's a game, and I forgot the rules five minutes in. - Captain No-Idea",
+    "Turns out, screaming into the void is actually quite therapeutic. - Doctor Yikes",
+    "If procrastination were an Olympic sport, I’d still be late to the ceremony. - Queen of Delays",
+    "Sometimes you just have to smile and pretend the world isn’t on fire. - Sir Chill-a-Lot",
+    "I didn’t sign up for this, but here we are, thriving in chaos. - Awkward Overlord",
+    "I’m not lazy; I’m on energy-saving mode for efficiency reasons. - Duke of Deflection",
+    "Apparently, adulting is just a never-ending to-do list with no fun DLCs. - Miss Nope",
+    "In the grand scheme of things, my plan is to wing it, survive, and maybe grab a snack. - Baroness Snackworthy",
+    "Reality is just an illusion, but your failures? Oh, those are very real. - Bill Cipher"
   ];
 
   @ViewChild('sentenceReloader', { static: true }) sentenceReloader!: ElementRef;
@@ -84,7 +90,7 @@ export class MainComponent implements OnInit, AfterViewInit {
     this.clearTypingAnimation();
     const sentence = this.getRandomElement(this.sentences);
     this.typingState = 'start';
-    await this.startTypingAnimation(sentence, 80);
+    await this.startTypingAnimation(sentence, 60);
   }
 
   getRandomElement<T>(array: T[]): T {
