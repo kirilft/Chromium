@@ -83,7 +83,7 @@
 .nav-link{
   margin-left: 16px;
   margin-right: 16px;
-  color: var(--Grays-White, #FFF);
+  color: var(--Grays-White);
   font-family: Outfit;
   font-size: var(--Fontsize-h3);
   font-style: normal;
@@ -106,7 +106,7 @@
 .dot-grid li {
   width: 6px;
   height: 6px;
-  background-color: white; /* Pure solid color */
+  background-color: var(--black); /* Pure solid color */
   border-radius: 50%; /* Makes the dots round */
 }
 
@@ -126,10 +126,18 @@
   cursor: pointer;
 }
 
-.light {
-  display: none;
+.theme-switcher {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 40px;
+  margin-left: 1rem;
+  cursor: pointer;
 }
 
+.theme-switcher svg {
+  width: 100%;
+  height: 100%;
+}
 
 /* Mobile Layout (up to 767px wide) */
 @media only screen and (max-width: 767px) {
