@@ -1,21 +1,20 @@
-// src/app/services/theme.service.ts
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID, EventEmitter } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
   private colorScheme: 'light' | 'dark';
-  private debug: boolean = false; // Debug flag to control logging
-  private themeSubject = new BehaviorSubject<'light' | 'dark'>('light');
-  theme$ = this.themeSubject.asObservable();
+  private debug: boolean = false;
+
+  /** EventEmitter to broadcast theme changes */
+  public themeChanged = new EventEmitter<'light' | 'dark'>();
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.colorScheme = this.detectColorScheme();
     this.applyTheme(this.colorScheme);
-    this.themeSubject.next(this.colorScheme);
+    this.themeChanged.emit(this.colorScheme); // Emit initial theme
 
     if (this.debug) {
       console.log(`The Theme is set to ${this.colorScheme} mode`);
@@ -56,7 +55,7 @@ export class ThemeService {
       darkModeMediaQuery.addEventListener('change', (event) => {
         this.colorScheme = event.matches ? 'dark' : 'light';
         this.applyTheme(this.colorScheme);
-        this.themeSubject.next(this.colorScheme);
+        this.themeChanged.emit(this.colorScheme); // Emit theme change
 
         if (this.debug) {
           console.log(`System theme changed to ${this.colorScheme} mode`);
@@ -69,7 +68,7 @@ export class ThemeService {
   toggleTheme() {
     this.colorScheme = this.colorScheme === 'dark' ? 'light' : 'dark';
     this.applyTheme(this.colorScheme);
-    this.themeSubject.next(this.colorScheme);
+    this.themeChanged.emit(this.colorScheme); // Emit theme change
 
     if (this.debug) {
       console.log(`Theme changed to ${this.colorScheme} mode`);

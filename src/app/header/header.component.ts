@@ -1,37 +1,30 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ThemeService } from '../services/theme.service'; // Adjust the path as needed
-import { Subscription } from 'rxjs';
-import { CommonModule } from '@angular/common'; // For *ngIf directive
+// src/app/header/header.component.ts
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ThemeService } from '../services/theme.service';
+import { CommonModule } from '@angular/common';
+import { IconComponent } from '../shared/icon/icon.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, IconComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit, OnDestroy {
-  currentTheme: 'light' | 'dark' = 'light'; // Initialize with a default value
-  private themeSubscription: Subscription = new Subscription();
+export class HeaderComponent implements OnInit {
+  currentTheme: 'light' | 'dark' = 'light';
 
-  constructor(private themeService: ThemeService) {}
+  constructor(public themeService: ThemeService) {}
 
   ngOnInit() {
-    // Get the initial theme
     this.currentTheme = this.themeService.currentTheme;
 
-    // Subscribe to theme changes
-    this.themeSubscription = this.themeService.theme$.subscribe((theme) => {
+    this.themeService.themeChanged.subscribe((theme) => {
       this.currentTheme = theme;
     });
   }
 
-  ngOnDestroy() {
-    // Unsubscribe to prevent memory leaks
-    this.themeSubscription.unsubscribe();
-  }
-
-  /** Toggle the theme when the user clicks the switcher */
   toggleTheme() {
     this.themeService.toggleTheme();
   }
