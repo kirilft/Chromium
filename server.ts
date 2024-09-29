@@ -28,6 +28,7 @@ export function app(): express.Express {
   server.get('*', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
 
+    // Render the Angular application
     commonEngine
       .render({
         bootstrap,
@@ -36,7 +37,14 @@ export function app(): express.Express {
         publicPath: browserDistFolder,
         providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
       })
-      .then((html) => res.send(html))
+      .then((html) => {
+        // Check if the rendered page contains the 404 page component
+        if (html.includes('<app-page-not-found')) {
+          // Send a 404 status code for 404 routes
+          res.status(404);
+        }
+        res.send(html);
+      })
       .catch((err) => next(err));
   });
 

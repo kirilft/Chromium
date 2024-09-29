@@ -28,6 +28,7 @@ main {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  min-height: 5.25rem;
   }
 
   .info-text {
