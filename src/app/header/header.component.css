@@ -83,7 +83,7 @@
 .nav-link{
   margin-left: 16px;
   margin-right: 16px;
-  color: var(--Grays-White);
+  color: var(--white);
   font-family: Outfit;
   font-size: var(--Fontsize-h3);
   font-style: normal;
@@ -106,7 +106,7 @@
 .dot-grid li {
   width: 6px;
   height: 6px;
-  background-color: var(--black); /* Pure solid color */
+  background-color: var(--white); /* Pure solid color */
   border-radius: 50%; /* Makes the dots round */
 }
 
@@ -152,6 +152,7 @@
     width: 5.375rem; /* Changed from 86px */
     height: 1.6875rem; /* Changed from 27px */
     border-radius: 6px;
+    margin-left: 0.5rem; /* Changed from 4px */
   }
 
   .tagline-content {
