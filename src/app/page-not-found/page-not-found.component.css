@@ -7,87 +7,85 @@ main {
   height: 72.2vh;
   margin: 13.9vh 2rem;
   width: calc(100vw - 4rem);
+}
+
+.animated-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  width: calc(100% - 32rem);
+  margin: auto;
+  color: var(--white);
+  font-family: Outfit, serif;
+  font-size: var(--Fontsize-h1);
+  font-style: normal;
+  line-height: normal;
+  min-height: 5.25rem;
+}
+
+.info-text {
+  flex-direction: column;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  width: calc(100% - 4rem);
+  margin: auto auto auto 6rem;
+  color: var(--gray4);
+  font-family: Outfit, serif;
+  font-size: var(--Fontsize-h3, 38px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.sentence-reloader {
+  align-items: center;
+  color: var(--gray3);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  justify-content: flex-end;
+  margin: 1rem 2.5rem 0 auto;
+  user-select: none;
+  width: fit-content;
+}
+
+.sentence-reloader:hover {
+  color: var(--green);
+}
+
+.rotate360 {
+  animation: rotate360 1s linear;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-  .animated-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    overflow: hidden;
-    overflow-wrap: break-word;
-    text-align: center;
-    text-overflow: ellipsis;
-    font-size: var(--font-size-h1);
-    font-weight: 500;
-    width: calc(100% - 32rem);
-    margin: auto;
-    color: var(--Grays-White---Dark, #FFF);
-    font-family: Outfit;
-    font-size: var(--Fontsize-h1, 67px);
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    }
+.warp{
+  color: var(--white, #FFF);
+  font-family: Outfit, serif;
+  font-size: var(--Fontsize-h3, 38px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
 
-    .info-text {
-    flex-direction: column;
-    overflow: hidden;
-    overflow-wrap: break-word;
-    text-overflow: ellipsis;
-    width: calc(100% - 4rem);
-    margin-left: 6rem;
-    margin-bottom: auto;
-    margin-top: auto;
-    margin-right: auto;
-    color: var(--Grays-Gray4---Dark, #A5A5B0);
-    font-family: Outfit;
-    font-size: var(--Fontsize-h3, 38px);
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    }
 
-    .sentence-reloader {
-    align-items: center;
-    color: var(--secondary);
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    font-size: 2rem;
-    justify-content: flex-end;
-    margin: 1rem 2.5rem 0 auto;
-    user-select: none;
-    width: fit-content;
-    }
 
-    .sentence-reloader:hover {
-    color: var(--green);
-    }
-
-    .rotate360 {
-      animation: rotate360 1s linear;
-    }
-
-    @keyframes rotate360 {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .warp{
-      color: var(--Grays-White, #FFF);
-      font-family: Inter;
-      font-size: var(--Fontsize-h3, 38px);
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-    }
-
-    /* Mobile Layout (up to 767px wide) */
+/* Mobile Layout (up to 767px wide) */
 @media only screen and (max-width: 767px) {
   main {
     margin-left: 1rem ;
@@ -98,13 +96,13 @@ main {
 
   .animated-text {
     width: calc(100% - 1rem);
-      font-size: var(--Fontsize-h3, 38px);
+    font-size: var(--Fontsize-h3, 38px);
   }
 
-    .info-text {
-  font-size: var(--Fontsize-h5);
-  margin-left: 1rem;
-    }
+  .info-text {
+    font-size: var(--Fontsize-h5);
+    margin-left: 1rem;
+  }
 
   .sentence-reloader {
     font-size: 1.5rem;
@@ -122,15 +120,17 @@ main {
 
   .animated-text {
     width: calc(100% - 6rem);
-      font-size: var(--Fontsize-h3, 38px);
+    font-size: var(--Fontsize-h3, 38px);
   }
 
-    .info-text {
-  font-size: var(--Fontsize-h4);
-  margin-left: 2rem;
-    }
+  .info-text {
+    font-size: var(--Fontsize-h4);
+    margin-left: 2rem;
+  }
 
   .sentence-reloader {
     font-size: 2.5rem;
   }
 }
+
+

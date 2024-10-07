@@ -23,11 +23,6 @@ export class ThemeService {
     this.watchSystemThemeChanges();
   }
 
-  /** Toggle debug mode */
-  toggleDebugMode(debug: boolean) {
-    this.debug = debug;
-  }
-
   /** Detect the preferred color scheme */
   private detectColorScheme(): 'light' | 'dark' {
     if (isPlatformBrowser(this.platformId)) {

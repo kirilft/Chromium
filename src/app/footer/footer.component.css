@@ -10,7 +10,7 @@ footer{
 
 .footer{
   color: var(--white);
-  font-family: Outfit;
+  font-family: Outfit, serif;
   font-size: var(--Fontsize-h3, 38px);
   font-style: normal;
   font-weight: 500;

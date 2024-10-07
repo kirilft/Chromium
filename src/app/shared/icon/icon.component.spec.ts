@@ -1,23 +1,26 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, Input } from '@angular/core';
 
-import { IconComponent } from './icon.component';
+@Component({
+  selector: 'app-icon',
+  standalone: true,
+  template: `
+    <img [attr.src]="iconUrl" [alt]="alt" class="icon" />
+  `,
+  styles: [
+    `
+      .icon {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+    `,
+  ],
+})
+export class IconComponent {
+  @Input() name!: string;
+  @Input() alt: string = '';
 
-describe('IconComponent', () => {
-  let component: IconComponent;
-  let fixture: ComponentFixture<IconComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [IconComponent]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(IconComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  get iconUrl(): string {
+    return `./assets/icons/${this.name}.svg`;
+  }
+}

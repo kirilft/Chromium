@@ -28,7 +28,7 @@ export class MainComponent implements OnInit, AfterViewInit {
   typingState: string = 'initial';
   private typingTimeouts: any[] = [];
   sentences: string[] = [
-    "Intelligence is knowing that you know nothing. - Kiri",
+    "Intelligence is acknowledging knowing nothing. - Kiri",
     "Don't let yourself make excuses for not doing the things you want to do. - Sam Altman",
     "Move fast. Speed is one of your main advantages over large competitors. - Sam Altman",
     "Reality is just a crutch for people who can't handle science fiction. - Skylar Astin",
@@ -69,7 +69,7 @@ export class MainComponent implements OnInit, AfterViewInit {
     if (isPlatformBrowser(this.platformId)) {
       this.renderer.listen(this.sentenceReloader.nativeElement, 'click', () => {
         this.toggleAnimation();
-        this.displayRandomSentence();
+        this.displayRandomSentence().then();
       });
     }
   }

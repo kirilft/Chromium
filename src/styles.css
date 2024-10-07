@@ -39,24 +39,12 @@
 }
 
 :root {
-  --red: #FF383F;
-  --green: #31D354;
-  --blue: #2997FF;
-  --purple: #B00B69;
-
-  --white: #FFF;
-  --gray4: #A5A5B0;
-  --gray3: #585860;
-  --gray2: #2C2C30;
-  --gray: #0A0A0F;
-  --black: #000;
-
   --Fontsize-h1: 4.1875rem;
   --Fontsize-h2: 3.1875rem;
   --Fontsize-h3: 2.375rem;
   --Fontsize-h4: 1.75rem;
   --Fontsize-h5: 1.3125rem;
-  --Fontsize-small: 0.75rem; /* Added for consistency */
+  --small: 0.75rem;
 
   --Gradients-Title: linear-gradient(96deg, var(--blue) 4.56%, var(--purple) 95.39%);
   --Gradients-Stroke: linear-gradient(90deg, var(--black) -83.55%, var(--purple) 100%);
