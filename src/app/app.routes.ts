@@ -2,7 +2,6 @@
 import { Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { title } from 'node:process';
 
 export const routes: Routes = [
   { path: '', component: MainComponent, data:{ title: 'Kasai - Home Page'} }, // Main path for the root
