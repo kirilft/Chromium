@@ -133,9 +133,13 @@
   object-fit: contain; /* Ensure the SVG scales properly */
 }
 
+  .theme-switcher:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
 
 /* Mobile Layout (up to 767px wide) */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .header-container {
     height: 4rem; /* Changed from 64px */
     margin: 1rem;
@@ -188,7 +192,7 @@
 }
 
 /* Tablet Layout (768px to 1024px wide) */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   .header-container {
     height: 5rem; /* Changed from 80px */
     margin: 1.5rem;
