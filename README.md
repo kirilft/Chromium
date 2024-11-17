@@ -1,9 +1,9 @@
 # Chromium
 
->[!IMPORTANT]
 > Chromium is the project name for Kasai.tech
 > This is the Frontend for kiri's website
 > it is run on nginx and qm2
+> {style="info"}
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
 

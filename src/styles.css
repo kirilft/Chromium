@@ -39,7 +39,7 @@
 }
 
 :root {
-  --Fontsize-h1: 4.1875rem;
+  --Fontsize-h1: 4.1875rem; /* multiply by 16 to get px */
   --Fontsize-h2: 3.1875rem;
   --Fontsize-h3: 2.375rem;
   --Fontsize-h4: 1.75rem;
