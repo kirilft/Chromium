@@ -7,12 +7,14 @@
   display: flex;
   align-items: center;
   margin: 2rem;
+  transition: color 0.5s ease-in-out;
 }
 
 /* Centering */
 .logo-section {
   display: flex;
   align-items: center;
+  transition: color 0.5s ease-in-out;
 }
 
 /* Kasai Logo Text */
@@ -30,6 +32,7 @@
   margin-right: 1rem;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   transition: font-size 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
 }
 
 .tagline-box {
@@ -41,6 +44,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color 0.5s ease-in-out;
 }
 
 .tagline-content {
@@ -52,6 +56,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 
 .tagline-full,
@@ -64,6 +69,7 @@
   font-weight: 300;
   line-height: 1.6;
   width: 280px;
+  transition: color 0.5s ease-in-out;
 }
 
 .tagline-short {
@@ -89,6 +95,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  transition: color 0.5s ease-in-out;
 }
 
 .nav-link:hover{
@@ -101,6 +108,7 @@
   gap: 6px; /* 6px gap between each dot */
   padding: 0;
   list-style-type: none; /* Remove default list styling */
+  transition: color 0.5s ease-in-out;
 }
 
 .dot-grid li {
@@ -108,6 +116,7 @@
   height: 6px;
   background-color: var(--white); /* Pure solid color */
   border-radius: 50%; /* Makes the dots round */
+  transition: color 0.5s ease-in-out;
 }
 
 .nav-box{
@@ -125,17 +134,20 @@
   margin-right: 40px;
   margin-left: 1rem;
   cursor: pointer;
+  transition: color 0.5s ease-in-out;
 }
 
 .theme-switcher .icon {
   width: 100%;
   height: 100%;
   object-fit: contain; /* Ensure the SVG scales properly */
+  transition: color 0.5s ease-in-out;
 }
 
   .theme-switcher:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease-in-out;
+    transition: color 0.5s ease-in-out;
   }
 
 /* Mobile Layout (up to 767px wide) */
@@ -144,12 +156,14 @@
     height: 4rem; /* Changed from 64px */
     margin: 1rem;
     width: calc(100% - 2rem);
+    transition: color 0.5s ease-in-out;
   }
 
   .logo-title {
     font-size: var(--Fontsize-h3);
     margin-left: 0.25rem;
     margin-right: 0;
+    transition: color 0.5s ease-in-out;
   }
 
   .tagline-box {
@@ -163,23 +177,28 @@
     width: 5.125rem; /* Changed from 82px */
     height: 1.4375rem; /* Changed from 23px */
     border-radius: 4px;
+    transition: color 0.5s ease-in-out;
   }
 
   .tagline-short {
     display: block;
     font-size: var(--small, 12px); /* Use existing variable */
+    transition: color 0.5s ease-in-out;
   }
 
   .tagline-full {
     display: none;
+    transition: color 0.5s ease-in-out;
   }
 
   .nav-links{
     display: none;
+    transition: color 0.5s ease-in-out;
   }
 
   .nav-box{
     display: block;
+    transition: color 0.5s ease-in-out;
   }
 
   .theme-switcher{
@@ -187,6 +206,7 @@
     height: 2rem;
     margin-right: 0;
     margin-left: 1rem;
+    transition: color 0.5s ease-in-out;
   }
 
 }
@@ -224,6 +244,7 @@
 
   .nav-link{
     font-size: var(--Fontsize-h4);
+    transition: color 0.5s ease-in-out;
   }
 
   .theme-switcher{

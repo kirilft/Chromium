@@ -7,6 +7,7 @@ main {
   height: 72.2vh;
   margin: 13.9vh 2rem;
   width: calc(100vw - 4rem);
+      transition: color 0.5s ease-in-out;
   }
 
   .animated-text {
@@ -19,6 +20,7 @@ main {
   text-align: center;
   text-overflow: ellipsis;
   font-weight: 500;
+  transition: color 0.5s ease-in-out;
 
   margin: auto;
   color: var(--white);
@@ -42,6 +44,7 @@ main {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  transition: color 0.5s ease-in-out;
   }
 
   .sentence-reloader {
@@ -55,6 +58,7 @@ main {
   margin: 1rem 2.5rem 0 auto;
   user-select: none;
   width: fit-content;
+  transition: color 0.5s ease-in-out;
   }
 
   .sentence-reloader:hover {

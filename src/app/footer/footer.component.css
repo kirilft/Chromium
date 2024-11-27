@@ -8,7 +8,8 @@
     justify-content: flex-start;
     gap: 2rem;
     padding-left: 3rem;
-    background-color: var(--footer-background, #000); /* Optional background color */
+    background-color: var(--black); /* Optional background color */
+    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
   }
 
   .footer-link,
