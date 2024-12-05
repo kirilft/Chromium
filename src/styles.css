@@ -39,28 +39,22 @@
 }
 
 :root {
-  --Fontsize-h1: 4.1875rem; /* multiply by 16 to get px */
+  --Fontsize-h1: 4.1875rem;
   --Fontsize-h2: 3.1875rem;
   --Fontsize-h3: 2.375rem;
   --Fontsize-h4: 1.75rem;
   --Fontsize-h5: 1.3125rem;
   --small: 0.75rem;
 
-  --Gradients-Title: linear-gradient(96deg, var(--blue) 4.56%, var(--purple) 95.39%);
+  --Gradients-Title: linear-gradient(96deg, #0090F7 4.56%, #BA62FC 49.97%, #F2416B 95.39%);
   --Gradients-Stroke: linear-gradient(90deg, var(--black) -83.55%, var(--purple) 100%);
 }
 
 /* Global Styles */
 body {
   font-family: 'Outfit', sans-serif;
-  line-height: 1.6;
   color: var(--white);
   background-color: var(--black);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 
 *, *::before, *::after {
@@ -72,14 +66,4 @@ body {
 html {
   font-size: 100%;
   width: 100%;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.icon {
-  cursor: pointer;
-  transition: color 0.5s ease-in-out;
 }
