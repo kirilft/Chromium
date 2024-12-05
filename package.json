@@ -24,7 +24,7 @@
     "@angular/service-worker": "^19.0.3",
     "@angular/ssr": "^19.0.3",
     "compression": "^1.7.4",
-    "express": "^4.21.1",
+    "express": "^4.21.2",
     "glob": "^11.0.0",
     "lru-cache": "^11.0.0",
     "rimraf": "^6.0.1",
