@@ -22,32 +22,40 @@
 /* Define and register custom properties with fallback syntax for light/dark */
 /* Theme Variables */
 :root[data-theme="light"] {
-  --red: #FF282F;
-  --green: #33CC54;
-  --blue: #1F8BFF;
-  --purple: #A80B61;
+  --green: #3CF53C;
+  --orange: #FF4b00;
+  --red: #FF4B4B;
+  --pink: #F23761;
+  --purple: #9C0169;
+  --lila: #A601FF;
+  --blue: #1F8DFF;
 
-  --white: #050505;
-  --gray4: #0F0F15;
-  --gray3: #585860;
-  --gray2: #B0B0C7;
-  --gray: #E5E5F1;
   --black: #FFF;
+  --gray: #F1F1FF;
+  --gray2: #A9A9AE;
+  --gray3: #505055;
+  --gray4: #373739;
+  --gray5: #1D1D20;
+  --white: #000;
 }
 
-  :root[data-theme="dark"] {
-    --red: #FF383F;
-    --green: #31D354;
-    --blue: #2997FF;
-    --purple: #B00B69;
+:root[data-theme="dark"] {
+  --green: #5F5;
+  --orange: #F50;
+  --red: #F55;
+  --pink: #F2515B;
+  --purple: #B00B69;
+  --lila: #B00BFF;
+  --blue: #2997FF;
 
-    --white: #FFF;
-    --gray4: #A5A5B0;
-    --gray3: #585860;
-    --gray2: #2C2C30;
-    --gray: #0A0A0F;
-    --black: #000;
-  }
+  --black: #000;
+  --gray: #161617;
+  --gray2: #303030;
+  --gray3: #49494C;
+  --gray4: #A2A2A5;
+  --gray5: #EAEAF6;
+  --white: #FFF;
+}
 
 
 :root {
@@ -85,9 +93,9 @@ html {
 /* Remove underline from links */
 a {
   text-decoration: none;
-  color: var(--blue);
+  color:var(--gray5);
 }
 
 a:hover, a:focus {
-  text-decoration: underline;
+  color: var(--blue);
 }
