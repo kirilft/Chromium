@@ -2,13 +2,24 @@
 @font-face {
   font-family: 'Outfit';
   src: url('/assets/fonts/Outfit_woff2.woff2') format('woff2'),
-       url('/assets/fonts/Outfit_woff.woff') format('woff'),
-       url('/assets/fonts/Outfit.ttf') format('truetype');
+  url('/assets/fonts/Outfit_woff.woff') format('woff'),
+  url('/assets/fonts/Outfit.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Jersey 10';
+  src: url('/assets/fonts/Jersey10_woff2.woff2') format('woff2'),
+  url('/assets/fonts/Jersey10_woff.woff') format('woff'),
+  url('/assets/fonts/Jersey10.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Define and register custom properties with fallback syntax for light/dark */
 /* Theme Variables */
 :root[data-theme="light"] {
   --red: #FF282F;
@@ -24,21 +35,24 @@
   --black: #FFF;
 }
 
-:root[data-theme="dark"] {
-  --red: #FF383F;
-  --green: #31D354;
-  --blue: #2997FF;
-  --purple: #B00B69;
+  :root[data-theme="dark"] {
+    --red: #FF383F;
+    --green: #31D354;
+    --blue: #2997FF;
+    --purple: #B00B69;
 
-  --white: #FFF;
-  --gray4: #A5A5B0;
-  --gray3: #585860;
-  --gray2: #2C2C30;
-  --gray: #0A0A0F;
-  --black: #000;
-}
+    --white: #FFF;
+    --gray4: #A5A5B0;
+    --gray3: #585860;
+    --gray2: #2C2C30;
+    --gray: #0A0A0F;
+    --black: #000;
+  }
+
 
 :root {
+  color-scheme: light dark;
+
   --Fontsize-h1: 4.1875rem;
   --Fontsize-h2: 3.1875rem;
   --Fontsize-h3: 2.375rem;
@@ -46,7 +60,7 @@
   --Fontsize-h5: 1.3125rem;
   --small: 0.75rem;
 
-  --Gradients-Title: linear-gradient(96deg, #0090F7 4.56%, #BA62FC 49.97%, #F2416B 95.39%);
+  --Gradients-Title: linear-gradient(90deg, var(--purple) 0%, var(--red) 100%);
   --Gradients-Stroke: linear-gradient(90deg, var(--black) -83.55%, var(--purple) 100%);
 }
 
@@ -66,4 +80,14 @@ body {
 html {
   font-size: 100%;
   width: 100%;
+}
+
+/* Remove underline from links */
+a {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
 }
