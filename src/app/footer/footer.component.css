@@ -1,63 +1,88 @@
 /* footer.css */
+
 footer {
   position: fixed;
-  width: calc(100% - 4rem); /* Account for margins */
+  width: calc(100% - 4rem);
   left: 0;
   bottom: 0;
-  margin: 0 2rem;
+  margin: 0 2rem 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
-
 }
 
-/* Link styling */
-.footer-link {
-  text-decoration: none;
-  font-size: 16px;
-  color: var(--white);
-}
-
-.footer-link:hover {
-  text-decoration: underline;
-}
-
-.privacy-link {
-  font-size: 14px;
-  color: var(--white);
-  margin-left: auto;
-  text-decoration: none;
-}
-
-.privacy-link:hover {
-  text-decoration: underline;
-}
-
-/* Short version visibility */
-.footer-short {
-  display: none; /* Hidden by default */
-}
-
-/* Full version visibility */
 .footer-full {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Space between elements */
+  gap: 1rem;
 }
 
-/* Responsive styling for smaller screens */
-@media (max-width: 768px) {
-  .footer-short {
-    display: flex; /* Show short version on smaller screens */
-    align-items: center;
-  }
+.footer-short {
+  display: none;
+  align-items: center;
+}
 
+.footer-link {
+  text-decoration: none;
+  color: var(--white);
+  font-family: Outfit;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.152px;
+}
+
+.footer-link:hover {
+  text-decoration: none;
+}
+
+.privacy-link {
+  text-decoration: none;
+  color: var(--white);
+  font-family: Outfit;
+  font-size: var(--Fontsize-h4, 28px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.28px;
+}
+
+.privacy-link:hover {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+@media only screen and (max-width: 768px) {
   .footer-full {
-    display: none; /* Hide full version */
+    display: none;
+  }
+  .footer-short {
+    display: flex;
+    margin: 0 auto;
   }
 
   footer {
-    justify-content: center; /* Center align the short footer */
+    width: calc(100% - 2rem);
+    margin: 0 1rem 2rem;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1382px) {
+  footer {
+    width: calc(100% - 3rem);
+    margin: 0 1.5rem 2rem;
+  }
+}
+
+@media only screen and (min-height: 400px) and (max-height: 600px) {
+  footer {
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-height: 400px) {
+  footer {
+    margin-bottom: 0;
   }
 }
