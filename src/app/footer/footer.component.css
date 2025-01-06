@@ -26,11 +26,11 @@ footer {
   text-decoration: none;
   color: var(--white);
   font-family: Outfit;
-  font-size: 38px;
+  font-size: var(--Fontsize-h3);
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  letter-spacing: -0.152px;
+  letter-spacing: -0.0095rem;
 }
 
 .footer-link:hover {
@@ -41,11 +41,11 @@ footer {
   text-decoration: none;
   color: var(--white);
   font-family: Outfit;
-  font-size: var(--Fontsize-h4, 28px);
+  font-size: var(--Fontsize-h4);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 0.28px;
+  letter-spacing: 0.0175rem;
 }
 
 .privacy-link:hover {

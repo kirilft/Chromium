@@ -17,22 +17,40 @@
   transition: color 0.5s ease-in-out;
 }
 
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+  
+  to {
+    background-position: -200% center;
+  }
+}
+
 /* Kasai Logo Text */
 .logo-title {
-  font-family: 'Outfit', sans-serif;
-  font-size: var(--Fontsize-h2);
-  font-weight: 500;
-  letter-spacing: -0.2px;
+
+  font-family: "Jersey 10";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 3.04px;
+
+  /* The keyframe animation */
+  animation: background-pan 20s linear infinite;
+  /* Your gradient variable */
   background: var(--Gradients-Title);
+  /* Make sure the background is large enough to see it move */
+  background-size: 200% 100%;
+  /* Required for text color via gradient */
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent; /* Fallback for non-webkit browsers */
-  margin-left: 1rem;
-  margin-right: 1rem;
+  color: transparent; /* fallback */
+
+
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  transition: font-size 0.5s ease-in-out;
-  transition: color 0.5s ease-in-out;
 }
 
 .tagline-box {

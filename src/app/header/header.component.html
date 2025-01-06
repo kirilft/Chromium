@@ -1,16 +1,11 @@
 <header>
-
-  <div class="header-container">
     <div class="logo-section">
       <h1 class="logo-title"><a href="/" class="logo-link">Kasai</a></h1>
       <div class="tagline-box">
-        <div class="tagline-content">
           <p class="tagline-full">This webpage is Experimental</p>
           <p class="tagline-short">Experimental</p>
-        </div>
       </div>
     </div>
-
     <nav class="navbar">
        <div class="nav-box">
         <ul class="dot-grid">
@@ -28,7 +23,6 @@
       <div class="nav-links">
         <a href="https://github.com/kirilft" class="nav-link">Github</a>
       </div>
-
       <div
         class="theme-switcher"
         (click)="toggleTheme()"
@@ -36,21 +30,17 @@
         (keydown.enter)="toggleTheme()"
         aria-label="Toggle Theme"
       >
-        <!-- Light Theme Icon (Shown when current theme is dark) -->
         <app-icon
           *ngIf="currentTheme === 'light'"
           name="sun"
           alt="Switch to dark mode"
         ></app-icon>
 
-        <!-- Dark Theme Icon (Shown when current theme is light) -->
         <app-icon
           *ngIf="currentTheme === 'dark'"
           name="moon"
           alt="Switch to light mode"
         ></app-icon>
       </div>
-
     </nav>
-  </div>
 </header>

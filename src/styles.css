@@ -68,7 +68,7 @@
   --Fontsize-h5: 1.3125rem;
   --small: 0.75rem;
 
-  --Gradients-Title: linear-gradient(90deg, var(--purple) 0%, var(--red) 100%);
+  --Gradients-Title: linear-gradient(90deg, var(--purple) 0%, var(--red) 0.5rem, var(--purple) 100%);
   --Gradients-Stroke: linear-gradient(90deg, var(--black) -83.55%, var(--purple) 100%);
 }
 
