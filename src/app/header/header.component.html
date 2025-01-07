@@ -1,46 +1,39 @@
 <header>
-    <div class="logo-section">
-      <h1 class="logo-title"><a href="/" class="logo-link">Kasai</a></h1>
-      <div class="tagline-box">
-          <p class="tagline-full">This webpage is Experimental</p>
-          <p class="tagline-short">Experimental</p>
-      </div>
+  <div class="logo-section">
+    <h1 class="logo-title"><a href="/" class="logo-link">Kasai</a></h1>
+    <div class="tagline-box">
+      <!-- Tagline full or short can be toggled with media queries or JS -->
+      <p class="tagline-full">This webpage is Experimental</p>
+      <p class="tagline-short">Experimental</p>
     </div>
-    <nav class="navbar">
-       <div class="nav-box">
-        <ul class="dot-grid">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-      <div class="nav-links">
-        <a href="https://github.com/kirilft" class="nav-link">Github</a>
-      </div>
-      <div
-        class="theme-switcher"
-        (click)="toggleTheme()"
-        tabindex="0"
-        (keydown.enter)="toggleTheme()"
-        aria-label="Toggle Theme"
-      >
-        <app-icon
-          *ngIf="currentTheme === 'light'"
-          name="sun"
-          alt="Switch to dark mode"
-        ></app-icon>
-
-        <app-icon
-          *ngIf="currentTheme === 'dark'"
-          name="moon"
-          alt="Switch to light mode"
-        ></app-icon>
-      </div>
-    </nav>
+  </div>
+  <nav class="navbar">
+    <div class="nav-box">
+      <ul class="dot-grid">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="nav-links">
+      <a href="https://github.com/kirilft" class="nav-link">Github</a>
+    </div>
+    <div
+      class="theme-switcher"
+      (click)="toggleTheme()"
+      tabindex="0"
+      (keydown.enter)="toggleTheme()"
+      aria-label="Toggle Theme"
+    >
+      <!-- Angular conditional icons -->
+      <app-icon *ngIf="currentTheme === 'light'" name="sun" alt="Switch to dark mode"></app-icon>
+      <app-icon *ngIf="currentTheme === 'dark'" name="moon" alt="Switch to light mode"></app-icon>
+    </div>
+  </nav>
 </header>

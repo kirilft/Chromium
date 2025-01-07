@@ -1,4 +1,29 @@
-/* Adjust the width, height, and position of the element */
+/* styles.css */
+
+header {
+  position: fixed;
+  width: calc(100% - 4rem);
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  margin: 2rem;
+}
+/* ---------------------------------------------------- */
+/* 1. Example: Merged .navbar rules                     */
+/* ---------------------------------------------------- */
+.navbar {
+  margin-left: auto;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+/* ---------------------------------------------------- */
+/* 2. (Optional) .header-container styles               */
+/*    If you do not wrap <header> in a .header-container */
+/*    div, rename this to header { ... } or remove it.   */
+/* ---------------------------------------------------- */
 .header-container {
   position: fixed;
   width: calc(100% - 4rem);
@@ -7,49 +32,40 @@
   display: flex;
   align-items: center;
   margin: 2rem;
-  transition: color 0.5s ease-in-out;
 }
 
-/* Centering */
+/* ---------------------------------------------------- */
+/* 3. Logo and tagline                                  */
+/* ---------------------------------------------------- */
 .logo-section {
   display: flex;
   align-items: center;
-  transition: color 0.5s ease-in-out;
 }
 
 @keyframes background-pan {
   from {
     background-position: 0% center;
   }
-  
   to {
     background-position: -200% center;
   }
 }
 
-/* Kasai Logo Text */
 .logo-title {
-
-  font-family: "Jersey 10";
+  font-family: "Jersey 10", sans-serif;
   font-size: 64px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: 3.04px;
 
-  /* The keyframe animation */
   animation: background-pan 20s linear infinite;
-  /* Your gradient variable */
   background: var(--Gradients-Title);
-  /* Make sure the background is large enough to see it move */
-  background-size: 200% 100%;
-  /* Required for text color via gradient */
+  background-size: 300% 100%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent; /* fallback */
-
-
+  color: transparent;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -57,12 +73,12 @@
   width: 312px;
   height: 50px;
   flex-shrink: 0;
-  border-radius: 8px;
-  background: var(--Gradients-Stroke);
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: color 0.5s ease-in-out;
+  border: 4px solid var(--purple);
+  border-radius: 14px;
+  margin-left: 1rem; /* optional for spacing */
 }
 
 .tagline-content {
@@ -70,45 +86,29 @@
   height: 42px;
   flex-shrink: 0;
   border-radius: 6px;
-  background: var(--black);
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
-}
+  color: var(--Grays-Gray, #1D1D20);
 
-.tagline-full,
-.tagline-short {
-  color: var(--gray4);
   text-align: center;
-  font-family: 'Outfit', sans-serif;
-  font-size: var(--Fontsize-h5);
+  font-family: Outfit;
+  font-size: var(--Fontsize-h5, 21px);
   font-style: normal;
-  font-weight: 300;
-  line-height: 1.6;
-  width: 280px;
-  transition: color 0.5s ease-in-out;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .tagline-short {
   display: none;
 }
 
-.navbar {
-  display: flex;
-  align-items:  center;
-  margin-left: auto;
-  margin-right: 2rem;
-}
-
-.nav-links{
+.nav-links {
   margin: 8px;
-}
-.nav-link{
   margin-left: 16px;
   margin-right: 16px;
   color: var(--white);
-  font-family: Outfit, serif;
+  font-family: "Outfit", serif;
   font-size: var(--Fontsize-h3);
   font-style: normal;
   font-weight: 400;
@@ -116,36 +116,36 @@
   transition: color 0.5s ease-in-out;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   color: var(--blue);
 }
 
+.nav-box {
+  /* Hidden by default */
+  display: none;
+}
+
+/* Grid of dots */
 .dot-grid {
   display: grid;
-  grid-template-columns: repeat(3, 6px); /* 3 columns, each 6px wide */
-  gap: 6px; /* 6px gap between each dot */
+  grid-template-columns: repeat(3, 6px);
+  gap: 6px;
   padding: 0;
-  list-style-type: none; /* Remove default list styling */
+  list-style-type: none;
   transition: color 0.5s ease-in-out;
 }
 
 .dot-grid li {
   width: 6px;
   height: 6px;
-  background-color: var(--white); /* Pure solid color */
-  border-radius: 50%; /* Makes the dots round */
+  background-color: var(--white);
+  border-radius: 50%;
   transition: color 0.5s ease-in-out;
 }
 
-.nav-box{
-  display: none;
-}
-.navbar {
-  display: flex;
-  align-items: center;
-}
-
-/* src/app/header/header.component.css */
+/* ---------------------------------------------------- */
+/* 5. Theme Switcher                                    */
+/* ---------------------------------------------------- */
 .theme-switcher {
   width: 3rem;
   height: 3rem;
@@ -155,118 +155,95 @@
   transition: color 0.5s ease-in-out;
 }
 
-.theme-switcher .icon {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Ensure the SVG scales properly */
-  transition: color 0.5s ease-in-out;
-}
+@media only screen and (min-width: 769px) and (max-width: 1382px) {
 
-  .theme-switcher:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
-    transition: color 0.5s ease-in-out;
+
+  .tagline-full {
+    display: none;
   }
-
-/* Mobile Layout (up to 767px wide) */
-@media only screen and (max-width: 768px) {
-  .header-container {
-    height: 4rem; /* Changed from 64px */
-    margin: 1rem;
-    width: calc(100% - 2rem);
-    transition: color 0.5s ease-in-out;
-  }
-
-  .logo-title {
-    font-size: var(--Fontsize-h3);
-    margin-left: 0.25rem;
-    margin-right: 0;
-    transition: color 0.5s ease-in-out;
-  }
-
-  .tagline-box {
-    width: 5.375rem; /* Changed from 86px */
-    height: 1.6875rem; /* Changed from 27px */
-    border-radius: 6px;
-    margin-left: 0.5rem; /* Changed from 4px */
-  }
-
-  .tagline-content {
-    width: 5.125rem; /* Changed from 82px */
-    height: 1.4375rem; /* Changed from 23px */
-    border-radius: 4px;
-    transition: color 0.5s ease-in-out;
-  }
-
   .tagline-short {
     display: block;
-    font-size: var(--small, 12px); /* Use existing variable */
-    transition: color 0.5s ease-in-out;
-  }
-
-  .tagline-full {
-    display: none;
-    transition: color 0.5s ease-in-out;
-  }
-
-  .nav-links{
-    display: none;
-    transition: color 0.5s ease-in-out;
-  }
-
-  .nav-box{
-    display: block;
-    transition: color 0.5s ease-in-out;
-  }
-
-  .theme-switcher{
-    width: 2rem;
-    height: 2rem;
-    margin-right: 0;
-    margin-left: 1rem;
-    transition: color 0.5s ease-in-out;
-  }
-
-}
-
-/* Tablet Layout (768px to 1024px wide) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .header-container {
-    height: 5rem; /* Changed from 80px */
-    margin: 1.5rem;
-    width: calc(100% - 3rem);
-  }
+  };
 
   .logo-title {
-    font-size: var(--Fontsize-h3);
-    margin-left: 1rem;
-    margin-right: 0.5rem;
+    font-size: 48px;
   }
 
   .tagline-box {
-    margin-left: 1rem; /* Changed from 16px */
-    width: 20.0625rem; /* Changed from 321px */
-    height: 3.125rem; /* Remains 50px equivalent */
-    border-radius: 12px;
+    width: 256px;
+    height: 42px;
   }
 
   .tagline-content {
-    width: 19.6875rem; /* Changed from 315px */
-    height: 2.75rem; /* Changed from 44px */
-    border-radius: 9px;
+    width: 248px;
+    height: 34px;
+    font-size: 18px;
   }
 
+  .nav-links {
+    font-size: 18px;
+  }
+
+  .theme-switcher {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .dot-grid {
+    grid-template-columns: repeat(3, 5px);
+    gap: 5px;
+  }
+
+  .dot-grid li {
+    width: 5px;
+    height: 5px;
+  }
+
+
+
+}
+
+@media only screen and (max-width: 769px) {
   .tagline-full {
-    font-size: var(--Fontsize-h5);
+    display: none;
+  }
+  .tagline-short {
+    display: block;
+  };
+
+  .logo-title {
+    font-size: 32px;
   }
 
-  .nav-link{
-    font-size: var(--Fontsize-h4);
-    transition: color 0.5s ease-in-out;
+  .tagline-box {
+    width: 192px;
+    height: 32px;
   }
 
-  .theme-switcher{
-    width: 40px;
-    height: 40px;
+  .tagline-content {
+    width: 184px;
+    height: 24px;
+    font-size: 16px;
   }
+
+  .nav-links {
+    font-size: 16px;
+  }
+
+  .theme-switcher {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .dot-grid {
+    grid-template-columns: repeat(3, 4px);
+    gap: 4px;
+  }
+
+  .dot-grid li {
+    width: 4px;
+    height: 4px;
+  }
+
+  
 }
