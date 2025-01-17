@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BlauwalComponent } from './blauwal/blauwal.component';
+import { ArcComponent } from './arc/arc.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,10 @@ export const routes: Routes = [
   {
     path: 'blauwal',
     component: BlauwalComponent
+  },
+  {
+    path: 'arc',
+    component: ArcComponent
   },
   {
     path: '**',
