@@ -9,42 +9,25 @@ header {
   margin: 2rem;
 }
 
-.navbar {
-  margin-left: auto;
-  margin-right: 2rem;
-  display: flex;
-  align-items: center;
-}
-
-.header-container {
-  position: fixed;
-  width: calc(100% - 4rem);
-  left: 0;
-  top: 0;
-  display: flex;
-  align-items: center;
-  margin: 2rem;
-}
-
-.logo-section {
-  display: flex;
-  align-items: center;
-}
-
 .logo-title {
-  font-family: Outfit;
-  font-size: 64px;
+  font-family: Outfit, Arial, sans-serif;
+  font-size: var(--Fontsize-h2, 51px);
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
   line-height: normal;
-  letter-spacing: 3.04px;
-
+  letter-spacing: -0.5px;
   background: var(--Gradients-Title);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  text-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.25);
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-left: 2rem;
+  align-content: center;
 }
 
 .tagline-box {
@@ -54,61 +37,35 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 4px solid var(--orange, #F50);
-  border-radius: 14px;
+  border: 3.496px solid var(--orange);
+  border-radius: 14.65px;
   margin-left: 1rem;
-}
-
-.tagline-content {
-  width: 304px;
-  height: 42px;
-  flex-shrink: 0;
-  border-radius: 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--Grays-Gray, #1D1D20);
-
-  text-align: center;
-  font-family: Outfit;
-  font-size: var(--Fontsize-h5, 21px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 
 .tagline-short {
   display: none;
-}
-
-.nav-links {
-  margin: 8px;
-  margin-left: 16px;
-  margin-right: 16px;
-  color: var(--white);
-  font-family: "Outfit", serif;
-  font-size: var(--Fontsize-h3);
+  color: var(--Grays-Gray5, #EAEAF8);
+  font-family: Outfit, Arial, sans-serif;
+  font-size: var(--small);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  transition: color 0.5s ease-in-out;
+  letter-spacing: 0.24px;
 }
 
-.nav-link:hover {
-  color: var(--blue);
-}
-
-.nav-box {
-  display: none;
+.navbar {
+  margin-left: auto;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
 }
 
 .dot-grid {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 6px);
   gap: 6px;
-  padding: 0;
   list-style-type: none;
-  transition: color 0.5s ease-in-out;
+  filter: drop-shadow(2px 4px 4px rgba(255, 255, 255, 0.33));
 }
 
 .dot-grid li {
@@ -116,15 +73,106 @@ header {
   height: 6px;
   background-color: var(--white);
   border-radius: 50%;
-  transition: color 0.5s ease-in-out;
+}
+
+.nav-links {
+  margin: 1rem;
+}
+
+.nav-link{
+  margin: 0.75rem;
+  color: var(--Grays-Gray5);
+  text-decoration: none;
+  font-family: Outfit, Arial, sans-serif;
+  font-size: var(--Fontsize-h3);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.76px;
+}
+
+.nav-link:hover {
+  color: var(--blue);
 }
 
 .theme-switcher {
   width: 3rem;
   height: 3rem;
-  margin-right: 40px;
+  margin-right: 2.5rem;
   margin-left: 1rem;
   cursor: pointer;
-  transition: color 0.5s ease-in-out;
 }
 
+@media only screen and (max-width: 768px) {
+  header {
+    margin: 1rem;
+    width:calc(100% - 2rem);
+  }
+
+  .logo-title {
+    font-size: 30px;
+    letter-spacing: 0.3px;
+    margin-left: 1rem;
+  }
+
+  .tagline-short {
+    display: flex;
+  }
+
+  .tagline-full {
+    display: none;
+  }
+
+  .tagline-box {
+    width: 86px;
+    height: 27px;
+    border: 2.16px solid var(--orange);
+    border-radius: 7.911px;
+  }
+  
+  .dot-grid {
+    display: grid;
+  }
+
+  .nav-links {
+    display: none;
+}
+
+.theme-switcher {
+  margin-right: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+.navbar {
+  margin-right: 0;
+}
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    margin: 1.5rem;
+    width:calc(100% - 3rem);
+  }
+
+  .logo-title {
+    font-size: 38px;
+    letter-spacing: 0.38px;
+    margin-left: 1.5rem;
+  }
+
+  .tagline-box {
+    width: 321px;
+    height: 50px;
+    border: 3.49px solid var(--orange);
+    border-radius: 14.65px;
+  }
+
+.theme-switcher {
+  margin-right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.navbar {
+  margin-right: 0;
+}
+}
