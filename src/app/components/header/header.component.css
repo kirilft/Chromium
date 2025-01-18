@@ -1,5 +1,4 @@
 /* styles.css */
-
 header {
   position: fixed;
   width: calc(100% - 4rem);
@@ -9,9 +8,7 @@ header {
   align-items: center;
   margin: 2rem;
 }
-/* ---------------------------------------------------- */
-/* 1. Example: Merged .navbar rules                     */
-/* ---------------------------------------------------- */
+
 .navbar {
   margin-left: auto;
   margin-right: 2rem;
@@ -19,11 +16,6 @@ header {
   align-items: center;
 }
 
-/* ---------------------------------------------------- */
-/* 2. (Optional) .header-container styles               */
-/*    If you do not wrap <header> in a .header-container */
-/*    div, rename this to header { ... } or remove it.   */
-/* ---------------------------------------------------- */
 .header-container {
   position: fixed;
   width: calc(100% - 4rem);
@@ -34,25 +26,13 @@ header {
   margin: 2rem;
 }
 
-/* ---------------------------------------------------- */
-/* 3. Logo and tagline                                  */
-/* ---------------------------------------------------- */
 .logo-section {
   display: flex;
   align-items: center;
 }
 
-@keyframes background-pan {
-  from {
-    background-position: 0% center;
-  }
-  to {
-    background-position: -200% center;
-  }
-}
-
 .logo-title {
-  font-family: "Jersey 10", sans-serif;
+  font-family: Outfit;
   font-size: 64px;
   font-style: normal;
   font-weight: 400;
@@ -65,9 +45,6 @@ header {
   -webkit-text-fill-color: transparent;
   color: transparent;
   text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
-   font-smooth: always;  /* For smoother text rendering */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 .tagline-box {
@@ -79,7 +56,7 @@ header {
   align-items: center;
   border: 4px solid var(--orange, #F50);
   border-radius: 14px;
-  margin-left: 1rem; /* optional for spacing */
+  margin-left: 1rem;
 }
 
 .tagline-content {
@@ -122,11 +99,9 @@ header {
 }
 
 .nav-box {
-  /* Hidden by default */
   display: none;
 }
 
-/* Grid of dots */
 .dot-grid {
   display: grid;
   grid-template-columns: repeat(3, 6px);
@@ -144,9 +119,6 @@ header {
   transition: color 0.5s ease-in-out;
 }
 
-/* ---------------------------------------------------- */
-/* 5. Theme Switcher                                    */
-/* ---------------------------------------------------- */
 .theme-switcher {
   width: 3rem;
   height: 3rem;
@@ -156,95 +128,3 @@ header {
   transition: color 0.5s ease-in-out;
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1382px) {
-
-
-  .tagline-full {
-    display: none;
-  }
-  .tagline-short {
-    display: block;
-  };
-
-  .logo-title {
-    font-size: 48px;
-  }
-
-  .tagline-box {
-    width: 256px;
-    height: 42px;
-  }
-
-  .tagline-content {
-    width: 248px;
-    height: 34px;
-    font-size: 18px;
-  }
-
-  .nav-links {
-    font-size: 18px;
-  }
-
-  .theme-switcher {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
-  .dot-grid {
-    grid-template-columns: repeat(3, 5px);
-    gap: 5px;
-  }
-
-  .dot-grid li {
-    width: 5px;
-    height: 5px;
-  }
-
-
-
-}
-
-@media only screen and (max-width: 769px) {
-  .tagline-full {
-    display: none;
-  }
-  .tagline-short {
-    display: block;
-  };
-
-  .logo-title {
-    font-size: 32px;
-  }
-
-  .tagline-box {
-    width: 192px;
-    height: 32px;
-  }
-
-  .tagline-content {
-    width: 184px;
-    height: 24px;
-    font-size: 16px;
-  }
-
-  .nav-links {
-    font-size: 16px;
-  }
-
-  .theme-switcher {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .dot-grid {
-    grid-template-columns: repeat(3, 4px);
-    gap: 4px;
-  }
-
-  .dot-grid li {
-    width: 4px;
-    height: 4px;
-  }
-
-  
-}
