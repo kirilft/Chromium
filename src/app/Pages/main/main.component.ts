@@ -1,7 +1,7 @@
 import { Component, OnInit, Renderer2, ElementRef, ViewChild, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
+import { HeaderComponent } from '../../components/header/header.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 import { trigger, style, transition, animate } from '@angular/animations';
 
 @Component({

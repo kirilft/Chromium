@@ -1,8 +1,8 @@
 // src/app/header/header.component.ts
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { ThemeService } from '../services/theme.service';
+import { ThemeService } from '../../services/theme.service';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../shared/icon/icon.component';
+import { IconComponent } from '../../services/icon/icon.component';
 
 @Component({
   selector: 'app-header',

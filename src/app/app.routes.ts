@@ -1,9 +1,9 @@
 /* app.routes.ts */
 import { Routes } from '@angular/router';
-import { MainComponent } from './main/main.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { BlauwalComponent } from './blauwal/blauwal.component';
-import { ArcComponent } from './arc/arc.component';
+import { MainComponent } from './Pages/main/main.component';
+import { PageNotFoundComponent } from './Pages/page-not-found/page-not-found.component';
+import { BlauwalComponent } from './Pages/blauwal/blauwal.component';
+import { ArcComponent } from './Pages/arc/arc.component';
 
 export const routes: Routes = [
   {

@@ -56,7 +56,7 @@
   --small: 0.75rem;
 
   --Gradients-Title: linear-gradient(96deg, #009AFF 4.56%, #D744FF 50.43%, #FF4100 95.39%);
-  --Gradients-Title: linear-gradient(96deg, color(display-p3 0.1608 0.5922 1) 4.56%, color(display-p3 0.7804 0.3098 1) 50.43%, color(display-p3 1 0.3333 0) 95.39%);
+  --Gradients-Background: inear-gradient(90deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
   --Gradients-Stroke: linear-gradient(90deg, var(--black) -83.55%, var(--purple) 100%);
 }
 
