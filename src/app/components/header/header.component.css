@@ -42,9 +42,18 @@ header {
   margin-left: 1rem;
 }
 
+.tagline-full{
+  color: var(--gray5);
+  font-family: Outfit, Arial, sans-serif;
+  font-size: var(--Fontsize-h5, 21px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .tagline-short {
   display: none;
-  color: var(--Grays-Gray5, #EAEAF8);
+  color: var(--gray5);
   font-family: Outfit, Arial, sans-serif;
   font-size: var(--small);
   font-style: normal;
@@ -55,7 +64,7 @@ header {
 
 .navbar {
   margin-left: auto;
-  margin-right: 2rem;
+  margin-right: 2.5rem;
   display: flex;
   align-items: center;
 }
@@ -80,8 +89,9 @@ header {
 }
 
 .nav-link{
-  margin: 0.75rem;
-  color: var(--Grays-Gray5);
+  margin-left: 1.5rem;
+  margin-right: 0;
+  color: var(--gray5);
   text-decoration: none;
   font-family: Outfit, Arial, sans-serif;
   font-size: var(--Fontsize-h3);
@@ -98,12 +108,12 @@ header {
 .theme-switcher {
   width: 3rem;
   height: 3rem;
-  margin-right: 2.5rem;
+  margin-right: 0rem;
   margin-left: 1rem;
   cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 910px) {
   header {
     margin: 1rem;
     width:calc(100% - 2rem);
@@ -129,26 +139,27 @@ header {
     border: 2.16px solid var(--orange);
     border-radius: 7.911px;
   }
-  
+
   .dot-grid {
     display: grid;
   }
 
   .nav-links {
     display: none;
+  }
+
+  .theme-switcher {
+    margin-right: 1rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .navbar {
+    margin-right: 0;
+  }
 }
 
-.theme-switcher {
-  margin-right: 1rem;
-  width: 2rem;
-  height: 2rem;
-}
-.navbar {
-  margin-right: 0;
-}
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 911px) and (max-width: 1280px) {
   header {
     margin: 1.5rem;
     width:calc(100% - 3rem);
@@ -167,12 +178,13 @@ header {
     border-radius: 14.65px;
   }
 
-.theme-switcher {
-  margin-right: 1rem;
-  width: 2.5rem;
-  height: 2.5rem;
-}
-.navbar {
-  margin-right: 0;
-}
+  .theme-switcher {
+    margin-left: 0;
+    margin-right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .navbar {
+    margin-right: 0;
+  }
 }

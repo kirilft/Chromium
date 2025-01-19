@@ -13,7 +13,6 @@ footer {
 .footer-full {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
 }
 
 .footer-short {
@@ -39,6 +38,7 @@ footer {
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0.0175rem;
+  margin-left: 1.5rem;
 }
 
 .privacy-link:hover {

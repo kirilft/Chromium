@@ -2,7 +2,6 @@
 import { Routes } from '@angular/router';
 import { MainComponent } from './Pages/main/main.component';
 import { PageNotFoundComponent } from './Pages/page-not-found/page-not-found.component';
-import { BlauwalComponent } from './Pages/blauwal/blauwal.component';
 import { ArcComponent } from './Pages/arc/arc.component';
 
 export const routes: Routes = [
@@ -16,10 +15,6 @@ export const routes: Routes = [
     redirectTo: '',
     pathMatch: 'full'
   }, // Redirect from 'main' to root
-  {
-    path: 'blauwal',
-    component: BlauwalComponent
-  },
   {
     path: 'arc',
     component: ArcComponent
