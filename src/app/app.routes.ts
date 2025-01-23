@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { MainComponent } from './Pages/main/main.component';
 import { PageNotFoundComponent } from './Pages/page-not-found/page-not-found.component';
 import { ArcComponent } from './Pages/arc/arc.component';
+import { Zoe27Component } from './Pages/zoe27/zoe27.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,10 @@ export const routes: Routes = [
   {
     path: 'arc',
     component: ArcComponent
+  },
+  {
+    path: 'zoe27',
+    component: Zoe27Component
   },
   {
     path: '**',
