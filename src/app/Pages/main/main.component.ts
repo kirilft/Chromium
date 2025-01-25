@@ -3,12 +3,11 @@ import { isPlatformBrowser } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { trigger, style, transition, animate } from '@angular/animations';
-import { IconComponent } from '../../services/icon/icon.component';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, IconComponent],
+  imports: [HeaderComponent, FooterComponent],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
   animations: [
