@@ -28,27 +28,19 @@ export class MainComponent implements OnInit, AfterViewInit {
   typingState: string = 'initial';
   private typingTimeouts: any[] = [];
   sentences: string[] = [
-    "Intelligence is acknowledging knowing nothing. - Kiri",
-    "Don't let yourself make excuses for not doing the things you want to do. - Sam Altman",
-    "Move fast. Speed is one of your main advantages over large competitors. - Sam Altman",
-    "Reality is just a crutch for people who can't handle science fiction. - Skylar Astin",
-    "Procrastination is the art of keeping up with yesterday. - Don Marquis",
-    "I’m not arguing, I’m just explaining why I’m right. - Charlie Bright",
-    "Always borrow money from a pessimist, they never expect it back. - Oscar Wilde",
-    "I don’t have a dirty mind, I have a sexy imagination. - Noah Sparks",
-    "The early bird might get the worm, but the second mouse gets the cheese. - Steven Wright",
-    "I’m not weird, I’m a limited edition. - Sam Cawthorn",
-    "Success is just failure with better marketing. - Superinaligence",
-    "If I had a dollar for every time I didn’t care, I’d be too rich to deal with this nonsense. - Weathly",
-    "Life's a game, and I forgot the rules five minutes in. - Captain No-Idea",
-    "Turns out, screaming into the void is actually quite therapeutic. - Doctor Yikes",
-    "If procrastination were an Olympic sport, I’d still be late to the ceremony. - Queen of Delays",
-    "Sometimes you just have to smile and pretend the world isn’t on fire. - Sir Chill-a-Lot",
-    "I didn’t sign up for this, but here we are, thriving in chaos. - Awkward Overlord",
-    "I’m not lazy; I’m on energy-saving mode for efficiency reasons. - Duke of Deflection",
-    "Apparently, adulting is just a never-ending to-do list with no fun DLCs. - Miss Nope",
-    "In the grand scheme of things, my plan is to wing it, survive, and maybe grab a snack. - Baroness Snackworthy",
-    "Reality is just an illusion, but your failures? Oh, those are very real. - Bill Cipher"
+    "Intelligence is acknowledging that even a fox sometimes forgets its tail. - The Furry Sage",
+    "In the cyber-forest, protogen spirit meets raw RAM power—unleash your inner beast. - Digital Lupine",
+    "Reality is a playground for those bold enough to let their fur fly. - Astro Paws",
+    "Procrastination is like a cat napping in a sunbeam—tempting yet delaying the chase. - Whiskered Wanderer",
+    "I’m not arguing; I’m just pouncing on the right point with impeccable fox finesse. - Velvet Claws",
+    "I’m not weird; I’m a one-of-a-kind fur edition. - Mystic Muzzle",
+    "I’m not lazy; I’m conserving energy for my next epic midnight sprint across the digital savannah. - Nocturnal Nova",
+    "Fur real: I'm a wild coder. - Cyber Fox",
+    "Byte me, I run on RAM and dreams. - Protogen Pixie",
+    "Fur-get limits, only pawsibilities. - Wily Whiskers",
+    "Too pawsome for basic reality. - Neon Furr",
+    "Keep calm and let the fur fly. - Pawsitive Vibes",
+    "Chasing tails, breaking codes. - Whiskered Whiz"
   ];
 
   @ViewChild('sentenceReloader', { static: true }) sentenceReloader!: ElementRef;
