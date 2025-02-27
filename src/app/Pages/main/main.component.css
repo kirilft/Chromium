@@ -29,6 +29,8 @@ main {
   font-style: normal;
   line-height: normal;
   min-height: 5.25rem;
+    padding-left: 12rem;
+    padding-right: 12rem;
   }
 
   .info-text {
