@@ -1,2 +1,43 @@
-<app-header></app-header>
-<app-footer></app-footer>
+<div class="container">
+    <h2>Squircle Generator v1</h2>
+    
+    <!-- Controls arranged in one row with individual columns -->
+    <div class="controls">
+      <!-- n Slider Control -->
+      <div class="control-group">
+        <label for="nRange">n: {{ n }}</label>
+        <input id="nRange" type="range" min="1" max="10" [(ngModel)]="n" />
+      </div>
+  
+      <!-- Border Radius Slider Control -->
+      <div class="control-group">
+        <label for="borderRadius">Border Radius: {{ borderRadius }}{{ measurement }}</label>
+        <input
+          id="borderRadius"
+          type="range"
+          [min]="0"
+          [max]="maxBorderRadius"
+          [(ngModel)]="borderRadius"
+        />
+      </div>
+  
+      <!-- Measurement Dropdown Control -->
+      <div class="control-group">
+        <label for="measurement">Measurement:</label>
+        <select id="measurement" [(ngModel)]="measurement">
+          <option *ngFor="let option of measurementOptions" [value]="option">
+            {{ option }}
+          </option>
+        </select>
+      </div>
+    </div>
+  
+    <!-- Squircle display -->
+    <div class="squircle-wrapper">
+      <div
+        class="squircle"
+        [ngStyle]="{ 'border-radius': borderRadius + measurement + ' 0 0 0' }"
+      ></div>
+    </div>
+  </div>
+  
