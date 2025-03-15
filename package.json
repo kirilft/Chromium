@@ -23,6 +23,7 @@
     "@angular/router": "^19.2.1",
     "@angular/service-worker": "^19.2.1",
     "@angular/ssr": "^19.2.1",
+    "@nguniversal/express-engine": "^7.0.2",
     "compression": "^1.7.4",
     "express": "^4.21.1",
     "glob": "^11.0.0",

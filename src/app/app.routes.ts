@@ -3,7 +3,6 @@ import { Routes } from '@angular/router';
 import { MainComponent } from './Pages/main/main.component';
 import { PageNotFoundComponent } from './Pages/page-not-found/page-not-found.component';
 import { ArcComponent } from './Pages/arc/arc.component';
-import { GalleryComponent } from './Pages/gallery/gallery.component';
 
 export const routes: Routes = [
   {
@@ -16,10 +15,6 @@ export const routes: Routes = [
     redirectTo: '',
     pathMatch: 'full'
   }, // Redirect from 'main' to root
-  {
-    path: 'gallery',
-    component: GalleryComponent
-  },
   {
     path: 'arc',
     component: ArcComponent
