@@ -1,6 +1,7 @@
-/* footer.css */
-
-footer {
+/**********************************************
+ * Basic Footer Layout
+ **********************************************/
+ footer {
   position: fixed;
   width: calc(100% - 14rem);
   left: 0;
@@ -10,17 +11,23 @@ footer {
   align-items: center;
 }
 
+/* Large screen footer (title, etc.) */
 .footer-full {
   display: flex;
   align-items: center;
 }
 
+/* Small screen footer (simplified text) */
 .footer-short {
   display: none;
   align-items: center;
 }
 
-.footer-link, .privacy-link {
+/**********************************************
+ * Shared Link Styles
+ **********************************************/
+.footer-link,
+.privacy-link {
   font-family: Outfit, sans-serif;
   line-height: normal;
   color: var(--white);
@@ -45,7 +52,40 @@ footer {
   color: var(--blue);
 }
 
-/*width*/
+/**********************************************
+ * Social Icons
+ **********************************************/
+.footer-social {
+  margin-left: auto; /* push to right side in a flex container */
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* spacing between icons */
+}
+
+/* Icon size */
+.social-icon {
+  width: 1.75rem;
+  height: auto;
+  transition: filter 0.2s ease;
+}
+
+/* 
+ * These icons invert if your background is dark,
+ * so they appear "white".
+ */
+.invert-icon {
+  filter: invert(100%);
+}
+
+/* The X icon remains black (no filter) */
+.x-icon {
+  filter: none;
+}
+
+/**********************************************
+ * Media Queries
+ **********************************************/
+/* On screens 768px or below, hide the full footer & social icons */
 @media only screen and (max-width: 768px) {
   .footer-full {
     display: none;
@@ -53,7 +93,10 @@ footer {
   .footer-short {
     display: flex;
   }
-  footer{
+  .footer-social {
+    display: none; /* hide icons on small screens */
+  }
+  footer {
     align-items: center;
     justify-content: center;
     margin-left: auto;
@@ -62,9 +105,9 @@ footer {
   }
 }
 
-
+/* Between 769px and 834px wide */
 @media only screen and (min-width: 769px) and (max-width: 834px) {
-  footer{
+  footer {
     margin: auto;
     align-items: center;
     justify-content: center;
@@ -73,7 +116,7 @@ footer {
   }
 }
 
-
+/* Height-based adjustments */
 @media only screen and (min-height: 400px) and (max-height: 600px) {
   footer {
     margin-bottom: 2rem;

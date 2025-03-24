@@ -1,11 +1,49 @@
 <footer>
+  <!-- Short Footer (shown on small screens) -->
   <div class="footer-short">
-      <a href="/" class="footer-link" title="Visit Kasai's Homepage">Kasai &copy;</a>
+    <a routerLink="/" class="footer-link" title="Visit Kasai's Homepage">Kasai &copy;</a>
   </div>
+
+  <!-- Full Footer (shown on larger screens) -->
   <div class="footer-full">
     <h2>
-      <a href="/" class="footer-link" title="Explore Kasai Technologies">Kasai Technologies &copy;</a>
+      <a routerLink="/" class="footer-link" title="Explore Kasai Technologies">Kasai Technologies &copy;</a>
     </h2>
-    <!--<a href="/privacy" class="privacy-link" title="Read Kasai's Privacy and Terms" aria-label="Privacy and Terms">Privacy and Terms</a>-->
+    <!--
+      Uncomment if needed:
+      <a routerLink="/privacy" class="privacy-link" title="Privacy and Terms" aria-label="Privacy and Terms">
+        Privacy and Terms
+      </a>
+    -->
+  </div>
+
+  <!-- Social Icons on the right -->
+  <div class="footer-social">
+    <a
+      href="https://bsky.app/profile/kiriwstd.bsky.social"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Visit my Bluesky profile"
+    >
+      <img src="assets/icons/bluesky.svg" alt="Bluesky" class="social-icon" />
+    </a>
+
+    <a
+      href="https://x.com/kiriwstd"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Visit my X profile"
+    >
+      <img src="assets/icons/x.svg" alt="X" class="social-icon" />
+    </a>
+
+    <a
+      href="https://www.tiktok.com/@kiri.wstd"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Visit my TikTok profile"
+    >
+      <img src="assets/icons/tiktok.svg" alt="TikTok" class="social-icon" />
+    </a>
   </div>
 </footer>
