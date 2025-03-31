@@ -59,28 +59,19 @@
   margin-left: auto; /* push to right side in a flex container */
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* spacing between icons */
+  gap: 2rem; /* spacing between icons */
 }
 
 /* Icon size */
 .social-icon {
-  width: 1.75rem;
-  height: auto;
-  transition: filter 0.2s ease;
+  transition: filter 0.4s ease;
+  filter: var(--social-filter);
 }
 
-/* 
- * These icons invert if your background is dark,
- * so they appear "white".
- */
-.invert-icon {
-  filter: invert(100%);
+.social-icon:hover {
+  filter: brightness(0.8);
 }
 
-/* The X icon remains black (no filter) */
-.x-icon {
-  filter: none;
-}
 
 /**********************************************
  * Media Queries

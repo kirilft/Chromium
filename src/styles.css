@@ -25,6 +25,8 @@
   --gray4: #373739;
   --gray5: #1D1D20;
   --white: #000;
+
+  --social-filter: invert(100%);
 }
 
 :root[data-theme="dark"] {
@@ -43,6 +45,8 @@
   --gray4: #A2A2A5;
   --gray5: #EAEAF6;
   --white: #FFF;
+
+  --social-filter: none;
 }
 
 :root {
