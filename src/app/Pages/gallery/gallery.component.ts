@@ -1,82 +1,83 @@
-// gallery.component.ts
-import { Component, OnInit, inject } from '@angular/core';
+// src/app/Pages/gallery/gallery.component.ts
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// Removed HttpClientModule as provideHttpClient() is preferred in app.config
-import { HttpClient, HttpErrorResponse, provideHttpClient, withFetch } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 
+// Define an interface for the structure of image data in the JSON
+interface GalleryImage {
+  src: string; // Now just the filename
+  alt: string;
+  downloadUrl: string;
+}
 
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [
-    CommonModule,
-    // Add HeaderComponent and FooterComponent here
-    HeaderComponent,
-    FooterComponent
-  ],
-  // Consider adding provideHttpClient(withFetch()) here if not provided globally in app.config.ts
-  // providers: [provideHttpClient(withFetch())], // Example if needed locally
+  imports: [CommonModule, HeaderComponent, FooterComponent, HttpClientModule],
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css']
 })
-export class GalleryComponent implements OnInit {
-  // Inject HttpClient using inject function
-  private http = inject(HttpClient);
+export class GalleryComponent implements OnInit, OnDestroy {
+  // Base path for the gallery images
+  readonly baseImagePath = 'assets/gallery/'; // Define base path
 
-  // Component state
-  images: string[] = [];
-  previewImage: string | null = null;
+  // Array to hold the structured image data
+  images: GalleryImage[] = [];
+  // Property to store the *full path* of the image currently being previewed
+  previewImageFullPath: string | null = null;
+  // Property to store the download URL for the previewed image
+  previewDownloadUrl: string | null = null;
+  // Subscription to manage the HTTP request
+  private imagesSubscription: Subscription | null = null;
 
-  // Configuration for image loading
-  private readonly manifestUrl = 'assets/gallery/images.json'; // Path to your image list
-  private readonly basePath    = 'assets/gallery/'; // Base path for image files
+  // Inject HttpClient and ChangeDetectorRef
+  constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    this.loadImages();
+    // Fetch the image data from the JSON file
+    this.imagesSubscription = this.http.get<GalleryImage[]>('assets/gallery/images.json')
+      .subscribe({
+        next: (data) => {
+          this.images = data;
+          console.log('Gallery images loaded (filenames only):', this.images);
+          this.cdr.detectChanges(); // Trigger change detection if needed
+        },
+        error: (error) => {
+          console.error('Error loading gallery images:', error);
+          this.images = []; // Ensure images array is empty on error
+          this.cdr.detectChanges(); // Trigger change detection
+        }
+      });
+  }
+
+  ngOnDestroy(): void {
+    // Unsubscribe from the HTTP request to prevent memory leaks
+    if (this.imagesSubscription) {
+      this.imagesSubscription.unsubscribe();
+    }
   }
 
   /**
-   * Loads the list of image filenames from the manifest JSON file.
+   * Opens the preview overlay for the selected image.
+   * Constructs the full path for the preview image.
+   * @param image The GalleryImage object containing src (filename), alt, and downloadUrl.
    */
-  private loadImages(): void {
-    this.http.get<string[]>(this.manifestUrl).pipe(
-      catchError((err: HttpErrorResponse) => {
-        // Log an error if the manifest can't be loaded
-        console.error('Error loading gallery manifest:', err.message);
-        // Return an empty array to prevent breaking the page
-        return of([]);
-      })
-    ).subscribe(list => {
-      // Map filenames to full paths and handle potential empty list
-      this.images = (list && list.length)
-        ? list.map(name => `${this.basePath}${name}`) // Removed slice(0, 9) to show all images
-        : [];
-      if (!this.images.length) {
-        console.warn('No images found or listed in the gallery manifest.');
-      }
-    });
+  openPreview(image: GalleryImage): void {
+    // Construct the full path for the preview image
+    this.previewImageFullPath = this.baseImagePath + image.src;
+    this.previewDownloadUrl = image.downloadUrl; // Store the specific download URL
+    console.log('Opening preview for:', this.previewImageFullPath, 'Download:', image.downloadUrl);
   }
 
   /**
-   * Sets the image URL for the fullscreen preview.
-   * @param img The URL of the image to preview.
-   */
-  openPreview(img: string): void {
-    this.previewImage = img;
-    // Optional: Prevent body scroll when overlay is open
-    document.body.style.overflow = 'hidden';
-  }
-
-  /**
-   * Clears the preview image URL, hiding the overlay.
+   * Closes the preview overlay.
    */
   closePreview(): void {
-    this.previewImage = null;
-    // Optional: Restore body scroll
-    document.body.style.overflow = '';
+    this.previewImageFullPath = null; // Clear the full path
+    this.previewDownloadUrl = null; // Clear the download URL
+    console.log('Closing preview');
   }
 }

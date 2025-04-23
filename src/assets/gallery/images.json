@@ -1,7 +1,22 @@
 [
-    "_DSF4250.avif",
-    "DSC_0067.avif",
-    "_DSF4293.avif",
-    "_DSF4329.avif"
-  ]
-  
+  {
+    "src": "_DSF4250.avif",
+    "alt": "Image description placeholder for _DSF4250",
+    "downloadUrl": "#download-link-placeholder-1"
+  },
+  {
+    "src": "DSC_0067.avif",
+    "alt": "Image description placeholder for DSC_0067",
+    "downloadUrl": "#download-link-placeholder-2"
+  },
+  {
+    "src": "_DSF4293.avif",
+    "alt": "Image description placeholder for _DSF4293",
+    "downloadUrl": "#download-link-placeholder-3"
+  },
+  {
+    "src": "_DSF4329.avif",
+    "alt": "Image description placeholder for _DSF4329",
+    "downloadUrl": "#download-link-placeholder-4"
+  }
+]
