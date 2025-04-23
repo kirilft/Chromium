@@ -1,28 +1,43 @@
 <app-header></app-header>
-<h2>Gallery</h2>
-<p>Here are some images of the beautiful nature</p>
-<table>
-    <tr>
-        <td>
-            <img src="https://images.unsplash.com/photo-1612838320302-3b3b3b3b3b3b" alt="Nature 1" width="300" height="200">
-        </td>
-        <td>
-            <img src="https://images.unsplash.com/photo-1612838320302-3b3b3b3b3b3b" alt="Nature 2" width="300" height="200">
-        </td>
-        <td>
-            <img src="https://images.unsplash.com/photo-1612838320302-3b3b3b3b3b3b" alt="Nature 3" width="300" height="200">
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <img src="https://images.unsplash.com/photo-1612838320302-3b3b3b3b3b3b" alt="Nature 4" width="300" height="200">
-        </td>
-        <td>
-            <img src="https://images.unsplash.com/photo-1612838320302-3b3b3b3b3b3b" alt="Nature 5" width="300" height="200">
-        </td>
-        <td>
-            <img src="https://images.unsplash.com/photo-1612838320302-3b3b3b3b3b3b" alt="Nature 6" width="300" height="200">
-        </td>
-    </tr>   
-</table>
+
+<main class="gallery-main">
+
+  <section class="gallery-intro">
+    <h2>Gallery</h2>
+    <p>
+      Welcome! This gallery showcases moments and scenes captured through the lens of my Fujifilm X-T4.
+      Photography is my way of exploring perspectives and sharing the world as I see it.
+    </p>
+    <p>
+      If you're interested in prints, collaborations, or just want to chat about photography,
+      feel free to reach out via email:
+      <a href="mailto:kiri.wstd&#64;gmail.com" class="email-link">kiri.wstd&#64;gmail.com</a>.
+    </p>
+  </section>
+
+  <section class="gallery-grid-section">
+    <div class="gallery-grid" *ngIf="images.length > 0; else noImages">
+      <div class="gallery-item" *ngFor="let img of images; let i = index">
+        <img
+          [src]="img"
+          (click)="openPreview(img)"
+          [alt]="'Gallery image ' + (i + 1)"
+          loading="lazy" role="button" tabindex="0" (keydown.enter)="openPreview(img)" />
+      </div>
+    </div>
+
+    <ng-template #noImages>
+      <p class="no-images">No images found in the gallery. Check the console for errors.</p>
+    </ng-template>
+  </section>
+
+</main> <div class="preview-overlay" *ngIf="previewImage" (click)="closePreview()" title="Click to close preview">
+  <button class="close-preview-button" (click)="closePreview()" aria-label="Close image preview">&times;</button>
+  <img
+    [src]="previewImage"
+    class="preview-image"
+    alt="Fullscreen preview"
+    (click)="$event.stopPropagation()" />
+</div>
+
 <app-footer></app-footer>
