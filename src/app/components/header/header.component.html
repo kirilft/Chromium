@@ -1,39 +1,36 @@
 <header>
-  <h1 class="logo-title">
-    <a routerLink="/" title="Go to Kasai Homepage">Kasai</a>
-  </h1>
-
-  <div class="tagline-box">
-    <p class="tagline-full">This Webpage is Experimental</p>
-    <p class="tagline-short">Experimental</p>
+    <h1 class="logo-title"><a href="/">Kasai</a></h1>
+    <div class="tagline-box">
+      <p class="tagline-full">This Webpage is Experimental</p>
+      <p class="tagline-short">Experimental</p>
   </div>
-
   <nav class="navbar">
-      <button
-          class="mobile-menu-toggle"
-          aria-label="Toggle navigation menu"
-          aria-expanded="false"
-          [attr.aria-expanded]="isMobileMenuOpen()"
-          (click)="toggleMobileMenu()">
-          <ul class="dot-grid" aria-hidden="true"> <li></li><li></li><li></li>
-              <li></li><li></li><li></li>
-              <li></li><li></li><li></li>
-          </ul>
-          </button>
-
-      <div class="nav-links" [class.mobile-active]="isMobileMenuOpen()">
-          <a routerLink="/gallery" class="nav-link" (click)="closeMobileMenu()">Gallery</a>
-          <a href="https://github.com/kirilft" target="_blank" rel="noopener noreferrer" class="nav-link" (click)="closeMobileMenu()">Github</a>
-          </div>
-
-      <button
-        class="theme-switcher"
-        (click)="toggleTheme()"
-        title="Toggle Theme"
-        aria-label="Toggle Theme"
-      >
-        <app-icon *ngIf="currentTheme === 'light'" name="sun" alt="Switch to dark mode"></app-icon>
-        <app-icon *ngIf="currentTheme === 'dark'" name="moon" alt="Switch to light mode"></app-icon>
-      </button>
+      <ul class="dot-grid">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    <div class="nav-links">
+      <!--<a href="https://github.com/kirilft" class="nav-link">Projects</a>-->
+      <a href="/gallery" class="nav-link">Gallery</a>
+      <a href="https://github.com/kirilft" class="nav-link">Github</a>
+    </div>
+    <div
+      class="theme-switcher"
+      (click)="toggleTheme()"
+      tabindex="0"
+      (keydown.enter)="toggleTheme()"
+      aria-label="Toggle Theme"
+    >
+      <!-- Angular conditional icons -->
+      <app-icon *ngIf="currentTheme === 'light'" name="sun" alt="Switch to dark mode"></app-icon>
+      <app-icon *ngIf="currentTheme === 'dark'" name="moon" alt="Switch to light mode"></app-icon>
+    </div>
   </nav>
 </header>

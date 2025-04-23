@@ -23,8 +23,7 @@
             "assets": [
               "src/favicon.webp",
               "src/assets",
-              "src/robots.txt",
-              "src/manifest.webmanifest"
+              "src/robots.txt"
             ],
             "styles": [
               "src/styles.css"
@@ -33,7 +32,7 @@
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
-              "entry": "src/main.server.ts"
+              "entry": "server.ts"
             }
           },
           "configurations": {
@@ -89,8 +88,7 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/manifest.webmanifest"
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
