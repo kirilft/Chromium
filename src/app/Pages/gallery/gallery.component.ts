@@ -1,28 +1,22 @@
 // src/app/Pages/gallery/gallery.component.ts
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'; // Keep HttpClientModule if other components need it directly
 import { Subscription } from 'rxjs';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
-
-// Define an interface for the structure of image data in the JSON
-interface GalleryImage {
-  src: string; // Now just the filename
-  alt: string;
-  downloadUrl: string;
-}
+import { GalleryDataService, GalleryImage } from '../../services/gallery-data.service'; // Import service and interface
 
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, FooterComponent, HttpClientModule],
+  imports: [CommonModule, HeaderComponent, FooterComponent, HttpClientModule], // HttpClientModule might still be needed if Footer/Header use HttpClient directly
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit, OnDestroy {
-  // Base path for the gallery images
-  readonly baseImagePath = 'assets/gallery/'; // Define base path
+  // Base path for the gallery images (can get from service too if preferred)
+  readonly baseImagePath = 'assets/gallery/';
 
   // Array to hold the structured image data
   images: GalleryImage[] = [];
@@ -30,23 +24,27 @@ export class GalleryComponent implements OnInit, OnDestroy {
   previewImageFullPath: string | null = null;
   // Property to store the download URL for the previewed image
   previewDownloadUrl: string | null = null;
-  // Subscription to manage the HTTP request
+  // Subscription to manage the data request
   private imagesSubscription: Subscription | null = null;
 
-  // Inject HttpClient and ChangeDetectorRef
-  constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
+  // Inject GalleryDataService and ChangeDetectorRef
+  constructor(
+    private galleryDataService: GalleryDataService, // Use the service
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
-    // Fetch the image data from the JSON file
-    this.imagesSubscription = this.http.get<GalleryImage[]>('assets/gallery/images.json')
+    console.log('GalleryComponent: Initializing and getting gallery data from service.');
+    // Get the image data from the service
+    this.imagesSubscription = this.galleryDataService.getGalleryData()
       .subscribe({
         next: (data) => {
           this.images = data;
-          console.log('Gallery images loaded (filenames only):', this.images);
+          console.log('GalleryComponent: Received gallery data from service:', this.images);
           this.cdr.detectChanges(); // Trigger change detection if needed
         },
         error: (error) => {
-          console.error('Error loading gallery images:', error);
+          console.error('GalleryComponent: Error getting gallery data from service:', error);
           this.images = []; // Ensure images array is empty on error
           this.cdr.detectChanges(); // Trigger change detection
         }
@@ -54,7 +52,7 @@ export class GalleryComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Unsubscribe from the HTTP request to prevent memory leaks
+    // Unsubscribe from the data request to prevent memory leaks
     if (this.imagesSubscription) {
       this.imagesSubscription.unsubscribe();
     }
@@ -69,7 +67,7 @@ export class GalleryComponent implements OnInit, OnDestroy {
     // Construct the full path for the preview image
     this.previewImageFullPath = this.baseImagePath + image.src;
     this.previewDownloadUrl = image.downloadUrl; // Store the specific download URL
-    console.log('Opening preview for:', this.previewImageFullPath, 'Download:', image.downloadUrl);
+    console.log('GalleryComponent: Opening preview for:', this.previewImageFullPath, 'Download:', image.downloadUrl);
   }
 
   /**
@@ -78,6 +76,6 @@ export class GalleryComponent implements OnInit, OnDestroy {
   closePreview(): void {
     this.previewImageFullPath = null; // Clear the full path
     this.previewDownloadUrl = null; // Clear the download URL
-    console.log('Closing preview');
+    console.log('GalleryComponent: Closing preview');
   }
 }
