@@ -1,19 +1,28 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
+/*
+* Application-specific TypeScript configuration.
+* Extends the base tsconfig.json for settings specific to the Angular application build.
+* See: https://angular.io/config/tsconfig
+*/
 {
-    "extends": "./tsconfig.json",
+    "extends": "./tsconfig.json", // Inherits base TypeScript settings
     "compilerOptions": {
-        "outDir": "./out-tsc/app",
-        "types": [
-            "node"
-        ],
-        "allowSyntheticDefaultImports": true
+      "outDir": "./out-tsc/app", // Specifies the output directory for compiled files
+      "types": [
+        "node" // Includes type definitions for Node.js (useful for SSR and tooling)
+      ],
+      "allowSyntheticDefaultImports": true // Allows default imports from modules with no default export (for compatibility)
     },
     "files": [
-        "src/main.ts",
-        "src/main.server.ts",
-        "server.ts"
+      // Explicitly lists the main entry points for the application builds.
+      "src/main.ts", // Main entry point for the browser application
+      "src/main.server.ts" // Main entry point for the server-side rendering build
+      // Removed "server.ts" - It's typically handled by tsconfig.server.json or a separate server build process.
     ],
     "include": [
-        "src/**/*.d.ts"
+      // Includes all TypeScript declaration files (.d.ts) within the src directory.
+      "src/**/*.d.ts"
     ]
-}
+    // Note: Angular CLI typically manages 'exclude' patterns (like node_modules, out-tsc)
+    // in the base tsconfig.json or via its internal build process.
+  }
+  

@@ -1,38 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { Title } from '@angular/platform-browser';
-import { filter, map } from 'rxjs/operators';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+// Note: Title setting is now handled declaratively in app.routes.ts via the `title` property.
+// The programmatic approach using Router events and Title service is no longer needed
+// unless more complex dynamic title logic is required.
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-root', // The root element selector for the application
+  standalone: true, // Marks this as a standalone component
+  imports: [
+    RouterOutlet // Provides the directive needed to render routed components
+  ],
+  templateUrl: './app.component.html', // Link to the component's HTML template
+  styleUrls: ['./app.component.css'] // Link to the component's CSS styles
 })
-export class AppComponent implements OnInit {
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private titleService: Title
-  ) {}
+export class AppComponent {
+  // No explicit title logic needed here anymore if using the router's `title` property.
+  // Angular's default TitleStrategy handles it based on the route configuration.
 
-  ngOnInit(): void {
-    this.router.events
-      .pipe(
-        filter((event) => event instanceof NavigationEnd),
-        map(() => {
-          let route = this.activatedRoute;
-          // Traverse to the deepest child route
-          while (route.firstChild) {
-            route = route.firstChild;
-          }
-          return route.snapshot.data['title'] || 'Kasai - To the Future and Beyond!';
-        })
-      )
-      .subscribe((pageTitle: string) => {
-        this.titleService.setTitle(pageTitle);
-      });
-  }
+  // Constructor and ngOnInit can be removed if they are empty.
+  // constructor() {}
+  // ngOnInit(): void {}
 }
