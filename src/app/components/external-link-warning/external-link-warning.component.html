@@ -1,0 +1,32 @@
+<div
+  class="warning-overlay"
+  *ngIf="showWarning$ | async"
+  (click)="onCancel()"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="warning-title">
+
+  <div class="warning-content" (click)="stopPropagation($event)">
+    <h3 id="warning-title" class="warning-title">External Link Notice</h3>
+
+    <p class="warning-text">You are about to navigate to the following external URL:</p>
+    <p class="warning-url">
+      <a [href]="(targetUrl$ | async) ?? '#'" target="_blank" rel="noopener noreferrer">{{ (targetUrl$ | async) ?? 'Invalid URL' }}</a>
+    </p>
+    <p class="warning-text">Are you sure you want to continue?</p>
+
+    <div class="warning-preference">
+      <input
+        type="checkbox"
+        id="rememberPreferenceCheckbox"
+        [(ngModel)]="rememberPreference" />
+      <label for="rememberPreferenceCheckbox">Don't show this warning again</label>
+    </div>
+
+    <div class="warning-actions">
+      <button class="button cancel-button" (click)="onCancel()">Cancel</button>
+      <button class="button proceed-button" (click)="onProceed()">Continue</button>
+    </div>
+  </div>
+
+</div>

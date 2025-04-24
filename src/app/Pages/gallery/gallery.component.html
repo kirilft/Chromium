@@ -47,7 +47,7 @@
 
   <div class="preview-info" *ngIf="previewDownloadUrl" (click)="$event.stopPropagation()">
     <span class="copyright-notice">© 2025 Kiri.wstd</span>
-    <a [href]="previewDownloadUrl" class="download-link" target="_blank" rel="noopener noreferrer">Download</a>
+    <a [href]="previewDownloadUrl" class="download-link" target="_blank" rel="noopener noreferrer" appExternalLink>Download</a>
   </div>
 
 </div>
