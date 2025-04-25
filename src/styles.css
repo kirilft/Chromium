@@ -6,9 +6,10 @@
   url('/assets/fonts/Outfit.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
-  font-display: swap;
+  font-display: swap; /* Use swap for faster perceived font loading */
 }
 
+/* Light Theme Variables */
 :root[data-theme="light"] {
   --green: #3CF53C;
   --orange: #FF4b00;
@@ -16,19 +17,27 @@
   --pink: #F23761;
   --purple: #9C0169;
   --lila: #A601FF;
-  --blue: #1F8DFF;
+  /* *** CONTRAST FIX (Light Mode): Use darker blue for better contrast on light backgrounds *** */
+  --blue: #005A9C; /* Was #1F8DFF */
 
-  --black: #FFF;
-  --gray: #F1F1FF;
-  --gray2: #A9A9AE;
-  --gray3: #505055;
-  --gray4: #373739;
-  --gray5: #1D1D20;
-  --white: #000;
+  --black: #FFF; /* Background color often becomes white */
+  --gray: #F1F1FF; /* Light gray background elements */
+  --gray2: #A9A9AE; /* Medium-light gray */
+  --gray3: #505055; /* Medium-dark gray */
+  --gray4: #373739; /* Dark gray text/elements */
+  --gray5: #1D1D20; /* Very dark gray / near black */
+  --white: #000; /* Text color often becomes black */
 
-  --social-filter: invert(100%);
+  --social-filter: invert(100%); /* Invert social icons for light background */
+
+  /* RGB versions for rgba() */
+  --text-primary-rgb: 0,0,0;
+  --background-primary-rgb: 255,255,255;
+  /* *** Use RGB for the corrected light mode blue *** */
+  --blue-rgb: 0, 90, 156; /* For #005A9C */
 }
 
+/* Dark Theme Variables */
 :root[data-theme="dark"] {
   --green: #5F5;
   --orange: #F50;
@@ -36,38 +45,104 @@
   --pink: #F2515B;
   --purple: #B00B69;
   --lila: #B00BFF;
-  --blue: #2997FF;
+  /* *** REVERTED: Use original dark mode blue *** */
+  --blue: #2997FF; /* Original dark mode blue */
 
-  --black: #000;
-  --gray: #161617;
-  --gray2: #303030;
-  --gray3: #49494C;
-  --gray4: #A2A2A5;
-  --gray5: #EAEAF6;
-  --white: #FFF;
+  --black: #000; /* Background color often becomes black */
+  --gray: #161617; /* Very dark gray background elements */
+  --gray2: #303030; /* Dark gray */
+  --gray3: #49494C; /* Medium-dark gray */
+  --gray4: #A2A2A5; /* Light gray text/elements */
+  --gray5: #EAEAF6; /* Very light gray / near white */
+  --white: #FFF; /* Text color often becomes white */
 
-  --social-filter: none;
+  --social-filter: none; /* Keep social icons as they are */
+
+  /* RGB versions for rgba() */
+  --text-primary-rgb: 255,255,255;
+  --background-primary-rgb: 0,0,0;
+  /* *** REVERTED: Use RGB for the original dark mode blue *** */
+  --blue-rgb: 41, 151, 255; /* For #2997FF */
 }
 
+/* Default Theme (Fallback & OS Preference Handling) */
 :root {
-  color-scheme: light dark;
+  /* Define default colors (using the adjusted light theme blue) */
+  --green: #3CF53C;
+  --orange: #FF4b00;
+  --red: #FF4B4B;
+  --pink: #F23761;
+  --purple: #9C0169;
+  --lila: #A601FF;
+  /* *** CONTRAST FIX (Light Mode Fallback): Use the darker blue *** */
+  --blue: #005A9C; /* Was #1F8DFF */
+  --black: #FFF;
+  --gray: #F1F1FF;
+  --gray2: #A9A9AE;
+  --gray3: #505055;
+  --gray4: #373739;
+  --gray5: #1D1D20;
+  --white: #000;
+  --social-filter: invert(100%);
+  --text-primary-rgb: 0,0,0;
+  --background-primary-rgb: 255,255,255;
+  /* *** Use RGB for the corrected light mode blue *** */
+  --blue-rgb: 0, 90, 156; /* For #005A9C */
 
-  --Fontsize-h1: 4.1875rem;
-  --Fontsize-h2: 3.1875rem;
-  --Fontsize-h3: 2.375rem;
-  --Fontsize-h4: 1.75rem;
-  --Fontsize-h5: 1.3125rem;
-  --small: 0.75rem;
 
+  /* Define font sizes */
+  --Fontsize-h1: 4.1875rem; /* ~67px */
+  --Fontsize-h2: 3.1875rem; /* ~51px */
+  --Fontsize-h3: 2.375rem;  /* ~38px */
+  --Fontsize-h4: 1.75rem;   /* ~28px */
+  --Fontsize-h5: 1.3125rem; /* ~21px */
+  --small: 0.75rem;     /* ~12px */
+
+  /* Define gradients */
   --Gradients-Title: linear-gradient(96deg, #009AFF 4.56%, #D744FF 50.43%, #FF4100 95.39%);
-  --Gradients-Background: inear-gradient(90deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
-  --Gradients-Stroke: linear-gradient(90deg, var(--black) -83.55%, var(--purple) 100%);
+  --Gradients-Background: linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+  --Gradients-Stroke: linear-gradient(90deg, var(--black) -83.55%, var(--purple) 100%); /* Check variable usage here */
+
+  /* Set color scheme preference */
+  color-scheme: light dark;
 }
 
+/* Apply dark theme variables if OS prefers dark AND no explicit theme is set */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --green: #5F5;
+    --orange: #F50;
+    --red: #F55;
+    --pink: #F2515B;
+    --purple: #B00B69;
+    --lila: #B00BFF;
+    /* *** REVERTED: Use original dark mode blue *** */
+    --blue: #2997FF; /* Original dark mode blue */
+    --black: #000;
+    --gray: #161617;
+    --gray2: #303030;
+    --gray3: #49494C;
+    --gray4: #A2A2A5;
+    --gray5: #EAEAF6;
+    --white: #FFF;
+    --social-filter: none;
+    --text-primary-rgb: 255,255,255;
+    --background-primary-rgb: 0,0,0;
+    /* *** REVERTED: Use RGB for the original dark mode blue *** */
+    --blue-rgb: 41, 151, 255; /* For #2997FF */
+  }
+}
+
+
+/* Global Styles & Resets */
 body {
   font-family: 'Outfit', sans-serif;
-  color: var(--white);
-  background-color: var(--black);
+  color: var(--white); /* Default text color (often white in dark, black in light) */
+  background-color: var(--black); /* Default background color (often black in dark, white in light) */
+  margin: 0; /* Remove default body margin */
+  -webkit-font-smoothing: antialiased; /* Improve font rendering on WebKit */
+  -moz-osx-font-smoothing: grayscale; /* Improve font rendering on Firefox */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transitions */
 }
 
 *, *::before, *::after {
@@ -77,10 +152,23 @@ body {
 }
 
 html {
-  font-size: 100%;
+  font-size: 100%; /* Base font size */
   width: 100%;
 }
 
-a{
-  text-decoration: none;
+a {
+  text-decoration: none; /* Remove default underline from links */
+  color: inherit; /* Make links inherit text color by default */
+}
+
+/* Add focus styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+    /* Use the --blue-rgb variable which is correctly set for light/dark mode */
+    box-shadow: 0 0 0 4px rgba(var(--blue-rgb), 0.3);
 }
