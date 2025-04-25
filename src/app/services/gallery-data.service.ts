@@ -20,8 +20,8 @@ export class GalleryDataService {
 
   // Observable to hold and replay the gallery image data
   private galleryData$: Observable<GalleryImage[]> | null = null;
-  // Flag to prevent multiple prefetch attempts
-  private prefetchTriggered = false;
+  // Flag to prevent multiple preload attempts
+  private preloadTriggered = false; // Renamed for clarity
   // Renderer to interact with the DOM safely
   private renderer: Renderer2;
 
@@ -36,6 +36,7 @@ export class GalleryDataService {
 
   /**
    * Gets the gallery image data. Fetches if not already cached.
+   * Uses shareReplay(1) to cache the JSON response.
    * @returns Observable<GalleryImage[]>
    */
   getGalleryData(): Observable<GalleryImage[]> {
@@ -52,47 +53,52 @@ export class GalleryDataService {
   }
 
   /**
-   * Initiates prefetching of JSON and image resources.
-   * Adds <link rel="prefetch"> tags to the document head for images.
-   * Only runs once and only in the browser.
+   * Initiates preloading of JSON and image resources when triggered (e.g., by hover).
+   * Adds <link rel="preload"> tags to the document head for images.
+   * 'preload' is used instead of 'prefetch' for higher priority, indicating
+   * the resource is needed for the current or imminent navigation.
+   * Only runs once per session and only in the browser.
    */
-  triggerPrefetch(): void {
-    // Only run prefetching in the browser and only once
-    if (!isPlatformBrowser(this.platformId) || this.prefetchTriggered) {
-      // console.log('GalleryDataService: Prefetch skipped (not browser or already triggered).');
+  triggerPrefetch(): void { // Method name kept for compatibility with HeaderComponent call
+    // Only run preloading in the browser and only once
+    if (!isPlatformBrowser(this.platformId) || this.preloadTriggered) {
+      // console.log('GalleryDataService: Preload skipped (not browser or already triggered).');
       return;
     }
 
-    console.log('GalleryDataService: Prefetch triggered by hover.');
-    this.prefetchTriggered = true; // Mark as triggered
+    console.log('GalleryDataService: Preload triggered by hover.');
+    this.preloadTriggered = true; // Mark as triggered
 
     // 1. Ensure JSON data is fetched (or starts fetching)
     this.getGalleryData().pipe(
       take(1) // Ensure the subscription completes after getting data once
     ).subscribe(images => {
-      // 2. Once JSON is loaded, add prefetch links for each image
-      console.log(`GalleryDataService: Adding prefetch links for ${images.length} images.`);
+      // 2. Once JSON is loaded, add preload links for each image
+      console.log(`GalleryDataService: Adding preload links for ${images.length} images.`);
       images.forEach(image => {
-        this.addPrefetchLink(this.baseImagePath + image.src);
+        this.addPreloadLink(this.baseImagePath + image.src); // Call the preload link method
       });
     });
   }
 
   /**
-   * Dynamically adds a <link rel="prefetch"> tag to the document's <head>.
-   * @param url The URL of the resource to prefetch.
+   * Dynamically adds a <link rel="preload"> tag to the document's <head>.
+   * This hints the browser to fetch the resource with higher priority.
+   * @param url The URL of the resource to preload.
    */
-  private addPrefetchLink(url: string): void {
+  private addPreloadLink(url: string): void { // Renamed method for clarity
     try {
       const link: HTMLLinkElement = this.renderer.createElement('link');
-      this.renderer.setAttribute(link, 'rel', 'prefetch');
+      // *** Use rel="preload" for higher priority fetching ***
+      this.renderer.setAttribute(link, 'rel', 'preload');
       this.renderer.setAttribute(link, 'href', url);
-      this.renderer.setAttribute(link, 'as', 'image'); // Hint the type of content
+      // Specify 'as' attribute for optimal prioritization
+      this.renderer.setAttribute(link, 'as', 'image');
       // Append link to the head of the document
       this.renderer.appendChild(document.head, link);
-      // console.log(`GalleryDataService: Added prefetch link for ${url}`);
+      // console.log(`GalleryDataService: Added preload link for ${url}`);
     } catch (e) {
-      console.error(`GalleryDataService: Error adding prefetch link for ${url}`, e);
+      console.error(`GalleryDataService: Error adding preload link for ${url}`, e);
     }
   }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit, Renderer2, ElementRef, ViewChild, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+// src/app/Pages/main/main.component.ts
+import { Component, OnInit, OnDestroy, Renderer2, ElementRef, ViewChild, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core'; // Import OnDestroy
 import { isPlatformBrowser } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
@@ -22,14 +23,12 @@ import { trigger, style, transition, animate } from '@angular/animations';
     ])
   ],
 })
-export class MainComponent implements OnInit, AfterViewInit {
+export class MainComponent implements OnInit, AfterViewInit, OnDestroy { // Implement OnDestroy
   displayedSentence: string = '';
   typingState: string = 'initial';
   private typingTimeouts: any[] = [];
   sentences: string[] = [
     "Intelligence is acknowledging knowing nothing. - Kiri",
-    "Don't let yourself make excuses for not doing the things you want to do. - Sam Altman",
-    "Move fast. Speed is one of your main advantages over large competitors. - Sam Altman",
     "Reality is just a crutch for people who can't handle science fiction. - Skylar Astin",
     "Procrastination is the art of keeping up with yesterday. - Don Marquis",
     "I’m not arguing, I’m just explaining why I’m right. - Charlie Bright",
@@ -61,13 +60,13 @@ export class MainComponent implements OnInit, AfterViewInit {
     if (isPlatformBrowser(this.platformId)) {
       // Initialize the working copy with the original sentences.
       this.workingSentences = [...this.sentences];
-      window.onload = () => {
-        this.initialize();
-      };
+      // *** REMOVE window.onload wrapper and call initialize directly ***
+      this.initialize();
     }
   }
 
   ngAfterViewInit(): void {
+    // Keep the click listener setup here
     if (isPlatformBrowser(this.platformId)) {
       this.renderer.listen(this.sentenceReloader.nativeElement, 'click', () => {
         this.toggleAnimation();
@@ -76,7 +75,16 @@ export class MainComponent implements OnInit, AfterViewInit {
     }
   }
 
+  // *** ADD ngOnDestroy for cleanup ***
+  ngOnDestroy(): void {
+      if (isPlatformBrowser(this.platformId)) {
+          this.clearTypingAnimation(); // Clear any running timeouts when component is destroyed
+          console.log('MainComponent destroyed, typing animation cleared.');
+      }
+  }
+
   initialize(): void {
+    console.log('MainComponent initializing animation...'); // Add log for debugging
     this.displayRandomSentence().catch(error => console.error('Error during sentence display:', error));
   }
 
@@ -89,7 +97,7 @@ export class MainComponent implements OnInit, AfterViewInit {
   }
 
   async displayRandomSentence(): Promise<void> {
-    this.clearTypingAnimation();
+    this.clearTypingAnimation(); // Ensure previous animation is stopped
     const sentence = this.getRandomSentence();
     this.typingState = 'start';
     await this.startTypingAnimation(sentence, 60);
@@ -99,6 +107,7 @@ export class MainComponent implements OnInit, AfterViewInit {
   // Picks a random sentence from a working copy that is reset when empty.
   private getRandomSentence(): string {
     if (this.workingSentences.length === 0) {
+      console.log('Sentence list empty, resetting working copy.'); // Log for debugging
       this.workingSentences = [...this.sentences];
     }
     const randomIndex = Math.floor(Math.random() * this.workingSentences.length);
@@ -106,6 +115,7 @@ export class MainComponent implements OnInit, AfterViewInit {
     // Swap with the last element and remove it for O(1) removal.
     this.workingSentences[randomIndex] = this.workingSentences[this.workingSentences.length - 1];
     this.workingSentences.pop();
+    console.log('Selected sentence:', chosenSentence); // Log for debugging
     return chosenSentence;
   }
 
@@ -114,21 +124,30 @@ export class MainComponent implements OnInit, AfterViewInit {
     let index = 0;
 
     const typeCharacter = () => {
+      // Check if component might have been destroyed mid-animation
+      if (!this.typingTimeouts) return;
+
       if (index < sentence.length) {
         this.displayedSentence += sentence[index];
         index++;
+        // Store timeout ID before setting it
         const timeoutId = setTimeout(typeCharacter, speed);
         this.typingTimeouts.push(timeoutId);
+      } else {
+         console.log('Typing animation complete.'); // Log for debugging
       }
     };
 
+    // Start the recursive typing
     typeCharacter();
   }
 
   clearTypingAnimation(): void {
+    console.log(`Clearing ${this.typingTimeouts.length} typing timeouts.`); // Log for debugging
     this.typingTimeouts.forEach(timeoutId => clearTimeout(timeoutId));
-    this.typingTimeouts = [];
-    this.displayedSentence = '';
-    this.typingState = '';
+    this.typingTimeouts = []; // Reset the array
+    // Optionally reset displayed sentence if needed, though displayRandomSentence does this
+    // this.displayedSentence = '';
+    // this.typingState = '';
   }
 }
