@@ -14,7 +14,7 @@
     <div class="nav-links">
       <a
         routerLink="/gallery"
-        routerLinkActive="active-link"  
+        routerLinkActive="active-link"
         class="nav-link"
         (mouseenter)="prefetchGalleryData()">Gallery</a>
         <a href="https://github.com/kirilft" class="nav-link" target="_blank" rel="noopener noreferrer" appExternalLink>Github</a>
@@ -27,8 +27,10 @@
       (keydown.enter)="toggleTheme()"
       aria-label="Toggle Theme"
     >
-      <app-icon *ngIf="currentTheme === 'light'" name="sun" alt="Switch to dark mode"></app-icon>
-      <app-icon *ngIf="currentTheme === 'dark'" name="moon" alt="Switch to light mode"></app-icon>
-    </div>
+      <ng-container *ngIf="themeInitializedClientSide">
+        <app-icon *ngIf="currentTheme === 'light'" name="sun" alt="Switch to dark mode"></app-icon>
+        <app-icon *ngIf="currentTheme === 'dark'" name="moon" alt="Switch to light mode"></app-icon>
+      </ng-container>
+      </div>
   </nav>
 </header>
