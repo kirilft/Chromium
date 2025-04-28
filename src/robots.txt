@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /zoe27
+
+Sitemap: https://kasai.tech/sitemap.xml

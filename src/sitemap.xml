@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Home Page -->
+
   <url>
     <loc>https://kasai.tech/</loc>
-    <lastmod>2025-03-24</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2025-04-28</lastmod> <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Arc Page -->
+
   <url>
     <loc>https://kasai.tech/arc</loc>
-    <lastmod>2025-03-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Gallery Page -->
+    <lastmod>2025-04-28</lastmod> <changefreq>monthly</changefreq> <priority>0.7</priority> </url>
+
   <url>
     <loc>https://kasai.tech/gallery</loc>
-    <lastmod>2025-03-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-04-28</lastmod> <changefreq>weekly</changefreq> <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://kasai.tech/impressum</loc>
+    <lastmod>2025-04-28</lastmod> <changefreq>yearly</changefreq> <priority>0.3</priority> </url>
+
 </urlset>
