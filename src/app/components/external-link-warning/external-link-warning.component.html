@@ -19,8 +19,11 @@
       <input
         type="checkbox"
         id="rememberPreferenceCheckbox"
-        [(ngModel)]="rememberPreference" />
-      <label for="rememberPreferenceCheckbox">Don't show this warning again</label>
+        [(ngModel)]="rememberPreference"
+        [disabled]="!hasConsent()"  [title]="!hasConsent() ? 'Accept cookie policy to enable this option' : null" /> <label
+         for="rememberPreferenceCheckbox"
+         [class.disabled-label]="!hasConsent()"> Don't show this warning again
+       </label>
     </div>
 
     <div class="warning-actions">

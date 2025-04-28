@@ -1,0 +1,124 @@
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+    .cookie-consent-banner {
+      /* Frosted glass effect for browsers that support it */
+      background-color: rgba(var(--background-primary-rgb, 240, 240, 240), 0.7); /* Adjusted alpha */
+      -webkit-backdrop-filter: blur(15px) saturate(180%);
+      backdrop-filter: blur(15px) saturate(180%);
+    }
+  }
+  
+  .cookie-consent-banner {
+    position: fixed;
+    bottom: 1rem; /* Add some space from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Fine-tune centering */
+    width: calc(100% - 2rem); /* Max width with padding */
+    max-width: 600px; /* Limit max width for larger screens */
+  
+    /* Fallback background for browsers without backdrop-filter support */
+    background-color: rgba(var(--background-primary-rgb, 30, 30, 30), 0.95);
+    color: var(--text-primary, #fff);
+    padding: 1rem 1.5rem; /* Inner padding */
+  
+    /* Appearance */
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25); /* Softer shadow */
+    border: 1px solid rgba(var(--text-primary-rgb, 255, 255, 255), 0.15); /* Subtle border */
+    z-index: 10001;
+    box-sizing: border-box;
+  
+    /* Animation */
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px); /* Start slightly lower */
+    animation: slideInUp 0.5s 0.2s ease-out forwards;
+  }
+  
+  .consent-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1rem; /* Space between text and button */
+  }
+  
+  .consent-text {
+    margin: 0;
+    font-size: 0.85rem; /* Slightly smaller text */
+    line-height: 1.5;
+    flex-grow: 1;
+    color: var(--gray4); /* Use a slightly dimmer text color */
+  }
+  
+  .consent-text a {
+    color: var(--blue);
+    text-decoration: none; /* Remove default underline */
+    font-weight: 500;
+  }
+  .consent-text a:hover {
+    text-decoration: underline;
+  }
+  
+  .consent-actions {
+    display: flex;
+    flex-shrink: 0;
+  }
+  
+  /* Reusing button styles similar to external-link-warning */
+  .button {
+    padding: 0.6rem 1.2rem; /* Adjust padding */
+    border: none;
+    border-radius: 8px; /* Match other buttons */
+    font-size: 0.85rem; /* Match text size */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    white-space: nowrap;
+  }
+  
+  .button:active {
+      transform: scale(0.97);
+  }
+  
+  .accept-button {
+    background-color: var(--blue); /* Use theme blue */
+    color: #fff; /* Ensure contrast */
+  }
+  
+  .accept-button:hover {
+    /* Slightly darken the blue on hover - adjust if needed */
+    filter: brightness(0.9);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) { /* Adjust breakpoint if needed */
+     .cookie-consent-banner {
+      bottom: 0.5rem;
+      width: calc(100% - 1rem);
+      border-radius: 8px; /* Reduce rounding slightly */
+    }
+    .consent-content {
+      flex-direction: column; /* Stack elements */
+      align-items: center; /* Center items */
+      gap: 0.8rem;
+      text-align: center;
+    }
+     .consent-text {
+      font-size: 0.8rem;
+    }
+    .button {
+       padding: 0.5rem 1rem;
+       font-size: 0.8rem;
+    }
+  }
+  
+  /* Simple slide-in animation */
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }

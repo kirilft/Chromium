@@ -1,138 +1,107 @@
-// src/app/services/external-link.service.ts
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID, inject } from '@angular/core'; // Added inject
 import { isPlatformBrowser } from '@angular/common';
 import { BehaviorSubject } from 'rxjs';
+import { ConsentService } from './consent.service'; // Import ConsentService
 
 @Injectable({
-  providedIn: 'root' // Service available application-wide
+  providedIn: 'root'
 })
 export class ExternalLinkService {
-  // Key for storing the user's preference in localStorage
   private readonly localStorageKey = 'skipExternalLinkWarning';
 
-  // BehaviorSubject to hold the visibility state of the warning modal
-  // Private subject, public observable
   private _showWarning = new BehaviorSubject<boolean>(false);
   public showWarning$ = this._showWarning.asObservable();
 
-  // BehaviorSubject to hold the URL that triggered the warning
-  // Private subject, public observable
   private _targetUrl = new BehaviorSubject<string | null>(null);
   public targetUrl$ = this._targetUrl.asObservable();
 
+  // Inject ConsentService
+  private consentService = inject(ConsentService);
+
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  /**
-   * Checks if the warning should be shown based on user preference
-   * and initiates either direct navigation or shows the warning modal.
-   * This is the primary method called by the directive.
-   * @param url The external URL to navigate to.
-   */
   checkAndProceed(url: string | null): void {
-    // Ensure URL is valid
     if (!url) {
       console.error('ExternalLinkService: No URL provided.');
       return;
     }
 
-    // Proceed only in the browser environment
     if (isPlatformBrowser(this.platformId)) {
-      if (this.getSkipPreference()) {
-        // User has opted out, navigate directly
-        console.log('ExternalLinkService: Skipping warning based on preference.');
+      // Check consent BEFORE deciding based on preference
+      if (this.consentService.hasConsent() && this.getSkipPreference()) {
+        // User has opted out AND consent is given, navigate directly
+        console.log('ExternalLinkService: Skipping warning based on preference (consent given).');
         this._navigate(url);
       } else {
-        // User has not opted out, show the warning
-        console.log('ExternalLinkService: Showing warning for URL:', url);
+        // User has not opted out OR no consent given, show the warning
+        console.log('ExternalLinkService: Showing warning for URL (preference not set, or no consent):', url);
         this.showWarning(url);
       }
     } else {
-      // If not in browser (e.g., SSR), maybe just navigate? Or log?
-      // For safety, let's just log it for now. Direct navigation might not work server-side.
       console.warn('ExternalLinkService: External link navigation attempted outside browser environment for URL:', url);
-      // Optionally, you could attempt direct navigation if applicable in your SSR setup
-      // this._navigate(url);
     }
   }
 
-  /**
-   * Sets the state to display the warning modal with the target URL.
-   * @param url The URL to display in the warning.
-   */
   private showWarning(url: string): void {
     this._targetUrl.next(url);
     this._showWarning.next(true);
   }
 
-  /**
-   * Sets the state to hide the warning modal and clears the target URL.
-   */
   hideWarning(): void {
     this._showWarning.next(false);
     this._targetUrl.next(null);
     console.log('ExternalLinkService: Warning hidden.');
   }
 
-  /**
-   * Navigates to the stored target URL and optionally saves the preference.
-   * Called by the warning component when the user clicks "Continue".
-   * @param rememberPreference Whether to save the "skip warning" preference.
-   */
   proceed(rememberPreference: boolean): void {
-    const url = this._targetUrl.value; // Get the currently stored URL
+    const url = this._targetUrl.value;
     if (url) {
-      console.log(`ExternalLinkService: Proceeding to ${url}. Remember preference: ${rememberPreference}`);
-      if (rememberPreference) {
+      console.log(`ExternalLinkService: Proceeding to ${url}. Remember preference checkbox state: ${rememberPreference}`);
+      // Only save preference if checkbox is checked AND consent is given
+      if (rememberPreference && this.consentService.hasConsent()) {
         this.setSkipPreference(true);
+      } else if (rememberPreference && !this.consentService.hasConsent()) {
+        console.log('ExternalLinkService: Cannot save skip preference (no consent).');
       }
-      this.hideWarning(); // Hide modal before navigating
+      this.hideWarning();
       this._navigate(url);
     } else {
       console.error('ExternalLinkService: Proceed called but no target URL set.');
-      this.hideWarning(); // Hide modal anyway
+      this.hideWarning();
     }
   }
 
-  /**
-   * Reads the user's preference from localStorage.
-   * Returns true if the user wants to skip the warning, false otherwise.
-   */
+  /** Reads preference from localStorage - ONLY call if consent is granted */
   private getSkipPreference(): boolean {
     if (isPlatformBrowser(this.platformId)) {
-      try {
-        const preference = localStorage.getItem(this.localStorageKey);
-        return preference === 'true';
-      } catch (e) {
-        console.error('ExternalLinkService: Error reading from localStorage', e);
-        return false; // Default to showing the warning if localStorage fails
-      }
+        // **Caller (checkAndProceed) MUST ensure consent is given before calling this**
+        try {
+          const preference = localStorage.getItem(this.localStorageKey);
+          return preference === 'true';
+        } catch (e) {
+          console.error('ExternalLinkService: Error reading skip preference from localStorage', e);
+          return false;
+        }
     }
-    return false; // Default to showing warning if not in browser
+    return false;
   }
 
-  /**
-   * Writes the user's preference to localStorage.
-   * @param skip True to skip the warning, false to show it.
-   */
+  /** Writes preference to localStorage - ONLY call if consent is granted */
   private setSkipPreference(skip: boolean): void {
     if (isPlatformBrowser(this.platformId)) {
+      // **Caller (proceed) MUST ensure consent is given before calling this**
       try {
         localStorage.setItem(this.localStorageKey, String(skip));
-        console.log(`ExternalLinkService: Skip preference saved: ${skip}`);
+        console.log(`ExternalLinkService: Skip preference saved: ${skip} (consent given).`);
       } catch (e) {
-        console.error('ExternalLinkService: Error writing to localStorage', e);
+        console.error('ExternalLinkService: Error writing skip preference to localStorage', e);
       }
     }
   }
 
-  /**
-   * Performs the actual navigation in a new tab.
-   * @param url The URL to navigate to.
-   */
   private _navigate(url: string): void {
     if (isPlatformBrowser(this.platformId)) {
       try {
-        // Open the URL in a new tab/window
         window.open(url, '_blank', 'noopener noreferrer');
       } catch (e) {
         console.error(`ExternalLinkService: Error opening URL ${url}`, e);
