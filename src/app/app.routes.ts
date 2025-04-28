@@ -4,6 +4,7 @@ import { MainComponent } from './Pages/main/main.component';
 import { PageNotFoundComponent } from './Pages/page-not-found/page-not-found.component';
 import { ArcComponent } from './Pages/arc/arc.component';
 import { GalleryComponent } from './Pages/gallery/gallery.component';
+import { ImpressumComponent } from './Pages/impressum/impressum.component';
 
 export const routes: Routes = [
   {
@@ -23,6 +24,11 @@ export const routes: Routes = [
   {
     path: 'gallery',
     component: GalleryComponent
+  },
+  {
+    path: 'impressum', // The URL path
+    component: ImpressumComponent,
+    data: { title: 'Kasai - Impressum' } // Set the page title
   },
   {
     path: '**',

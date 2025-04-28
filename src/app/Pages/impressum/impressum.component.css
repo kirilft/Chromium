@@ -1,0 +1,75 @@
+/* Inspired by main.component.css */
+.impressum-container {
+    display: flex;
+    align-items: center; /* Center content vertically */
+    flex-direction: column;
+    justify-content: center; /* Center content horizontally */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(102, 102, 102, 0.1) 100%); /* Subtle gradient */
+    border-radius: 1rem; /* 16px */
+    min-height: 72.2vh; /* Maintain similar height */
+    margin: 13.9vh 2rem 0; /* Adjust top/bottom margin if needed, leave space for footer */
+    padding: 3rem; /* Add padding inside the container */
+    box-sizing: border-box;
+    text-align: center; /* Center text within the container */
+    color: var(--white); /* Ensure text color matches theme */
+  }
+  
+  .impressum-headline {
+    font-family: Outfit, sans-serif; /* Use consistent font */
+    font-size: var(--Fontsize-h1); /* Use defined H1 size */
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: var(--white); /* Ensure headline color matches theme */
+  }
+  
+  .impressum-content {
+    font-family: Outfit, sans-serif;
+    font-size: var(--Fontsize-h4); /* Slightly smaller size for content */
+    line-height: 1.6;
+    color: var(--gray4); /* Use a readable gray */
+    max-width: 600px; /* Limit width for readability */
+  }
+  
+  .impressum-content p {
+    margin-bottom: 1.5rem; /* Space between paragraphs */
+  }
+  
+  .impressum-content a {
+    color: var(--blue); /* Use theme blue for links */
+    text-decoration: none;
+  }
+  
+  .impressum-content a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive adjustments (similar to main.component.css) */
+  @media only screen and (max-width: 767px) {
+    .impressum-container {
+      margin-left: 1rem ;
+      margin-right: 1rem;
+      padding: 2rem 1rem;
+      min-height: 70vh;
+    }
+    .impressum-headline {
+      font-size: var(--Fontsize-h2); /* Adjust size */
+      margin-bottom: 1.5rem;
+    }
+    .impressum-content {
+      font-size: var(--Fontsize-h5); /* Adjust size */
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+     .impressum-container {
+      margin-left: 1.5rem ;
+      margin-right: 1.5rem;
+      padding: 2.5rem;
+    }
+     .impressum-headline {
+      font-size: var(--Fontsize-h2); /* Adjust size */
+    }
+     .impressum-content {
+      font-size: var(--Fontsize-h4); /* Adjust size */
+    }
+  }
