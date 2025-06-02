@@ -16,39 +16,43 @@
   </section>
 
   <section class="gallery-grid-section">
-    <div class="gallery-grid" *ngIf="images.length > 0; else noImages">
-      <div class="gallery-item" *ngFor="let img of images; let i = index">
-        <img
-          [src]="baseImagePath + img.src"  
-          (click)="openPreview(img)"
-          [alt]="img.alt"
-          loading="lazy"
-          role="button"
-          tabindex="0"
-          (keydown.enter)="openPreview(img)" />
+    @if (images.length > 0) {
+      <div class="gallery-grid">
+        @for (img of images; track img; let i = $index) {
+          <div class="gallery-item">
+            <img
+              [src]="baseImagePath + img.src"
+              (click)="openPreview(img)"
+              [alt]="img.alt"
+              loading="lazy"
+              role="button"
+              tabindex="0"
+              (keydown.enter)="openPreview(img)" />
+            </div>
+          }
+        </div>
+      } @else {
+        <p class="no-images">No images found in the gallery. Check the console for errors.</p>
+      }
+
+    </section>
+
+  </main>
+
+  @if (previewImageFullPath) {
+    <div class="preview-overlay" (click)="closePreview()" title="Click background to close preview">
+      <button class="close-preview-button" (click)="closePreview()" aria-label="Close image preview">&times;</button>
+      <img
+        [src]="previewImageFullPath"
+        class="preview-image"
+        alt="Fullscreen preview"
+        (click)="$event.stopPropagation()" />
+        @if (previewDownloadUrl) {
+          <div class="preview-info" (click)="$event.stopPropagation()">
+            <span class="copyright-notice">© 2025 Kiri.wstd</span>
+            <a [href]="previewDownloadUrl" class="download-link" target="_blank" rel="noopener noreferrer" appExternalLink>Download</a>
+          </div>
+        }
       </div>
-    </div>
-
-    <ng-template #noImages>
-      <p class="no-images">No images found in the gallery. Check the console for errors.</p>
-    </ng-template>
-  </section>
-
-</main>
-
-<div class="preview-overlay" *ngIf="previewImageFullPath" (click)="closePreview()" title="Click background to close preview">
-  <button class="close-preview-button" (click)="closePreview()" aria-label="Close image preview">&times;</button>
-
-  <img
-    [src]="previewImageFullPath"
-    class="preview-image"
-    alt="Fullscreen preview"
-    (click)="$event.stopPropagation()" />
-
-  <div class="preview-info" *ngIf="previewDownloadUrl" (click)="$event.stopPropagation()">
-    <span class="copyright-notice">© 2025 Kiri.wstd</span>
-    <a [href]="previewDownloadUrl" class="download-link" target="_blank" rel="noopener noreferrer" appExternalLink>Download</a>
-  </div>
-
-</div>
-<app-footer></app-footer>
+    }
+    <app-footer></app-footer>
