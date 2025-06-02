@@ -1,70 +1,130 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kasai Tech | Kiri's Experimental Web Platform & Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="description" content="Explore Kasai Tech, Kiri's experimental web platform and portfolio showcasing Angular development, web design concepts, and photography projects.">
-  <meta name="keywords" content="Kasai Tech, Kiri, Angular Developer, Web Design, Photography Portfolio, Experimental Website, Kasai Technologies, Frontend Development">
+  <!-- Optimized Title: 56 characters, includes primary keywords early -->
+  <title>Angular Portfolio & Photography | Kasai Tech by Kiri</title>
 
-  <link rel="canonical" href="https://kasai.tech/">
+  <!-- Optimized Description: ~150 characters, target keywords near start -->
+  <meta
+    name="description"
+    content="Kasai Tech by Kiri: An Angular portfolio showcasing web design, standalone component tutorials, and a curated photography gallery from Austria."
+  />
 
-  <link rel="icon" href="/assets/favicon/512x512.png">
+  <!-- (Optional) You may keep or remove keywords—their impact is minimal, but we’ll keep them for completeness -->
+  <meta
+    name="keywords"
+  />
 
-  <link rel="preload" href="/assets/fonts/Outfit_woff2.woff2" as="font" type="font/woff2" crossorigin="anonymous"> <link rel="manifest" href="/assets/manifest.webmanifest">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://kasai.tech/" />
 
-  <base href="/">
+  <!-- Favicons & Manifest (unchanged) -->
+  <link rel="icon" href="/assets/favicon/512x512.png" />
+  <link rel="preload" href="/assets/fonts/Outfit_woff2.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+  <link rel="manifest" href="/assets/manifest.webmanifest" />
 
-  <meta name="theme-color" content="#161617"> <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes"> <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Kasai">
-  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/72x72.png">
-  <link rel="apple-touch-icon" sizes="96x96" href="/assets/favicon/96x96.png">
-  <link rel="apple-touch-icon" sizes="128x128" href="/assets/favicon/128x128.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/152x152.png">
-  <link rel="apple-touch-icon" sizes="192x192" href="/assets/favicon/192x192.png">
-  <link rel="apple-touch-icon" sizes="256x256" href="/assets/favicon/256x256.png">
-  <link rel="apple-touch-icon" sizes="512x512" href="/assets/favicon/512x512.png">
+  <!-- Base HREF -->
+  <base href="/" />
 
-  <link rel="apple-touch-startup-image" href="/assets/splash-screens/splash-2048x2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="/assets/splash-screens/splash-2732x2048.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="/assets/splash-screens/splash-1668x2388.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="/assets/splash-screens/splash-2388x1668.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="/assets/splash-screens/splash-828x1792.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="/assets/splash-screens/splash-1792x828.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <!-- PWA & Mobile Tags (unchanged) -->
+  <meta name="theme-color" content="#161617" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Kasai" />
 
+  <!-- Apple Touch Icons (unchanged) -->
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/72x72.png" />
+  <link rel="apple-touch-icon" sizes="96x96" href="/assets/favicon/96x96.png" />
+  <link rel="apple-touch-icon" sizes="128x128" href="/assets/favicon/128x128.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/152x152.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="/assets/favicon/192x192.png" />
+  <link rel="apple-touch-icon" sizes="256x256" href="/assets/favicon/256x256.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="/assets/favicon/512x512.png" />
+
+  <!-- Apple Startup Images (unchanged) -->
+  <link
+    rel="apple-touch-startup-image"
+    href="/assets/splash-screens/splash-2048x2732.png"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="/assets/splash-screens/splash-2732x2048.png"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="/assets/splash-screens/splash-1668x2388.png"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="/assets/splash-screens/splash-2388x1668.png"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="/assets/splash-screens/splash-828x1792.png"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="/assets/splash-screens/splash-1792x828.png"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+
+  <!-- Structured Data: WebSite + WebPage for better crawl understanding -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Kasai Tech",
-    "url": "https://kasai.tech/",
-    "description": "Kiri's experimental web platform and portfolio showcasing Angular development, web design concepts, and photography projects.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://kasai.tech/search?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    },
-     "author": { // Assuming Kiri is the primary author/creator
-        "@type": "Person",
-        "name": "Kiri Yo Wasted",
-         // Add "url": "link-to-personal-profile-or-impressum" if available
-         "sameAs": [ // Add links to social profiles if desired
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://kasai.tech/#website",
+        "url": "https://kasai.tech/",
+        "name": "Kasai Tech",
+        "description": "Kiri's Angular portfolio showcasing web design, standalone component tutorials, and a curated photography gallery.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://kasai.tech/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Kiri Yo Wasted",
+          "sameAs": [
             "https://x.com/kiriwstd",
             "https://bsky.app/profile/kiriwstd.bsky.social",
             "https://www.tiktok.com/@kiri.wstd",
             "https://github.com/kirilft"
-         ]
+          ]
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://kasai.tech/#webpage",
+        "url": "https://kasai.tech/",
+        "name": "Kasai Tech Home | Angular Portfolio & Photography",
+        "description": "Kasai Tech by Kiri: An Angular portfolio showcasing web design, standalone component tutorials, and a curated photography gallery from Austria.",
+        "isPartOf": {
+          "@id": "https://kasai.tech/#website"
+        },
+        "inLanguage": "en-US"
       }
+    ]
   }
   </script>
 
 </head>
 <body>
   <app-root></app-root>
-  <noscript>Please enable JavaScript to view the full interactive experience on Kasai Tech.</noscript> </body>
+  <noscript>Please enable JavaScript to view the full interactive experience on Kasai Tech.</noscript>
+</body>
 </html>
