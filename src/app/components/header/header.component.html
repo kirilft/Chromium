@@ -7,18 +7,18 @@
   </div>
 
   <nav class="navbar">
-    <ul class="dot-grid">
-      <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-    </ul>
+      <ul class="dot-grid">
+        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+      </ul>
 
     <div class="nav-links">
       <a
         routerLink="/gallery"
         routerLinkActive="active-link"
         class="nav-link"
-      (mouseenter)="prefetchGalleryData()">Gallery</a>
-      <a href="https://github.com/kirilft" class="nav-link" target="_blank" rel="noopener noreferrer" appExternalLink>Github</a>
-    </div>
+        (mouseenter)="prefetchGalleryData()">Gallery</a>
+        <a href="https://github.com/kirilft" class="nav-link" target="_blank" rel="noopener noreferrer" appExternalLink>Github</a>
+      </div>
 
     <div
       class="theme-switcher"
@@ -26,15 +26,11 @@
       tabindex="0"
       (keydown.enter)="toggleTheme()"
       aria-label="Toggle Theme"
-      >
-      @if (themeInitializedClientSide) {
-        @if (currentTheme === 'light') {
-          <app-icon name="sun" alt="Switch to dark mode"></app-icon>
-        }
-        @if (currentTheme === 'dark') {
-          <app-icon name="moon" alt="Switch to light mode"></app-icon>
-        }
-      }
-    </div>
+    >
+      <ng-container *ngIf="themeInitializedClientSide">
+        <app-icon *ngIf="currentTheme === 'light'" name="sun" alt="Switch to dark mode"></app-icon>
+        <app-icon *ngIf="currentTheme === 'dark'" name="moon" alt="Switch to light mode"></app-icon>
+      </ng-container>
+      </div>
   </nav>
 </header>

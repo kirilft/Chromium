@@ -1,48 +1,46 @@
 <div class="container">
 
   <div class="controls"> <h2 class="controls-title">Squircle Generator v2</h2> <div class="control-group dimension-group">
-  <label for="productWidth">Width:</label>
-  <input id="productWidth" type="number" min="1" [(ngModel)]="productWidth" />
-</div>
-<div class="control-group dimension-group">
-  <label for="productHeight">Height:</label>
-  <input id="productHeight" type="number" min="1" [(ngModel)]="productHeight" />
-</div>
+      <label for="productWidth">Width:</label>
+      <input id="productWidth" type="number" min="1" [(ngModel)]="productWidth" />
+    </div>
+    <div class="control-group dimension-group">
+      <label for="productHeight">Height:</label>
+      <input id="productHeight" type="number" min="1" [(ngModel)]="productHeight" />
+    </div>
 
-<div class="control-group">
-  <label for="measurement">Output Units:</label> <select id="measurement" [(ngModel)]="measurement">
-  @for (option of measurementOptions; track option) {
-    <option [value]="option">
-      {{ option }}
-    </option>
-  }
-</select>
-</div>
+    <div class="control-group">
+      <label for="measurement">Output Units:</label> <select id="measurement" [(ngModel)]="measurement">
+        <option *ngFor="let option of measurementOptions" [value]="option">
+          {{ option }}
+        </option>
+      </select>
+    </div>
 
-<div class="control-group smoothing-group"> <label for="cornerSmoothing">Corner Smoothing: {{ cornerSmoothing() }}%</label>
-<input id="cornerSmoothing" type="range" min="0" max="100" step="1" [(ngModel)]="cornerSmoothing" />
-</div>
+    <div class="control-group smoothing-group"> <label for="cornerSmoothing">Corner Smoothing: {{ cornerSmoothing() }}%</label>
+      <input id="cornerSmoothing" type="range" min="0" max="100" step="1" [(ngModel)]="cornerSmoothing" />
+    </div>
 
-<div
-  class="output-group"
-  (click)="copyRadius()"
-  [class.copied]="copySuccess()"
-  title="Click to copy CSS">
-  <label>Calculated CSS:</label>
-  <code class="output-code">
-    {{ copySuccess() ? 'Copied!' : borderRadiusCssString() }}
-  </code>
-</div>
+    <div
+      class="output-group"
+      (click)="copyRadius()"
+      [class.copied]="copySuccess()"
+      title="Click to copy CSS">
+      <label>Calculated CSS:</label>
+      <code class="output-code">
+        {{ copySuccess() ? 'Copied!' : borderRadiusCssString() }}
+      </code>
+    </div>
 
-<div class="info-group">
-  <label>Approximate 'n':</label>
-  <span>{{ n().toFixed(2) }}</span>
-</div>
-</div>
-
-<div class="squircle-wrapper">
-  <div class="squircle zoom-default" [ngStyle]="displaySquircleStyle()">
+     <div class="info-group">
+        <label>Approximate 'n':</label>
+        <span>{{ n().toFixed(2) }}</span>
+      </div>
   </div>
-</div>
+
+  <div class="squircle-wrapper">
+    <div class="squircle zoom-default" [ngStyle]="displaySquircleStyle()">
+        </div>
+  </div>
 
 </div>

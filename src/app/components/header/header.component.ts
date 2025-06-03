@@ -1,6 +1,6 @@
 // src/app/components/header/header.component.ts
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, Inject, PLATFORM_ID, ChangeDetectorRef } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ThemeService } from '../../services/theme.service';
@@ -12,11 +12,12 @@ import { ExternalLinkDirective } from '../../directives/external-link.directive'
   selector: 'app-header',
   standalone: true,
   imports: [
-    IconComponent,
-    RouterLink,
-    RouterLinkActive,
-    ExternalLinkDirective
-],
+      CommonModule,
+      IconComponent,
+      RouterLink,
+      RouterLinkActive,
+      ExternalLinkDirective
+  ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,12 +1,10 @@
-@if (showBanner()) {
-  <div class="cookie-consent-banner">
+<div class="cookie-consent-banner" *ngIf="showBanner()">
     <div class="consent-content">
       <p class="consent-text">
         This website uses local storage to enhance your experience, primarily for saving theme preferences and external link warning settings (functional purposes). By clicking "Accept", you consent to this use.
-      </p>
+        </p>
       <div class="consent-actions">
         <button class="button accept-button" (click)="accept()">Accept</button>
       </div>
     </div>
   </div>
-}

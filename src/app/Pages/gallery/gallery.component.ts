@@ -1,6 +1,6 @@
     // src/app/Pages/gallery/gallery.component.ts
     import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
-    
+    import { CommonModule } from '@angular/common';
     import { HttpClientModule } from '@angular/common/http';
     import { Subscription } from 'rxjs';
     import { HeaderComponent } from '../../components/header/header.component';
@@ -13,11 +13,12 @@
       standalone: true,
       // Add ExternalLinkDirective to imports
       imports: [
-    HeaderComponent,
-    FooterComponent,
-    HttpClientModule,
-    ExternalLinkDirective
-],
+          CommonModule,
+          HeaderComponent,
+          FooterComponent,
+          HttpClientModule,
+          ExternalLinkDirective // <-- ADD HERE
+      ],
       templateUrl: './gallery.component.html',
       styleUrls: ['./gallery.component.css']
     })
