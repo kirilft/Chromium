@@ -5,7 +5,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
   selector: 'app-kasai',
   imports: [FooterComponent],
   templateUrl: './kasai.component.html',
-  styleUrl: './kasai.component.css'
+  styleUrls: ['./kasai.component.css']
 })
 export class KasaiComponent {
 
