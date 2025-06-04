@@ -1,8 +1,8 @@
 // src/app/app.component.ts
-import { Component, OnInit, inject } from '@angular/core'; // Removed Inject, added inject
+import { Component, OnInit, inject, DOCUMENT } from '@angular/core'; // Removed Inject, added inject
 import { Router, ActivatedRoute, NavigationEnd, Event as RouterEvent } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
-import { DOCUMENT, CommonModule } from '@angular/common'; // Keep DOCUMENT import
+ // Keep DOCUMENT import
 import { filter, map, distinctUntilChanged } from 'rxjs/operators';
 import { RouterOutlet } from '@angular/router';
 import { ExternalLinkWarningComponent } from './components/external-link-warning/external-link-warning.component';
@@ -11,7 +11,7 @@ import { CookieConsentComponent } from './components/cookie-consent/cookie-conse
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ExternalLinkWarningComponent, CookieConsentComponent],
+  imports: [RouterOutlet, ExternalLinkWarningComponent, CookieConsentComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
