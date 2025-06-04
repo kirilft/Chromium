@@ -79,15 +79,26 @@
       transform: scale(0.97);
   }
   
-  .accept-button {
-    background-color: var(--blue); /* Use theme blue */
-    color: #fff; /* Ensure contrast */
-  }
-  
-  .accept-button:hover {
-    /* Slightly darken the blue on hover - adjust if needed */
-    filter: brightness(0.9);
-  }
+.accept-button {
+  background-color: var(--blue); /* Use theme blue */
+  color: #fff; /* Ensure contrast */
+}
+
+.accept-button:hover {
+  /* Slightly darken the blue on hover - adjust if needed */
+  filter: brightness(0.9);
+}
+
+.decline-button {
+  background-color: var(--gray1);
+  color: var(--gray4);
+  border: 1px solid var(--gray2);
+  margin-right: 0.5rem;
+}
+
+.decline-button:hover {
+  background-color: var(--gray2);
+}
   
   /* Responsive adjustments */
   @media (max-width: 640px) { /* Adjust breakpoint if needed */

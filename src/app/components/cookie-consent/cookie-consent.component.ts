@@ -19,8 +19,10 @@ export class CookieConsentComponent {
     this.consentService.acceptConsent();
   }
 
-  // Optional: Implement decline logic if you add a decline button
-  // decline(): void {
-  //   this.consentService.declineConsent();
-  // }
+  /**
+   * Handle user declining consent.
+   */
+  decline(): void {
+    this.consentService.declineConsent();
+  }
 }
