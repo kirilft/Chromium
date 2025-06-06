@@ -5,6 +5,7 @@ import { PageNotFoundComponent } from './Pages/page-not-found/page-not-found.com
 import { ArcComponent } from './Pages/arc/arc.component';
 import { GalleryComponent } from './Pages/gallery/gallery.component';
 import { ImpressumComponent } from './Pages/impressum/impressum.component'; // Import Impressum
+import { KasaiComponent } from './Pages/kasai/kasai.component'; // Import KasaiComponent
 
 export const routes: Routes = [
   {
@@ -21,6 +22,7 @@ export const routes: Routes = [
     redirectTo: '',
     pathMatch: 'full'
   },
+   { path: 'kasai', component: KasaiComponent },
   {
     path: 'arc',
     component: ArcComponent,

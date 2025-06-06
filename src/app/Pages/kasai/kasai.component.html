@@ -1,1 +1,79 @@
+<app-header></app-header>
+
+<main class="kasai-main">
+  <div class="kasai-container">
+    <h2 class="kasai-title">
+      Another Day, suffering in this dimension…
+    </h2>
+
+    <div class="kasai-panel">
+      <!-- Column 1: Networking -->
+      <div class="kasai-column">
+        <h3>Networking</h3>
+        <ul>
+          <li *ngFor="let svc of networking">
+            <a [href]="svc.url" target="_blank" rel="noopener">
+              {{ svc.label }}
+            </a>
+            <span
+              class="status-dot"
+              [ngClass]="{
+                online: svc.isOnline === true,
+                offline: svc.isOnline === false,
+                checking: svc.isOnline === null
+              }"
+              title="{{ svc.isOnline === null ? 'Checking…' : (svc.isOnline ? 'Online' : 'Offline') }}">
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Proxmox -->
+      <div class="kasai-column">
+        <h3>Proxmox</h3>
+        <ul>
+          <li *ngFor="let svc of proxmox">
+            <a [href]="svc.url" target="_blank" rel="noopener">
+              {{ svc.label }}
+            </a>
+            <span
+              class="status-dot"
+              [ngClass]="{
+                online: svc.isOnline === true,
+                offline: svc.isOnline === false,
+                checking: svc.isOnline === null
+              }"
+              title="{{ svc.isOnline === null ? 'Checking…' : (svc.isOnline ? 'Online' : 'Offline') }}">
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Clients -->
+      <div class="kasai-column">
+        <h3>Clients</h3>
+        <ul>
+          <li *ngIf="clients.length === 0" class="no-entry">
+            No clients defined.
+          </li>
+          <li *ngFor="let svc of clients">
+            <a [href]="svc.url" target="_blank" rel="noopener">
+              {{ svc.label }}
+            </a>
+            <span
+              class="status-dot"
+              [ngClass]="{
+                online: svc.isOnline === true,
+                offline: svc.isOnline === false,
+                checking: svc.isOnline === null
+              }"
+              title="{{ svc.isOnline === null ? 'Checking…' : (svc.isOnline ? 'Online' : 'Offline') }}">
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
 <app-footer></app-footer>

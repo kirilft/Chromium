@@ -1,0 +1,162 @@
+/* 1) .kasai-main: identical to your global <main> dimensions */
+.kasai-main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(90deg, #ffffff1a 0%, #6666661a 100%);
+  border-radius: 1rem;
+  height: 72.2vh;               /* same as your main screen */
+  margin: 13.9vh 2rem;          /* same as your main screen */
+  width: calc(100vw - 4rem);    /* same as your main screen */
+  transition: color 0.5s ease-in-out;
+}
+
+/* 2) .kasai-container fills the .kasai-main area */
+.kasai-container {
+  background-color: var(--gray);    /* panel background (adapts to light/dark) */
+  color: var(--white);              /* text color */
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 2rem;                    /* inner padding */
+  font-family: 'Outfit', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* 3) Main title: 67.8px */
+.kasai-title {
+  font-size: 67.8px;                /* exactly 67.8px */
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  background: var(--Gradients-Title);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 4) Three‐column layout */
+.kasai-panel {
+  display: flex;
+  gap: 1rem;
+  flex: 1; /* fill vertical space if possible */
+}
+
+/* 5) Column container */
+.kasai-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 6) Column headings: 41.9px */
+.kasai-column h3 {
+  font-size: 41.9px;                /* exactly 41.9px */
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--blue);
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 0.25rem;
+}
+
+/* 7) List resets */
+.kasai-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kasai-column li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--gray2);
+}
+
+.kasai-column li:last-child {
+  border-bottom: none;
+}
+
+/* 8) Link style: 41.9px for service text */
+.kasai-column a {
+  color: var(--white);
+  font-size: 41.9px;                /* exactly 41.9px */
+  text-decoration: none;
+  flex-grow: 1;
+  transition: color 0.2s ease;
+}
+
+.kasai-column a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+/* 9) Status dot: always visible */
+.status-dot {
+  display: inline-block;
+  width: 0.75rem;                   /* ~12px diameter */
+  height: 0.75rem;
+  border-radius: 50%;
+  border: 1px solid var(--gray3);
+  margin-left: 0.75rem;
+}
+
+.status-dot.checking {
+  background-color: var(--gray3);
+}
+
+.status-dot.online {
+  background-color: var(--green);
+}
+
+.status-dot.offline {
+  background-color: var(--red);
+}
+
+/* 10) “No clients defined” fallback: 41.9px as well */
+.no-entry {
+  color: var(--gray4);
+  font-size: 41.9px;                /* exactly 41.9px */
+  padding: 0.5rem 0;
+}
+
+/* 11) Responsive breakpoints */
+
+/* Mobile (≤767px): stack columns vertically */
+@media only screen and (max-width: 767px) {
+  .kasai-panel {
+    flex-direction: column;
+  }
+  .kasai-column {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Tablet (768px–1024px): two columns top, one below */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .kasai-panel {
+    flex-wrap: wrap;
+  }
+  .kasai-column {
+    flex: 0 0 48%;
+    margin-bottom: 1rem;
+  }
+  .kasai-column:nth-child(3) {
+    flex: 0 0 100%;
+  }
+}
+
+/* Desktop (≥1025px): three equal columns side by side */
+@media only screen and (min-width: 1025px) {
+  .kasai-panel {
+    flex-direction: row;
+  }
+  .kasai-column {
+    flex: 1;
+  }
+}
