@@ -21,10 +21,10 @@
   --blue: #005aff; /* Was #1F8DFF */
 
   --black: #FFF; /* Background color often becomes white */
-  --gray: #F1F1FF; /* Light gray background elements */
-  --gray2: #A9A9AE; /* Medium-light gray */
-  --gray3: #505055; /* Medium-dark gray */
-  --gray4: #373739; /* Dark gray text/elements */
+  --gray: rgb(241, 241, 255); /* Light gray background elements */
+  --gray2: rgb(169, 169, 174); /* Medium-light gray */
+  --gray3: rgb(80, 80, 85); /* Medium-dark gray */
+  --gray4: rgb(55, 55, 57); /* Dark gray text/elements */
   --gray5: #1D1D20; /* Very dark gray / near black */
   --white: #000; /* Text color often becomes black */
 
@@ -32,7 +32,8 @@
 
   /* RGB versions for rgba() */
   --text-primary-rgb: 0,0,0;
-  --background-primary-rgb: 255,255,255;
+  --background-primary-rgb: 255, 255, 255;
+  --background-gradient: linear-gradient(90deg, rgba(241, 241, 255,0.1) 0%, rgba(80,80,85,0.1) 100%);
   /* *** Use RGB for the corrected light mode blue *** */
   --blue-rgb: 0, 90, 156; /* For #005A9C */
 }
@@ -51,8 +52,8 @@
   --black: #000; /* Background color often becomes black */
   --gray: #161617; /* Very dark gray background elements */
   --gray2: #303030; /* Dark gray */
-  --gray3: #49494C; /* Medium-dark gray */
-  --gray4: #A2A2A5; /* Light gray text/elements */
+  --gray3: #49494c; /* Medium-dark gray */
+  --gray4: #a2a2a5; /* Light gray text/elements */
   --gray5: #EAEAF6; /* Very light gray / near white */
   --white: #FFF; /* Text color often becomes white */
 
@@ -60,7 +61,8 @@
 
   /* RGB versions for rgba() */
   --text-primary-rgb: 255,255,255;
-  --background-primary-rgb: 0,0,0;
+  --background-primary-rgb: 0, 0, 0;
+  --background-gradient: linear-gradient(90deg,rgba(162,162,165,0.1) 0%,  rgba(22, 22 , 23 ,0.1) 100%);
   /* *** REVERTED: Use RGB for the original dark mode blue *** */
   --blue-rgb: 41, 151, 255; /* For #2997FF */
 }
@@ -85,7 +87,8 @@
   --white: #000;
   --social-filter: invert(100%);
   --text-primary-rgb: 0,0,0;
-  --background-primary-rgb: 255,255,255;
+
+  --background-primary-rgb: linear-gradient(90deg, rgba( var(--black), 0.102) 0%, rgba(var(--gray3), 0.102) 100%);
   /* *** Use RGB for the corrected light mode blue *** */
   --blue-rgb: 0, 90, 156; /* For #005A9C */
 

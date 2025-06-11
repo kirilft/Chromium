@@ -17,9 +17,12 @@
 .gallery-intro {
   margin-bottom: 3rem; /* Space below intro text */
   padding: 1.5rem;
-  background-color: rgba(var(--text-primary-rgb, 0, 0, 0), 0.03); /* Subtle background */
+  background: var(--background-gradient);
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
+  border: 1px solid var(--black);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  border: 1px solid rgba(var(--text-primary-rgb, 0, 0, 0), 0.08);
 }
 
 .gallery-intro h2 {
@@ -258,3 +261,12 @@ font-weight: 500; /* Slightly bolder */
 text-decoration: underline;
 }
 /* === ADDED STYLES END === */
+
+/* Dark-mode luminous frame on main container */
+:host-context([data-theme="dark"]) .gallery-intro {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.1),
+    0 0 30px rgba(255, 255, 255, 0.15),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
