@@ -18,7 +18,7 @@
   --purple: #9C0169;
   --lila: #A601FF;
   /* *** CONTRAST FIX (Light Mode): Use darker blue for better contrast on light backgrounds *** */
-  --blue: #005A9C; /* Was #1F8DFF */
+  --blue: #005aff; /* Was #1F8DFF */
 
   --black: #FFF; /* Background color often becomes white */
   --gray: #F1F1FF; /* Light gray background elements */
