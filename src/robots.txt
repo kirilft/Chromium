@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /zoe27
+Disallow: /kasai
 
-Sitemap: https://kasai.tech/sitemap.xml
+Sitemap: https://kiriwstd.com/sitemap.xml
