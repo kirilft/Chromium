@@ -1,3 +1,5 @@
+/* src/app/Pages/main/main.component.css */
+
 main {
   display: flex;
   align-items: center;
@@ -7,10 +9,10 @@ main {
   height: 72.2vh;
   margin: 13.9vh 2rem;
   width: calc(100vw - 4rem);
-      transition: color 0.5s ease-in-out;
-  }
+  transition: color 0.5s ease-in-out;
+}
 
-  .animated-text {
+.animated-text {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +23,6 @@ main {
   text-overflow: ellipsis;
   font-weight: 500;
   transition: color 0.5s ease-in-out;
-
   margin: auto;
   color: var(--white);
   font-family: Outfit, serif;
@@ -29,109 +30,120 @@ main {
   font-style: normal;
   line-height: normal;
   min-height: 5.25rem;
-    padding-left: 12rem;
-    padding-right: 12rem;
-  }
+  padding: 0 12rem;
+}
 
-  .info-text {
+.info-text {
   flex-direction: column;
   overflow: hidden;
   overflow-wrap: break-word;
   text-overflow: ellipsis;
   width: calc(100% - 4rem);
-    margin: auto auto auto 6rem;
-    color: var(--gray4);
-    font-family: Outfit, serif;
+  margin: auto auto auto 6rem;
+  color: var(--gray4);
+  font-family: Outfit, serif;
   font-size: var(--Fontsize-h3, 38px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   transition: color 0.5s ease-in-out;
-  }
+}
 
-  .sentence-reloader {
-  align-items: center;
-  color: var(--gray3);
-  cursor: pointer;
+/* Reload icon — Big (default) */
+.sentence-reloader {
+  position: relative;                /* ← needed for bottom-based jump */
   display: flex;
-  flex-direction: column;
-  font-size: 4rem;
-  justify-content: flex-end;
-  margin: 1rem 2.5rem 0 auto;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   user-select: none;
   width: fit-content;
+  color: var(--Grays-Gray4, #A9A9AE);
+  /* P3 fallback */
+  color: var(--Grays-Gray4, color(display-p3 0.6627 0.6627 0.6824));
+  text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.25);
+  text-shadow: 2px 4px 4px color(display-p3 1 1 1 / 0.25);
+  font-family: "SF Pro Display", sans-serif;
+  font-size: var(--Fontsize-h3, 41.9px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 32px 56px 0 auto;
   transition: color 0.5s ease-in-out;
-  }
+}
 
-  .sentence-reloader:hover {
+.sentence-reloader:hover {
   color: var(--green);
-  transform: scale(1.1);
-  transition: transform 0.3s ease-in-out;
-  }
+  animation: jump 1s infinite alternate;
+}
 
-  .rotate360 {
-    animation: rotate360 1s linear;
-  }
+/* Spin on click */
+.sentence-reloader.rotate360 {
+  animation: rotate360 1s linear;
+}
 
-  @keyframes rotate360 {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+@keyframes rotate360 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
 
-.icon{
+@keyframes jump {
+  0%   { bottom: 0px;  }
+  50%  { bottom: 20px; }
+  100% { bottom: 0px;  }
+}
+
+.icon {
   width: 2rem;
   height: 2rem;
 }
 
-
 /* Mobile Layout (up to 767px wide) */
 @media only screen and (max-width: 767px) {
   main {
-    margin-left: 1rem ;
-    margin-right: 1rem;
+    margin: 1rem;
     width: calc(100% - 2rem);
   }
 
-
   .animated-text {
     width: calc(100% - 1rem);
-      font-size: var(--Fontsize-h3, 38px);
+    font-size: var(--Fontsize-h3, 38px);
   }
 
-    .info-text {
-  font-size: var(--Fontsize-h5);
-  margin-left: 1rem;
-    }
+  .info-text {
+    font-size: var(--Fontsize-h5);
+    margin-left: 1rem;
+  }
 
   .sentence-reloader {
-    font-size: 1.5rem;
+    color: var(--Grays-Gray4, #A2A2A5);
+    color: var(--Grays-Gray4, color(display-p3 0.6353 0.6353 0.6471));
+    font-size: var(--Fontsize-h5, 25.9px);
+    margin: 12px 16px 0 auto;
   }
 }
 
 /* Tablet Layout (768px to 1024px wide) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   main {
-    margin-left: 1.5rem ;
-    margin-right: 1.5rem;
+    margin: 1.5rem;
     width: calc(100% - 3rem);
   }
 
-
   .animated-text {
     width: calc(100% - 6rem);
-      font-size: var(--Fontsize-h3, 38px);
+    font-size: var(--Fontsize-h3, 38px);
   }
 
-    .info-text {
-  font-size: var(--Fontsize-h4);
-  margin-left: 2rem;
-    }
+  .info-text {
+    font-size: var(--Fontsize-h4);
+    margin-left: 2rem;
+  }
 
   .sentence-reloader {
-    font-size: 2.5rem;
+    color: var(--Grays-Gray4, #A2A2A5);
+    color: var(--Grays-Gray4, color(display-p3 0.6353 0.6353 0.6471));
+    font-size: var(--Fontsize-h4, 34.4px);
+    margin: 32px 40px 0 auto;
   }
 }

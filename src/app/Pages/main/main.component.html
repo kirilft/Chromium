@@ -1,8 +1,14 @@
+<!-- src/app/Pages/main/main.component.html -->
+
 <app-header></app-header>
 <main>
-    <p #sentenceReloader class="sentence-reloader">&#8635;</p>
-      <div class="spacer"></div>
-      <p class="animated-text">{{ displayedSentence }}</p>
-      <p class="info-text">This is an example | Made by Kasai Technologies</p>
-  </main>
+  <p
+    #sentenceReloader
+    class="sentence-reloader"
+    (click)="onReload()"
+  >&#8635;</p>
+  <div class="spacer"></div>
+  <p class="animated-text">{{ displayedSentence }}</p>
+  <p class="info-text">This is an example | Made by Kasai Technologies</p>
+</main>
 <app-footer></app-footer>
