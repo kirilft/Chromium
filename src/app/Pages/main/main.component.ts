@@ -43,7 +43,23 @@ export class MainComponent implements OnInit, OnDestroy {
   private typingTimeouts: number[] = [];
   private sentences: string[] = [
     "Intelligence is acknowledging knowing nothing. - Kiri",
-    // …other sentences…
+        "Reality is just a crutch for people who can't handle science fiction. - Skylar Astin",
+    "Procrastination is the art of keeping up with yesterday. - Don Marquis",
+    "I’m not arguing, I’m just explaining why I’m right. - Charlie Bright",
+    "Always borrow money from a pessimist, they never expect it back. - Oscar Wilde",
+    "I don’t have a dirty mind, I have a sexy imagination. - Noah Sparks",
+    "The early bird might get the worm, but the second mouse gets the cheese. - Steven Wright",
+    "I’m not weird, I’m a limited edition. - Sam Cawthorn",
+    "Success is just failure with better marketing. - Superinaligence",
+    "If I had a dollar for every time I didn’t care, I’d be too rich to deal with this nonsense. - Weathly",
+    "Life's a game, and I forgot the rules five minutes in. - Captain No-Idea",
+    "Turns out, screaming into the void is actually quite therapeutic. - Doctor Yikes",
+    "If procrastination were an Olympic sport, I’d still be late to the ceremony. - Queen of Delays",
+    "Sometimes you just have to smile and pretend the world isn’t on fire. - Sir Chill-a-Lot",
+    "I didn’t sign up for this, but here we are, thriving in chaos. - Awkward Overlord",
+    "I’m not lazy; I’m on energy-saving mode for efficiency reasons. - Duke of Deflection",
+    "Apparently, adulting is just a never-ending to-do list with no fun DLCs. - Miss Nope",
+    "In the grand scheme of things, my plan is to wing it, survive, and maybe grab a snack. - Baroness Snackworthy",
     "Reality is just an illusion, but your failures? Oh, those are very real. - Bill Cipher"
   ];
   private workingSentences: string[] = [];
