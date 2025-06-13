@@ -13,7 +13,6 @@ main {
     0 0 10px  rgba(var(--text-primary-rgb), 0.1),
     0 0 30px  rgba(var(--text-primary-rgb), 0.2),
     inset 0 0 10px rgba(var(--text-primary-rgb), 0.15);
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   height: 72.2vh;
   margin: 13.9vh 2rem;
