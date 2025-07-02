@@ -9,6 +9,7 @@
   margin: 2.75rem 7rem 3rem 7rem;
   display: flex;
   align-items: center;
+  z-index: -1; ;
 }
 
 /* Large screen footer (title, etc.) */
