@@ -6,6 +6,7 @@ import { ArcComponent } from './Pages/arc/arc.component';
 import { GalleryComponent } from './Pages/gallery/gallery.component';
 import { ImpressumComponent } from './Pages/impressum/impressum.component';
 import { KasaiComponent } from './Pages/kasai/kasai.component';
+import { AvailableServicesComponent } from './Pages/available-services/available-services.component';
 
 export const routes: Routes = [
   {
@@ -51,6 +52,14 @@ export const routes: Routes = [
     data: {
       title: 'Impressum | Legal Notice | Kasai Tech',
       description: 'Legal notice and contact information for Kasai Tech, operated by Kiri Yo Wasted, Mank, Austria.'
+    }
+  },
+  {
+    path: 'services',
+    component: AvailableServicesComponent,
+    data: {
+      title: 'Available Services | Kasai Tech',
+      description: 'Browse all available services in the Kasai Tech Angular app.'
     }
   },
   {

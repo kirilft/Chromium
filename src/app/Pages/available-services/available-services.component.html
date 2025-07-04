@@ -1,0 +1,10 @@
+<app-header></app-header>
+<main>
+  <h1>Available Services</h1>
+  <ul class="services-list">
+    <li *ngFor="let link of links">
+      <a class="link" [href]="link.url" target="_blank" rel="noopener">{{ link.title }}</a>
+    </li>
+  </ul>
+</main>
+<app-footer></app-footer>
