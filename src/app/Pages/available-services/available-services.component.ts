@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 
@@ -18,11 +18,16 @@ export class AvailableServicesComponent implements OnInit, AfterViewInit {
     { title: 'Speedtest',            url: 'https://speed.kiriwstd.com' }
   ];
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   ngOnInit(): void {
     // initialize if needed
   }
 
   ngAfterViewInit(): void {
+    // Guard DOM access for SSR
+    if (!isPlatformBrowser(this.platformId)) return;
+
     const elems = document.getElementsByClassName('link');
     for (const el of Array.from(elems) as HTMLElement[]) {
       el.onmousemove = (e: MouseEvent) => {
