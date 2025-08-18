@@ -1,1 +1,59 @@
-<p>projects works!</p>
+<app-header></app-header>
+<main class="projects-grid">
+	<!-- Color Card -->
+	<section class="project-card">
+		<header class="project-card__header">
+			<h2>Color</h2>
+			<a routerLink="/projects/color" fragment="about" class="top-link" aria-label="Find out more about Color">↗</a>
+		</header>
+			<div class="project-card__image">
+				<img src="assets/project colour.png" alt="Color palettes and visual samples" loading="lazy" />
+		</div>
+		<div class="project-card__body">
+			<p>Explore color theory experiments, palette tools, and UI token systems.</p>
+			<ul>
+				<li>Palette generator</li>
+				<li>Contrast & accessibility checks</li>
+				<li>Theme token playground</li>
+			</ul>
+			<a routerLink="/projects/color" fragment="about" class="more">Find out more ↗</a>
+		</div>
+	</section>
+
+	<!-- Audio Card -->
+	<section class="project-card">
+		<header class="project-card__header">
+			<h2>Audio</h2>
+			<a routerLink="/projects/audio" fragment="about" class="top-link" aria-label="Find out more about Audio">↗</a>
+		</header>
+		<div class="project-card__image placeholder" aria-label="Audio demo image placeholder"></div>
+		<div class="project-card__body">
+			<p>Experiments with web audio processing, visualization, and synthesis.</p>
+			<ul>
+				<li>Waveform & spectrum visualizers</li>
+				<li>Effects rack (EQ, reverb, delay)</li>
+				<li>MIDI + WebAudio synth sketches</li>
+			</ul>
+			<a routerLink="/projects/audio" fragment="about" class="more">Find out more ↗</a>
+		</div>
+	</section>
+
+	<!-- Astrophotography Card -->
+	<section class="project-card">
+		<header class="project-card__header">
+			<h2>Astrophotography</h2>
+			<a routerLink="/projects/astrophotography" fragment="about" class="top-link" aria-label="Find out more about Astrophotography">↗</a>
+		</header>
+		<div class="project-card__image placeholder" aria-label="Astrophotography demo image placeholder"></div>
+		<div class="project-card__body">
+			<p>Capture, stack, and process the night sky with tooling and guides.</p>
+			<ul>
+				<li>Acquisition planners</li>
+				<li>Stacking & calibration workflows</li>
+				<li>Post-processing recipes</li>
+			</ul>
+			<a routerLink="/projects/astrophotography" fragment="about" class="more">Find out more ↗</a>
+		</div>
+	</section>
+</main>
+<app-footer></app-footer>

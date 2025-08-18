@@ -1,0 +1,2 @@
+@import '../color/color.component.css';
+.hero.placeholder { height: min(42vh, 420px); background: rgba(255,255,255,0.05); border-top-left-radius: 1rem; border-top-right-radius: 1rem; }

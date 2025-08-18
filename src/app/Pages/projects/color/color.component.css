@@ -1,0 +1,18 @@
+main.project-detail {
+  margin: 13.9vh 2rem;
+  width: calc(100vw - 4rem);
+  background: var(--background-gradient);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 1rem;
+  box-shadow:
+    0 0 10px rgba(var(--text-primary-rgb), 0.1),
+    0 0 30px rgba(var(--text-primary-rgb), 0.2),
+    inset 0 0 10px rgba(var(--text-primary-rgb), 0.15);
+}
+.hero { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.15); }
+.hero img { width: 100%; height: auto; display: block; object-fit: cover; border-top-left-radius: 1rem; border-top-right-radius: 1rem; }
+.content { padding: 1.25rem; color: var(--gray5); }
+.content h1 { font-size: var(--Fontsize-h2); color: var(--white); margin: 0 0 0.5rem; }
+.content h2 { margin-top: 1rem; color: var(--white); }
+.content p, .content li { color: var(--gray4); }
+@media (max-width: 768px){ main.project-detail{ margin: 13.9vh 1rem; width: calc(100% - 2rem);} }

@@ -40,6 +40,38 @@ export const routes: Routes = [
     }
   },
   {
+    path: 'projects',
+    loadComponent: () => import('./Pages/projects/projects.component').then(m => m.ProjectsComponent),
+    data: {
+      title: 'Projects | Kasai Tech',
+      description: 'A curated list of experiments, utilities, and works-in-progress built by Kasai Technologies.'
+    }
+  },
+  {
+    path: 'projects/color',
+    loadComponent: () => import('./Pages/projects/color/color.component').then(m => m.ProjectColorComponent),
+    data: {
+      title: 'Color | Kasai Projects',
+      description: 'Color experiments: palettes, contrast, tokens, and theming.'
+    }
+  },
+  {
+    path: 'projects/audio',
+    loadComponent: () => import('./Pages/projects/audio/audio.component').then(m => m.ProjectAudioComponent),
+    data: {
+      title: 'Audio | Kasai Projects',
+      description: 'Web audio experiments, effects, and visualization.'
+    }
+  },
+  {
+    path: 'projects/astrophotography',
+    loadComponent: () => import('./Pages/projects/astrophotography/astrophotography.component').then(m => m.ProjectAstrophotographyComponent),
+    data: {
+      title: 'Astrophotography | Kasai Projects',
+      description: 'Capture, stack, and process the night sky with tools and guides.'
+    }
+  },
+  {
     path: 'impressum',
   loadComponent: () => import('./Pages/impressum/impressum.component').then(m => m.ImpressumComponent),
     data: {
