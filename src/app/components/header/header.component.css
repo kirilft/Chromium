@@ -7,7 +7,7 @@ header {
   display: flex;
   align-items: center;
   margin: 2rem;
-  z-index: 200000; /* Ensure header (and its popup) stays above main stacking contexts */
+  z-index: 2;
 }
 
 .logo-title {

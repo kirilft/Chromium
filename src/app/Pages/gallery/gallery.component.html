@@ -24,7 +24,8 @@
               [src]="baseImagePath + img.src"
               (click)="openPreview(img)"
               [alt]="img.alt"
-              loading="lazy"
+              [attr.loading]="i === 0 ? 'eager' : 'lazy'"
+              [attr.fetchpriority]="i === 0 ? 'high' : null"
               role="button"
               tabindex="0"
               (keydown.enter)="openPreview(img)" />
