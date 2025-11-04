@@ -3,6 +3,7 @@ import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, Inject, PLATFORM
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ThemeService } from '../../services/theme.service';
 import { IconComponent } from '../../services/icon/icon.component';
 import { GalleryDataService } from '../../services/gallery-data.service';
@@ -20,6 +21,27 @@ import { ExternalLinkDirective } from '../../directives/external-link.directive'
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [
+    trigger('slideInOut', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateY(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateY(-8px)'
+        }),
+        animate('200ms ease-out')
+      ]),
+      transition('* => void', [
+        animate('200ms ease-in', style({
+          opacity: 0,
+          transform: 'translateY(-8px)'
+        }))
+      ])
+    ])
+  ]
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   // Initialize currentTheme directly from the service in the constructor

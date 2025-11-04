@@ -7,9 +7,26 @@
   </div>
 
   <nav class="navbar">
-    <ul class="dot-grid">
-      <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-    </ul>
+    <!-- Dot Grid / Menu Icon -->
+    <div 
+      class="dot-grid-container"
+      (click)="toggleMenu()"
+      tabindex="0"
+      (keydown.enter)="toggleMenu()"
+      aria-label="Open navigation menu"
+      role="button">
+      <ul class="dot-grid">
+        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+      </ul>
+      
+      <!-- Navigation Popup Menu -->
+      @if (isMenuOpen) {
+        <div class="nav-popup" [@slideInOut]>
+          <a routerLink="/gallery" (click)="closeMenu()" class="popup-link">Gallery</a>
+          <a href="https://github.com/kirilft" target="_blank" rel="noopener noreferrer" (click)="closeMenu()" class="popup-link" appExternalLink>GitHub</a>
+        </div>
+      }
+    </div>
 
     <div class="nav-links">
       <a

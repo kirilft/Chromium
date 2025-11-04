@@ -7,6 +7,7 @@ header {
   display: flex;
   align-items: center;
   margin: 2rem;
+  z-index: 200000; /* Ensure header (and its popup) stays above main stacking contexts */
 }
 
 .logo-title {
@@ -75,6 +76,8 @@ header {
   gap: 6px;
   list-style-type: none;
   filter: drop-shadow(2px 4px 4px rgba(255, 255, 255, 0.33));
+  margin: 0;
+  padding: 0;
 }
 
 .dot-grid li {
@@ -82,6 +85,81 @@ header {
   height: 6px;
   background-color: var(--white);
   border-radius: 50%;
+}
+
+/* Dot Grid Container with Popup Menu */
+.dot-grid-container {
+  position: relative;
+  display: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.dot-grid-container:hover {
+  background-color: rgba(var(--text-primary-rgb), 0.1);
+}
+
+.dot-grid-container:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+/* Navigation Popup Menu */
+.nav-popup {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.75rem;
+  background-color: var(--gray);
+  border: 1px solid var(--gray3);
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  z-index: 100000;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup-link {
+  padding: 0.75rem 1.5rem;
+  color: var(--white);
+  text-decoration: none;
+  font-family: Outfit, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+
+.popup-link:first-child {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.popup-link:last-child {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.popup-link:hover {
+  background-color: var(--gray3);
+  color: var(--blue);
 }
 
 .nav-links {
@@ -138,6 +216,12 @@ header {
     height: 27px;
     border: 2.16px solid var(--orange);
     border-radius: 7.911px;
+  }
+
+  .dot-grid-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .dot-grid {
