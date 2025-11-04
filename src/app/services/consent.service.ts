@@ -42,7 +42,7 @@ export class ConsentService {
                     console.error('ConsentService: Error writing consent state to localStorage', e);
                 }
             }
-        }, { allowSignalWrites: true }); // Needed because effect modifies showBanner signal
+        }); // Signal writes are always allowed in effects (allowSignalWrites is deprecated)
     }
   }
 
