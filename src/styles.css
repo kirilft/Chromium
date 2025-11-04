@@ -147,10 +147,24 @@ body {
   -moz-osx-font-smoothing: grayscale; /* Improve font rendering on Firefox */
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transitions */
   
-  /* OpenType Features for optimized typography */
-  font-variant-ligatures: common-ligatures discretionary-ligatures; /* Enable fi, fl ligatures */
+  /* OpenType Features for optimized typography - kerning and spacing only */
+  font-variant-ligatures: common-ligatures discretionary-ligatures; /* Enable fi, fl, ffl ligatures */
   font-variant-numeric: proportional-nums; /* Proportional number spacing */
+  font-feature-settings: "kern" 1, "liga" 1, "dlig" 1; /* Kerning and ligatures */
   text-rendering: optimizeLegibility; /* Better kerning and letter-pair spacing */
+  
+  /* Anti-aliasing and subpixel rendering */
+  -webkit-text-size-adjust: 100%; /* Prevent font size changes on mobile rotation */
+  text-size-adjust: 100%;
+  
+  /* Smooth scrolling behavior */
+  scroll-behavior: smooth;
+}
+
+/* Enhanced text rendering for headings - kerning and ligatures */
+h1, h2, h3, h4, h5, h6 {
+  font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+  text-rendering: optimizeLegibility;
 }
 
 *, *::before, *::after {
