@@ -9,6 +9,11 @@ export interface GalleryImage {
   src: string; // Filename only
   alt: string;
   downloadUrl: string;
+  srcSet?: {
+    sd: string;  // Small/preview size (e.g., ~500px)
+    hd: string;  // HD size (e.g., ~1200px)
+    full: string; // Full 4K size
+  };
 }
 
 @Injectable({
@@ -43,13 +48,39 @@ export class GalleryDataService {
     if (!this.galleryData$) {
       console.log('GalleryDataService: Fetching gallery data for the first time.');
       this.galleryData$ = this.http.get<GalleryImage[]>(this.jsonPath).pipe(
-        tap(data => console.log('GalleryDataService: Gallery JSON loaded:', data)),
+        tap(data => {
+          console.log('GalleryDataService: Gallery JSON loaded:', data);
+          // Generate proxy URLs for each image if not already present
+          data.forEach(image => {
+            if (!image.srcSet) {
+              image.srcSet = this.generateProxyUrls(image.src);
+            }
+          });
+        }),
         shareReplay(1) // Cache the result and replay for subsequent subscribers
       );
     } else {
       console.log('GalleryDataService: Returning cached gallery data.');
     }
     return this.galleryData$;
+  }
+
+  /**
+   * Generates proxy URLs for different image sizes.
+   * The site generates these automatically based on width parameter.
+   * @param filename The original image filename
+   * @returns Object with sd, hd, and full quality URLs
+   */
+  private generateProxyUrls(filename: string) {
+    // Assuming the proxy/CDN supports width parameter: ?w=<width>
+    // Adjust the base URL if your CDN/proxy uses different parameters
+    const basePath = `${this.baseImagePath}${filename}`;
+    
+    return {
+      sd: `${basePath}?w=400`,   // Small device preview (~400px) - very small on phones
+      hd: `${basePath}?w=1200`,  // HD size (~1200px)
+      full: `${basePath}?w=3200` // Full 4K resolution (~3200px)
+    };
   }
 
   /**
