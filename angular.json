@@ -24,7 +24,12 @@
               "src/sitemap.xml",
               "src/favicon.webp",
               "src/assets",
-              "src/robots.txt"
+              "src/robots.txt",
+              {
+                "glob": "**/*",
+                "input": "src/.well-known",
+                "output": "/.well-known"
+              }
             ],
             "styles": [
               "src/styles.css"
