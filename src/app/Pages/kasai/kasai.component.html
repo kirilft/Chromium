@@ -11,20 +11,22 @@
       <div class="kasai-column">
         <h3>Networking</h3>
         <ul>
-          <li *ngFor="let svc of networking">
-            <a [href]="svc.url" target="_blank" rel="noopener">
-              {{ svc.label }}
-            </a>
-            <span
-              class="status-dot"
+          @for (svc of networking; track svc) {
+            <li>
+              <a [href]="svc.url" target="_blank" rel="noopener">
+                {{ svc.label }}
+              </a>
+              <span
+                class="status-dot"
               [ngClass]="{
                 online: svc.isOnline === true,
                 offline: svc.isOnline === false,
                 checking: svc.isOnline === null
               }"
-              title="{{ svc.isOnline === null ? 'Checking…' : (svc.isOnline ? 'Online' : 'Offline') }}">
-            </span>
-          </li>
+                title="{{ svc.isOnline === null ? 'Checking…' : (svc.isOnline ? 'Online' : 'Offline') }}">
+              </span>
+            </li>
+          }
         </ul>
       </div>
 
@@ -32,20 +34,22 @@
       <div class="kasai-column">
         <h3>Proxmox</h3>
         <ul>
-          <li *ngFor="let svc of proxmox">
-            <a [href]="svc.url" target="_blank" rel="noopener">
-              {{ svc.label }}
-            </a>
-            <span
-              class="status-dot"
+          @for (svc of proxmox; track svc) {
+            <li>
+              <a [href]="svc.url" target="_blank" rel="noopener">
+                {{ svc.label }}
+              </a>
+              <span
+                class="status-dot"
               [ngClass]="{
                 online: svc.isOnline === true,
                 offline: svc.isOnline === false,
                 checking: svc.isOnline === null
               }"
-              title="{{ svc.isOnline === null ? 'Checking…' : (svc.isOnline ? 'Online' : 'Offline') }}">
-            </span>
-          </li>
+                title="{{ svc.isOnline === null ? 'Checking…' : (svc.isOnline ? 'Online' : 'Offline') }}">
+              </span>
+            </li>
+          }
         </ul>
       </div>
 
@@ -53,23 +57,27 @@
       <div class="kasai-column">
         <h3>Clients</h3>
         <ul>
-          <li *ngIf="clients.length === 0" class="no-entry">
-            No clients defined.
-          </li>
-          <li *ngFor="let svc of clients">
-            <a [href]="svc.url" target="_blank" rel="noopener">
-              {{ svc.label }}
-            </a>
-            <span
-              class="status-dot"
+          @if (clients.length === 0) {
+            <li class="no-entry">
+              No clients defined.
+            </li>
+          }
+          @for (svc of clients; track svc) {
+            <li>
+              <a [href]="svc.url" target="_blank" rel="noopener">
+                {{ svc.label }}
+              </a>
+              <span
+                class="status-dot"
               [ngClass]="{
                 online: svc.isOnline === true,
                 offline: svc.isOnline === false,
                 checking: svc.isOnline === null
               }"
-              title="{{ svc.isOnline === null ? 'Checking…' : (svc.isOnline ? 'Online' : 'Offline') }}">
-            </span>
-          </li>
+                title="{{ svc.isOnline === null ? 'Checking…' : (svc.isOnline ? 'Online' : 'Offline') }}">
+              </span>
+            </li>
+          }
         </ul>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
@@ -6,7 +6,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 @Component({
   selector: 'app-available-services',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, FooterComponent],
+  imports: [HeaderComponent, FooterComponent],
   templateUrl: './available-services.component.html',
   styleUrls: ['./available-services.component.css']
 })
